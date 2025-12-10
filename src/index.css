@@ -1,1 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap');
+@font-face {
+  font-family: silverlineblack;
+  src: url(../src/assets/fonts/SilverlineSans-Black.ttf);
+}
+@font-face {
+  font-family: silverlinebold;
+  src: url(../src/assets/fonts/SilverlineSans-Bold.ttf);
+}
+
+
+
 @import "tailwindcss";
+@plugin "daisyui";
+
+@theme{
+  --font-silverblack: silverlineblack,"sans-serif";
+  --font-silverbold: silverlinebold,"sans-serif";
+  --font-dmsans:"DM Sans", sans-serif;
+  --font-urbanist:"Urbanist", sans-serif;
+  --font-zendots:"Zen Dots", sans-serif;
+}
