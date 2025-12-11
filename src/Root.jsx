@@ -30,7 +30,7 @@ const Root = () => {
         tl.to('#title-logo',{
             y:0,
             opacity:1,
-            duration:1,
+            duration:0.5,
             ease: "power4.out",
         })
         
