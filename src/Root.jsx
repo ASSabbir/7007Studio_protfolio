@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 
+
 gsap.registerPlugin(useGSAP); 
 
 const Root = () => {
@@ -45,6 +46,9 @@ const Root = () => {
                 playsInline
                 id='loading_video'
                 className="w-full h-auto absolute top-0"></video>
+
+        
+
         </div>
     );
 };
