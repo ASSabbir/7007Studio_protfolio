@@ -37,7 +37,7 @@ const Root = () => {
         
     })
     return (
-        <div className='bg-zinc-950 relative h-screen text-white'>
+        <div className=' relative h-screen text-white'>
             <Nav></Nav>
             <Outlet></Outlet>
             <video src={logovideo} autoPlay
