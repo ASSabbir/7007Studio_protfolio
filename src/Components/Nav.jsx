@@ -48,7 +48,7 @@ const Nav = () => {
         transition={{ duration: 0.6, type: "spring" }}
         className={`absolute top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-black/95 backdrop-blur-lg border-b border-red-900/30 shadow-lg shadow-red-900/10"
+            ? " backdrop-blur-lg border-b border-red-900/30 shadow-lg shadow-red-900/10"
             : "bg-transparent"
         }`}
       >
@@ -255,8 +255,7 @@ const Nav = () => {
         )}
       </AnimatePresence>
 
-      {/* Spacer to prevent content from hiding under fixed nav */}
-      <div className="h-20 md:h-24 lg:h-32" />
+      
     </>
   );
 };

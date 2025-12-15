@@ -7,6 +7,18 @@
   font-family: silverlinebold;
   src: url(../src/assets/fonts/SilverlineSans-Bold.ttf);
 }
+@font-face {
+  font-family: font1;
+  src: url(../src/assets/fonts/font1.ttf);
+}
+@font-face {
+  font-family: font2;
+  src: url(../src/assets/fonts/font2.woff2);
+}
+@font-face {
+  font-family: font3;
+  src: url(../src/assets/fonts/font3.woff2);
+}
 
 
 
@@ -15,6 +27,9 @@
 @plugin "daisyui";
 
 @theme{
+  --font-font1: font1,"sans-serif";
+  --font-font2: font2,"sans-serif";
+  --font-font2: font2,"sans-serif";
   --font-silverblack: silverlineblack,"sans-serif";
   --font-silverbold: silverlinebold,"sans-serif";
   --font-dmsans:"DM Sans", sans-serif;

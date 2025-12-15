@@ -38,7 +38,7 @@ const Root = () => {
         
     })
     return (
-        <div className='bg-zinc-950 relative h-screen text-white'>
+        <div className=' relative h-screen text-white'>
             <Nav></Nav>
             <Outlet></Outlet>
             <video src={logovideo} autoPlay
@@ -47,13 +47,9 @@ const Root = () => {
                 playsInline
                 id='loading_video'
                 className="w-full h-auto absolute top-0"></video>
-<<<<<<< HEAD
-            <Footer></Footer>
-=======
 
         
 
->>>>>>> 89128cd3b3b940ff51ae2177082a361c48839d84
         </div>
     );
 };
