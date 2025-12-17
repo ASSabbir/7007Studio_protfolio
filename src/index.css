@@ -9,12 +9,6 @@
   src: url(../src/assets/fonts/SilverlineSans-Bold.ttf);
 }
 
-.orbitron-<uniquifier> {
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
 
 
 @import "tailwindcss";
