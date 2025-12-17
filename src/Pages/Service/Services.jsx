@@ -228,7 +228,7 @@ const Services = () => {
           <div className="flex justify-center gap-4">
             <button
               onClick={() => setActiveTab('gig')}
-              className={`relative px-8 py-4 font-silverbold text-lg transition-all duration-300 ${
+              className={`relative px-8 py-4 font-silverbold text-5xl transition-all duration-300 ${
                 activeTab === 'gig'
                   ? 'text-white'
                   : 'text-gray-500 hover:text-gray-300'
@@ -243,11 +243,11 @@ const Services = () => {
                   transition={{ type: "spring", duration: 0.6 }}
                 />
               )}
-            </button>
+            </button> 
 
             <button
               onClick={() => setActiveTab('custom')}
-              className={`relative px-8 py-4 font-silverbold text-lg transition-all duration-300 ${
+              className={`relative px-8 py-4 font-silverbold text-5xl transition-all duration-300 ${
                 activeTab === 'custom'
                   ? 'text-white'
                   : 'text-gray-500 hover:text-gray-300'
