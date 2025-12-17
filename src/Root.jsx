@@ -5,6 +5,7 @@ import logovideo from '../src/assets/video/logo2.mp4'
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Footer from './Components/Footer';
 
 
 gsap.registerPlugin(useGSAP); 
@@ -46,7 +47,7 @@ const Root = () => {
                 playsInline
                 id='loading_video'
                 className="w-full h-auto absolute top-0"></video>
-
+<Footer></Footer>
         
 
         </div>

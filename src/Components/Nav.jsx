@@ -46,7 +46,7 @@ const Nav = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, type: "spring" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`absolute top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? " backdrop-blur-lg border-b border-red-900/30 shadow-lg shadow-red-900/10"
             : "bg-transparent"
