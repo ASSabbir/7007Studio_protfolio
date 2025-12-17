@@ -46,11 +46,7 @@ const Nav = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, type: "spring" }}
-        className={`absolute top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
-            ? " backdrop-blur-lg border-b border-red-900/30 shadow-lg shadow-red-900/10"
-            : "bg-transparent"
-        }`}
+        className={"absolute top-0 left-0 right-0 z-50 transition-all duration-500"}
       >
         <div className="max-w-[1800px] mx-auto px-4 md:px-8 lg:px-[7vw]">
           <div className="flex justify-between items-center py-4 md:py-6 lg:py-8">
@@ -227,7 +223,7 @@ const Nav = () => {
                   <NavLink to="/contact" onClick={toggleMobileMenu}>
                     <motion.button
                       whileTap={{ scale: 0.95 }}
-                      className="w-full bg-red-600 hover:bg-red-700 text-white py-4 px-6 font-silverbold text-base transition-all duration-300 border border-red-600"
+                      className="w-full bg-red-600 hover:bg-red-700 text-white py-4 px-6 font-Urbanist text-base transition-all duration-300 border border-red-600"
                     >
                       Get Started
                     </motion.button>

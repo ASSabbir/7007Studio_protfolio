@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Star, Quote, Users, Award, TrendingUp, CheckCircle } from 'lucide-react';
+import ScrollMarquee from './ScrollMarquee';
+import MessageCard from './MessageCard';
 
 const ClientReview = () => {
   const reviews = [
-    { name: 'Sarah Johnson', role: 'CEO, TechCorp', text: 'Exceptional work! They transformed our vision into reality with incredible attention to detail.', rating: 5, avatar: 'A' },
-    { name: 'Michael Chen', role: 'Founder, StartupX', text: 'Professional, creative, and delivered beyond expectations. Highly recommend!', rating: 5, avatar: 'B' },
-    { name: 'Emily Rodriguez', role: 'Marketing Director', text: 'The team at 7007 Studio brings innovation and expertise to every project.', rating: 5, avatar: 'C' },
-    { name: 'David Kim', role: 'Product Manager', text: 'Outstanding collaboration and results. They truly understand modern design.', rating: 5, avatar: 'D' },
-    { name: 'Jessica Martinez', role: 'Creative Director', text: 'Absolutely brilliant! The animations exceeded all our expectations and wowed our clients.', rating: 5, avatar: 'E' },
-    { name: 'Ryan Thompson', role: 'VP of Marketing', text: 'Their 3D work is phenomenal. We saw a 300% increase in engagement after launching.', rating: 5, avatar: 'F' }
+    { name: 'Sarah Johnson', role: 'CEO, TechCorp', text: 'Exceptional work! They transformed our vision into reality with incredible attention to detail.', rating: 5, avatar: '👩‍💼' },
+    { name: 'Michael Chen', role: 'Founder, StartupX', text: 'Professional, creative, and delivered beyond expectations. Highly recommend!', rating: 5, avatar: '👨‍💼' },
+    { name: 'Emily Rodriguez', role: 'Marketing Director', text: 'The team at 7007 Studio brings innovation and expertise to every project.', rating: 5, avatar: '👩‍💻' },
+    { name: 'David Kim', role: 'Product Manager', text: 'Outstanding collaboration and results. They truly understand modern design.', rating: 5, avatar: '👨‍💻' },
+    { name: 'Jessica Martinez', role: 'Creative Director', text: 'Absolutely brilliant! The animations exceeded all our expectations and wowed our clients.', rating: 5, avatar: '👩‍🎨' },
+    { name: 'Ryan Thompson', role: 'VP of Marketing', text: 'Their 3D work is phenomenal. We saw a 300% increase in engagement after launching.', rating: 5, avatar: '👨‍💼' }
   ];
 
   return (
-
-
     <div className="min-h-screen bg-black text-white overflow-hidden">
       {/* Hero Section */}
       <motion.div
@@ -37,7 +37,7 @@ const ClientReview = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-silverblack mb-6 tracking-wide"
+            className="text-7xl md:text-6xl lg:text-7xl font-silverblack mb-6 tracking-wide"
           >
             Client
             <span className="text-red-500"> Testimonials</span>
@@ -58,7 +58,7 @@ const ClientReview = () => {
       <StatsSection />
 
       {/* Reviews Grid */}
-      <div className="px-4 md:px-8 py-16">
+      <div className="px-4 md:px-8 py-16 w-screen">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -67,18 +67,21 @@ const ClientReview = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-silverblack mb-4 tracking-wide">
+            <h2 className="text-5xl md:text-5xl font-silverblack mb-8 tracking-wide">
               What Our <span className="text-red-500">Clients Say</span>
             </h2>
-            <TypewriterText 
-              text="Real feedback from real clients who trust us with their projects" 
-              className="text-gray-300 font-dmsans text-lg tracking-wider"
-            />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {/* Scrolling Marquee */}
+          <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+            <ScrollMarquee />
+          </div>
+
+          {/* Reviews as Message Boxes */}
+          <div className="space-y-8 mt-16 max-w-4xl mx-auto">
             {reviews.map((review, index) => (
-              <ReviewCard key={index} review={review} index={index} />
+              <MessageCard
+                key={index} review={review} index={index} />
             ))}
           </div>
         </div>
@@ -123,10 +126,6 @@ const ClientReview = () => {
         </div>
       </motion.div>
     </div>
-
-
-
-
   );
 };
 
@@ -189,7 +188,7 @@ const StatsSection = () => {
               className="group relative bg-black border border-red-900/30 hover:border-red-500 p-6 md:p-8 text-center transition-all duration-500"
             >
               <div className="absolute inset-0 bg-red-500/0 group-hover:bg-red-500/5 transition-all duration-500" />
-              
+
               <div className="relative">
                 <motion.div
                   whileHover={{ rotate: 360 }}
@@ -265,9 +264,10 @@ const ReviewCard = ({ review, index }) => {
   const isInView = useInView(cardRef, { once: true, margin: "-100px" });
 
   useEffect(() => {
-    if (isInView && !isTyping) {
+    if (isInView && !isTyping && displayedText === '') {
       setIsTyping(true);
       let currentIndex = 0;
+
       const typingInterval = setInterval(() => {
         if (currentIndex <= review.text.length) {
           setDisplayedText(review.text.slice(0, currentIndex));
@@ -275,26 +275,29 @@ const ReviewCard = ({ review, index }) => {
         } else {
           clearInterval(typingInterval);
           setIsTyping(false);
+
           // Start name typing after text is done
           setTimeout(() => {
-            setIsNameTyping(true);
-            let nameIndex = 0;
-            const nameInterval = setInterval(() => {
-              if (nameIndex <= review.name.length) {
-                setDisplayedName(review.name.slice(0, nameIndex));
-                nameIndex++;
-              } else {
-                clearInterval(nameInterval);
-                setIsNameTyping(false);
-              }
-            }, 50);
+            if (displayedName === '') {
+              setIsNameTyping(true);
+              let nameIndex = 0;
+              const nameInterval = setInterval(() => {
+                if (nameIndex <= review.name.length) {
+                  setDisplayedName(review.name.slice(0, nameIndex));
+                  nameIndex++;
+                } else {
+                  clearInterval(nameInterval);
+                  setIsNameTyping(false);
+                }
+              }, 50);
+            }
           }, 200);
         }
       }, 30);
 
       return () => clearInterval(typingInterval);
     }
-  }, [isInView, review.text, review.name, isTyping]);
+  }, [isInView, review.text, review.name, isTyping, displayedText, displayedName]);
 
   return (
     <motion.div
@@ -308,7 +311,7 @@ const ReviewCard = ({ review, index }) => {
     >
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-red-500/0 to-red-500/0 group-hover:from-red-500/10 group-hover:to-black/50 transition-all duration-500" />
-      
+
       <div className="relative">
         {/* Quote Icon */}
         <motion.div
@@ -339,8 +342,8 @@ const ReviewCard = ({ review, index }) => {
         {/* Review Text with Typing Animation */}
         <div className="mb-6 min-h-[140px]">
           <p className="text-gray-200 font-dmsans text-base md:text-lg leading-relaxed tracking-wide">
-            {displayedText}
-            {isTyping && (
+            {displayedText || '\u00A0'}
+            {isTyping && displayedText && (
               <motion.span
                 animate={{ opacity: [1, 0] }}
                 transition={{ duration: 0.5, repeat: Infinity }}
@@ -356,23 +359,64 @@ const ReviewCard = ({ review, index }) => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: index * 0.1 + 0.4 }}
-          className="flex items-center gap-4 pt-6 border-t border-red-900/30"
+          className="pt-6 border-t border-red-900/30"
         >
-          <div className="w-12 h-12 bg-red-500/10 border border-red-500/30 flex items-center justify-center text-2xl">
-            {review.avatar}
-          </div>
-          <div>
-            <h4 className="font-silverbold text-white group-hover:text-red-500 transition-colors duration-300 text-base md:text-lg tracking-wider">
-              {displayedName}
-              {isNameTyping && (
-                <motion.span
-                  animate={{ opacity: [1, 0] }}
-                  transition={{ duration: 0.5, repeat: Infinity }}
-                  className="inline-block w-0.5 h-4 bg-red-500 ml-1 align-middle"
+          <div className="flex items-center gap-4 mb-4">
+            {/* Avatar/Image Box */}
+            <div className="relative group/avatar">
+              {review.image ? (
+                <img
+                  src={review.image}
+                  alt={review.name}
+                  className="w-14 h-14 object-cover border-2 border-red-500/30 group-hover:border-red-500 transition-all duration-300"
                 />
+              ) : (
+                <div className="w-14 h-14 bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center border-2 border-red-500/30 group-hover:border-red-500 transition-all duration-300">
+                  <span className="text-white font-silverbold text-lg tracking-wider">
+                    {review.avatar}
+                  </span>
+                </div>
               )}
-            </h4>
-            <p className="text-gray-400 font-dmsans text-sm tracking-wide mt-1">{review.role}</p>
+              {/* Verified Badge */}
+              <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center border-2 border-black">
+                <CheckCircle className="w-3 h-3 text-white" />
+              </div>
+            </div>
+
+            {/* User Info */}
+            <div className="flex-1">
+              <h4 className="font-silverbold text-white group-hover:text-red-500 transition-colors duration-300 text-base md:text-lg tracking-wider">
+                {displayedName}
+                {isNameTyping && (
+                  <motion.span
+                    animate={{ opacity: [1, 0] }}
+                    transition={{ duration: 0.5, repeat: Infinity }}
+                    className="inline-block w-0.5 h-4 bg-red-500 ml-1 align-middle"
+                  />
+                )}
+              </h4>
+              <p className="text-gray-400 font-dmsans text-sm tracking-wide">{review.role}</p>
+              <p className="text-gray-600 font-dmsans text-xs tracking-wide mt-0.5">{review.company}</p>
+            </div>
+          </div>
+
+          {/* Additional Info Grid */}
+          <div className="grid grid-cols-2 gap-3 text-xs">
+            <div className="flex items-center gap-2 text-gray-500">
+              <div className="w-1 h-1 bg-red-500 rounded-full" />
+              <span className="font-dmsans tracking-wide">{review.location}</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-500">
+              <div className="w-1 h-1 bg-red-500 rounded-full" />
+              <span className="font-dmsans tracking-wide">{review.date}</span>
+            </div>
+          </div>
+
+          {/* Project Type Badge */}
+          <div className="mt-3">
+            <span className="inline-block text-xs font-dmsans text-red-400 bg-red-500/5 px-2 py-1 border border-red-500/20 tracking-wider">
+              {review.projectType}
+            </span>
           </div>
         </motion.div>
       </div>
