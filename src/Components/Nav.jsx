@@ -46,7 +46,11 @@ const Nav = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, type: "spring" }}
-        className={"absolute top-0 left-0 right-0 z-50 transition-all duration-500"}
+        className={`absolute top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled
+            ? " backdrop-blur-lg "
+            : "bg-transparent"
+        }`}
       >
         <div className="max-w-[1800px] mx-auto px-4 md:px-8 lg:px-[7vw]">
           <div className="flex justify-between items-center py-4 md:py-6 lg:py-8">
