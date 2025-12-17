@@ -1,13 +1,14 @@
 import {
   createBrowserRouter,
-  
+
 } from "react-router-dom";
 import Root from "./Root";
 import Home from "./Components/Home";
 import Services from "../src/Pages/Service/Services";
 import CaseStudy from "../src/Pages/CaseStudy/CaseStudy";
 import ClientReview from "../src/Pages/ClientReview/ClientReview";
-import Contact from "../src/Pages/Contact/Contact";
+import Contct from "./Pages/Contact/Contct";
+
 
 
 const Route = createBrowserRouter([
@@ -33,7 +34,7 @@ const Route = createBrowserRouter([
         },
         {
             path:'/contact',
-            element:<Contact></Contact>
+            element:<Contct></Contct>
         },
     ]
   },
