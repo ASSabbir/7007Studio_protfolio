@@ -13,6 +13,8 @@ const ClientReview = () => {
   ];
 
   return (
+
+
     <div className="min-h-screen bg-black text-white overflow-hidden">
       {/* Hero Section */}
       <motion.div
@@ -121,6 +123,10 @@ const ClientReview = () => {
         </div>
       </motion.div>
     </div>
+
+
+
+
   );
 };
 

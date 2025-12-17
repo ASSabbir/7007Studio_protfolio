@@ -1,12 +1,16 @@
 import React from 'react';
-import Spline from '@splinetool/react-spline';
+import Banner from './Home/Banner';
+import Marque from './Home/Marque';
+import Second from './Home/Second';
+import SecondTitle from './Home/SecondTitle';
+
 const Home = () => {
     return (
-        <div className='text-7xl  font-silverblack'>
-           <Spline scene="https://prod.spline.design/tyIAVPmekUztUdjN/scene.splinecode" />
-            <div className='h-90'>
-
-            </div>
+        <div className='text-7xl  '>
+           <Banner></Banner>
+           <Marque></Marque>
+           <SecondTitle></SecondTitle>
+           <Second></Second>
         </div>
     );
 };
