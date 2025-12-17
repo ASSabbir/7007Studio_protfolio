@@ -30,7 +30,7 @@ const ScrollMarquee = () => {
   ];
 
   return (
-    <div className="relative w-screen overflow-hidden bg-white py-8">
+    <div className="relative w-screen overflow-hidden py-8">
       <motion.div
         animate={{
           x: scrollDirection === 'right' ? [0, -2000] : [-2000, 0]
@@ -45,7 +45,7 @@ const ScrollMarquee = () => {
         {[...Array(3)].map((_, setIndex) => (
           <div key={setIndex} className="flex ">
             {marqueeItems.map((item, index) => (
-              <h1 key={`${setIndex}-${index}`} className="text-6xl md:text-8xl lg:text-9xl font-black font-dmsans text-black mx-8">
+              <h1 key={`${setIndex}-${index}`} className="text-6xl md:text-8xl lg:text-9xl font-black font-dmsans text-white mx-8">
                 {item} <span className="text-red-500">-</span>
               </h1>
             ))}
