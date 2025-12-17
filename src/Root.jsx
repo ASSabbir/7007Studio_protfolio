@@ -47,7 +47,7 @@ const Root = () => {
                 playsInline
                 id='loading_video'
                 className="w-full h-auto absolute top-0"></video>
-
+<Footer></Footer>
         
 
         </div>
