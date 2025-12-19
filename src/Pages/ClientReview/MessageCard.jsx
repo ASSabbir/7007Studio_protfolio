@@ -20,7 +20,7 @@ const MessageCard = ({ review, index }) => {
           className={`relative bg-gradient-to-br ${
             isEven 
               ? 'from-red-500/10 to-black border-l-4 border-red-500' 
-              : 'from-gray-800 to-black border-r-4 border-red-500'
+              : 'from-orange-900 to-black border-r-4 border-red-500'
           } p-6 md:p-8 rounded-2xl shadow-xl`}
         >
           {/* Speech Bubble Triangle */}
@@ -50,7 +50,7 @@ const MessageCard = ({ review, index }) => {
           </div>
 
           {/* Review Text */}
-          <p className="text-gray-200 font-dmsans text-base md:text-lg leading-relaxed tracking-wide mb-6">
+          <p className="text-gray-200 font-dmsans text-base md:text-xl leading-relaxed tracking-wide mb-6">
             "{review.text}"
           </p>
 
@@ -78,7 +78,7 @@ const MessageCard = ({ review, index }) => {
 
             {/* Client Details */}
             <div className="flex-1">
-              <h4 className="font-silverbold text-white text-base md:text-lg tracking-wider">
+              <h4 className="font-Orbitron text-white text-base md:text-2xl tracking-wider">
                 {review.name}
               </h4>
               <p className="text-gray-400 font-dmsans text-sm tracking-wide">{review.role}</p>
@@ -87,7 +87,7 @@ const MessageCard = ({ review, index }) => {
 
             {/* Project Badge */}
             <div className="hidden md:block">
-              <span className="inline-block text-xs font-dmsans text-red-400 bg-red-500/10 px-3 py-1 border border-red-500/30 rounded-full tracking-wider">
+              <span className="inline-block text-5xl font-dmsans text-red-400 bg-red-500/10 px-3 py-1 border border-red-500/30 rounded-full tracking-wider">
                 {review.projectType}
               </span>
             </div>
@@ -113,7 +113,7 @@ const ExampleUsage = () => {
 
   return (
     <div className="min-h-screen bg-black p-8">
-      <div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-xl mx-auto">
         <MessageCard review={sampleReview} index={0} />
         <MessageCard review={sampleReview} index={1} />
         <MessageCard review={sampleReview} index={2} />

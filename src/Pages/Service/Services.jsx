@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Box, Zap, Sparkles, ArrowRight, Clock, DollarSign, Package } from 'lucide-react';
+import vdo1 from '../../assets/video/footage2.mp4'
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState('gig');
@@ -94,6 +95,9 @@ const Services = () => {
 
   const ServiceCard = ({ service, index, isGig }) => {
     return (
+
+
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -103,7 +107,7 @@ const Services = () => {
       >
         {/* Hover effect overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-red-600/0 to-red-600/0 group-hover:from-red-600/10 group-hover:to-black/50 transition-all duration-500" />
-        
+
         <div className="relative p-6 md:p-8">
           {/* Icon/Emoji */}
           <div className="text-6xl mb-4 transition-transform duration-1000">
@@ -178,61 +182,77 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <div className="min-h-screen  text-white overflow-hidden">
+
       {/* Hero Section */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="relative pt-20 md:pt-32 pb-16 px-4 md:px-8"
-      >
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-block mb-6"
-          >
-            <Box className="w-16 h-16 md:w-20 md:h-20 text-red-500 mx-auto animate-pulse" />
-          </motion.div>
 
-          <motion.h1
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-urbanist mb-6"
-          >
-            3D Animation
-            <span className="text-red-500"> Services</span>
-          </motion.h1>
+      <div id='banner-page' className="relative h-screen overflow-hidden top-0 font-silverblack">
+        {/* Background Video */}
+        <video
+          className="absolute  top-0 left-0 w-full h-full object-cover -z-10"
+          src={vdo1}
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+        <div className="absolute top-0 left-0 w-full h-full bg-black/60 -z-10"></div>
 
-          <motion.p
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-gray-400 font-dmsans text-lg md:text-xl max-w-3xl mx-auto"
-          >
-            Transform your vision into stunning 3D animations. Choose from ready-to-go packages or custom solutions.
-          </motion.p>
-        </div>
-      </motion.div>
+        {/* Hero Text Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="relative pt-40 md:pt-70 pb-16 px-4 md:px-8"
+        >
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-block mb-6"
+            >
+              <Box className="w-16 h-16 md:w-20 md:h-20 text-red-500 mx-auto animate-pulse" />
+            </motion.div>
+
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-4xl md:text-6xl lg:text-7xl font-urbanist mb-6"
+            >
+              3D Animation
+              <span className="text-red-500"> Services</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-gray-400 font-dmsans text-lg md:text-xl max-w-3xl mx-auto"
+            >
+              Transform your vision into stunning 3D animations. Choose from ready-to-go packages or custom solutions.
+            </motion.p>
+          </div>
+        </motion.div>
+      </div>
+
 
       {/* Tab Selector */}
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="sticky top-0 z-50 bg-black/80 backdrop-blur-lg border-b border-red-900/30 px-4 md:px-8 py-6"
+        className="sticky bg-black top-0 z-50  backdrop-blur-lg border-b border-red-900/30 px-4 md:px-8 py-6"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto ">
           <div className="flex justify-center gap-4">
             <button
               onClick={() => setActiveTab('gig')}
-              className={`relative px-8 py-4 font-silverbold text-5xl transition-all duration-300 ${
-                activeTab === 'gig'
-                  ? 'text-white'
-                  : 'text-gray-500 hover:text-gray-300'
-              }`}
+              className={`relative px-8 py-4 font-silverbold text-6xl transition-all duration-300 ${activeTab === 'gig'
+                ? 'text-white'
+                : 'text-gray-500 hover:text-gray-300'
+                }`}
             >
               <Package className="w-5 h-5 inline-block mr-2 font-urbanist" />
               Gig Services
@@ -243,15 +263,14 @@ const Services = () => {
                   transition={{ type: "spring", duration: 0.6 }}
                 />
               )}
-            </button> 
+            </button>
 
             <button
               onClick={() => setActiveTab('custom')}
-              className={`relative px-8 py-4 font-silverbold text-5xl transition-all duration-300 ${
-                activeTab === 'custom'
-                  ? 'text-white'
-                  : 'text-gray-500 hover:text-gray-300'
-              }`}
+              className={`relative px-8 py-4 font-silverbold text-5xl transition-all duration-300 ${activeTab === 'custom'
+                ? 'text-white'
+                : 'text-gray-500 hover:text-gray-300'
+                }`}
             >
               <Sparkles className="w-5 h-5 inline-block mr-2 font-urbanist" />
               Custom Projects
@@ -268,7 +287,7 @@ const Services = () => {
       </motion.div>
 
       {/* Services Grid */}
-      <div ref={containerRef} className="px-4 md:px-8 py-16">
+      <div ref={containerRef} className="bg-black px-4 md:px-8 py-16">
         <div className="max-w-7xl mx-auto">
           <AnimatePresence mode="wait">
             {activeTab === 'gig' ? (
@@ -318,7 +337,7 @@ const Services = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="relative py-20 px-4 md:px-8 mt-16"
+        className="bg-black relative py-20 px-4 md:px-8 "
       >
         <div className="max-w-4xl mx-auto text-center">
           <Zap className="w-12 h-12 text-red-500 mx-auto mb-6 animate-pulse" />
@@ -332,7 +351,7 @@ const Services = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-red-600 hover:bg-red-700 text-white font-silverbold text-lg px-12 py-4 inline-flex items-center gap-3 transition-all duration-300"
+            className="bg-red-600 hover:bg-red-700 text-white font-silverbold text-5xl rounded-full px-12 py-4 inline-flex items-center gap-3 transition-all duration-300"
           >
             Contact Us
             <ArrowRight className="w-5 h-5" />
