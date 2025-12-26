@@ -17,7 +17,7 @@ const Root = () => {
         const tl = gsap.timeline()
         tl.to('#loading_video', {
 
-            duration: 1.4
+            duration: 5
         })
         tl.to('#loading_video', {
             opacity: 0,
