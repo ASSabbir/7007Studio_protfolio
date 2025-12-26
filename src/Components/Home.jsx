@@ -12,7 +12,7 @@ const Home = () => {
 
   useGSAP(() => {
     gsap.to('#intro-logo', {
-      scale: 60,
+      scale: 70,
       opacity: 1,
       scrollTrigger: {
         trigger: '#intro-section',
@@ -21,7 +21,7 @@ const Home = () => {
         scrub: 1,
         pin: true,       // 🔥 THIS STOPS SCROLL
         anticipatePin: 1,
-        markers: true,
+        markers: false,
         onLeave: () => {
           gsap.set('#intro-logo', { display: 'none' })
         },
