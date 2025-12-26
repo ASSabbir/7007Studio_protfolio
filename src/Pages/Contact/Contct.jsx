@@ -85,9 +85,9 @@ const Contact = () => {
       </div>
 
       {/* Content overlay */}
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center lg:justify-between min-h-screen p-4 md:p-8 lg:p-12 pointer-events-none">
+      <div className="relative z-10 flex  items-center px-[10vw]  lg:justify-end min-h-screen   pointer-events-none">
         {/* Left side - Contact Form */}
-        <div className="relative lg:left-12 xl:left-44 w-full lg:w-1/2 max-w-2xl pointer-events-auto">
+        <div className="relative   w-full lg:w-1/2 max-w-2xl pointer-events-auto">
           {/* Glass morphism container */}
           <div className="backdrop-blur-xl bg-white/5 rounded-3xl shadow-2xl border border-white/20 p-6 md:p-10">
             {/* Header */}
@@ -173,7 +173,7 @@ const Contact = () => {
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                      <div className="w-4 h-4 sm:w-5 sm:h-5  border-white/30 border-t-white rounded-full animate-spin"></div>
                       Sending...
                     </>
                   ) : (
@@ -210,10 +210,10 @@ const Contact = () => {
         </div>
 
         {/* Right side - New Spline Scene */}
-        <div className="relative lg:right-20 xl:right-80 hidden lg:block w-1/2 h-screen pointer-events-auto">
+        {/* <div className="relative lg:right-20 xl:right-80 hidden lg:block w-1/2 h-screen pointer-events-auto">
           <Spline scene="https://prod.spline.design/Yl5v1BednKtCBeel/scene.splinecode" />
           <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-3 w-[150px] h-[40px] sm:w-[200px] sm:h-[50px] bg-black z-20"></div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

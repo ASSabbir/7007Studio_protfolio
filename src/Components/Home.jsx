@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from './Home/Banner';
 import Marque from './Home/Marque';
-import Second from './Home/Second';
+
 import SecondTitle from './Home/SecondTitle';
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
            <Banner></Banner>
            <Marque></Marque>
            <SecondTitle></SecondTitle>
-           <Second></Second>
+           
         </div>
     );
 };
