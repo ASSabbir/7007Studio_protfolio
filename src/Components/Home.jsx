@@ -30,10 +30,25 @@ const Home = () => {
       }
       }
     })
+    gsap.from('.navlinks-li', {
+      y:-100,
+      opacity: 1,
+      stagger:0.1,
+      scrollTrigger: {
+        trigger: '#navtrigger',
+        start: 'top top',
+        end:'top 7%',
+        markers: false,
+        
+        
+        
+        
+      }
+    })
   })
 
   return (
-    <div>
+    <div className='relative'>
       {/* 🔒 PINNED SECTION */}
       <section
         id="intro-section"
@@ -48,6 +63,7 @@ const Home = () => {
 
         <Banner />
       </section>
+      <div id='navtrigger'  className=' h-60 w-60 absolute top-20'></div>
 
       {/* 🚀 NORMAL SCROLL AFTER */}
       <SecondTitle />

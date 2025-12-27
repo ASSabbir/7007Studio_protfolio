@@ -4,29 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from '../assets/logo.png'
 const Nav = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Close mobile menu when window is resized
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  
 
   const navLinks = [
     { to: "/", label: "Home" },
@@ -36,17 +14,18 @@ const Nav = () => {
     { to: "/contact", label: "Contact" }
   ];
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  
 
   return (
-    <div className="flex absolute indent-0 z-20 top-0 justify-between items-center font-urbanist flex-row w-full  px-20 py-10">
-      <img src={logo} className="w-20 " alt="" />
-      <div className="flex list-none gap-20 text-lg ">
+    <div className="flex fixed  op indent-0 z-999 text-white top-0 justify-between items-center font-urbanist flex-row w-full  px-20 py-10">
+      <div className="overflow-hidden">
+        <img src={logo} className="w-20  navlinks-li" alt="" />
+      </div>
+      <div className="flex overflow-hidden list-none gap-20 text-lg ">
         {navLinks.map((link, index) => (
                 <li
                   key={link.to}
+                  className="navlinks-li"
                 >
                   <NavLink
                     to={link.to}
