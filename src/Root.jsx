@@ -68,6 +68,9 @@ const Root = () => {
         tl.to('#loading_video', {
             display: 'none'
         })
+        // tl.to('.navlinks-li', {
+        //     display: 'none'
+        // })
         // tl.from('#title-logo', {
         //     y: 50,
         //     opacity: 0
@@ -81,7 +84,7 @@ const Root = () => {
 
     })
     return (
-        <div className=' relative  h-screen text-white'>
+        <div className='   h-screen text-white'>
             <Nav></Nav>
             <Outlet></Outlet>
             <video  src={logovideo} autoPlay
