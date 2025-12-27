@@ -47,7 +47,6 @@ const Nav = () => {
         {navLinks.map((link, index) => (
                 <li
                   key={link.to}
-                  
                 >
                   <NavLink
                     to={link.to}
