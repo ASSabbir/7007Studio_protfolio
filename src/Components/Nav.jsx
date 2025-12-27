@@ -45,11 +45,8 @@ const Nav = () => {
       <img src={logo} className="w-20 " alt="" />
       <div className="flex list-none gap-20 text-lg ">
         {navLinks.map((link, index) => (
-                <motion.li
+                <li
                   key={link.to}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                 >
                   <NavLink
                     to={link.to}
@@ -62,7 +59,7 @@ const Nav = () => {
                     {link.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300" />
                   </NavLink>
-                </motion.li>
+                </li>
               ))}
       </div>
     </div>
