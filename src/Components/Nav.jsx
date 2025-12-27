@@ -4,29 +4,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from '../assets/logo.png'
 const Nav = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
+  // handeling the sticky navber animation
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Close mobile menu when window is resized
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setIsMobileMenuOpen(false);
+    const handelScrolling = () => {
+      const currentScrollState = window.scrollY;
+      if (currentScrollState > scrollPosition && currentScrollState > 50) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
       }
+      setScrollPosition(currentScrollState);
     };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    window.addEventListener("scroll", handelScrolling);
+    return () => {
+      window.removeEventListener("scroll", handelScrolling);
+    };
+  });
 
   const navLinks = [
     { to: "/", label: "Home" },
@@ -36,38 +32,48 @@ const Nav = () => {
     { to: "/contact", label: "Contact" }
   ];
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+
 
   return (
-    <div className="flex absolute indent-0 z-20 top-0 justify-between items-center font-urbanist flex-row w-full  px-20 py-10">
-      <img src={logo} className="w-20 " alt="" />
-      <div className="flex list-none gap-20 text-lg ">
+    <div className={`flex fixed  op indent-0 z-999 text-white top-0 justify-between items-center font-urbanist flex-row w-full  px-20 py-10`}>
+      <div className="overflow-hidden">
+        <img src={logo} className="w-20  navlinks-li" alt="" />
+      </div>
+      <div className="flex overflow-hidden list-none gap-20 text-lg ">
         {navLinks.map((link, index) => (
-                <motion.li
-                  key={link.to}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                >
-                  <NavLink
-                    to={link.to}
-                    className={({ isActive }) =>
-                      `relative group py-2 transition-colors duration-300 ${
-                        isActive ? "text-red-500" : "text-gray-300 hover:text-white"
-                      }`
-                    }
-                  >
-                    {link.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300" />
-                  </NavLink>
-                </motion.li>
-              ))}
+          <li
+            key={link.to}
+            className="navlinks-li"
+          >
+            <NavLink
+              to={link.to}
+              className={({ isActive }) =>
+                `relative group py-2 transition-colors duration-300 ${isActive ? "text-red-500" : "text-gray-300 hover:text-white"
+                }`
+              }
+            >
+              {link.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-500 group-hover:w-full transition-all duration-300" />
+            </NavLink>
+          </li>
+        ))}
       </div>
     </div>
   );
+
+
+
+  
+
 };
 
+
+
+
+
+
+
+
 export default Nav;
+
 
