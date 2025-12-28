@@ -9,6 +9,8 @@ import CaseStudy from "../src/Pages/CaseStudy/CaseStudy";
 import ClientReview from "../src/Pages/ClientReview/ClientReview";
 import Contct from "./Pages/Contact/Contct";
 import OurStudio from "./Pages/OurStudio/OurStudio";
+import ContactPage from "./Pages/Contact/ContactPage";
+
 
 
 
@@ -33,9 +35,10 @@ const Route = createBrowserRouter([
             path:'/client_review',
             element:<ClientReview></ClientReview>
         },
+
         {
             path:'/contact',
-            element:<Contct></Contct>
+            element:<ContactPage></ContactPage>
         },
     ]
   },
