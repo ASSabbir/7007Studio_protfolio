@@ -1,64 +1,126 @@
-
+import { 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Facebook, 
+  Instagram, 
+  Linkedin, 
+  Youtube 
+} from 'lucide-react';
 
 const Footer = () => {
   return (
-    <div className="h-screen bg-black">
-      <div className=" text-[12vw] text-center text-white px-20 leading-none pt-[10vw] normal-case w-full   font-font2">
-        <div className="relative w-fit mb-10 leading-40 ">
-          <h1 className="relative ">7007</h1>
-          <h1 className="relative left-70">Studio</h1>
+    <div className="bg-black lg:h-screen">
+      <div className="text-[12vw] lg:text-[12vw] md:text-[16vw] sm:text-[18vw] text-center text-white 
+        lg:px-20 md:px-10 px-4 leading-none pt-[10vw] font-font2">
+
+        {/* Brand */}
+        <div className="relative w-fit mb-10 leading-40 mx-auto lg:mx-0">
+          <h1>7007</h1>
+          <h1 className="relative 
+            lg:left-70 
+            md:left-40 
+            sm:left-0 
+            text-red-500">
+            Studio
+          </h1>
         </div>
-        <footer className="footer footer-horizontal footer-center border-t-[1px] text-base-content p-10">
-          <nav className="grid grid-cols-4  w-full gap-10">
-            <a className="link link-hover">About us</a>
-            <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
+
+        <footer className="footer footer-horizontal footer-center border-t border-white/20 
+          p-10 text-white">
+
+          {/* Main Sections */}
+          <nav
+            className="grid 
+            lg:grid-cols-4 
+            md:grid-cols-2 
+            sm:grid-cols-1 
+            w-full gap-10 text-sm"
+          >
+
+            {/* About */}
+            <div className="space-y-2">
+              <h3 className="text-red-500 font-semibold">About Us</h3>
+              <p className="text-gray-400">
+                7007 Studio is a creative design & digital production studio
+                focused on premium visuals, branding, and motion experiences.
+              </p>
+            </div>
+
+            {/* Contact */}
+            <div className="space-y-2">
+              <h3 className="text-red-500 font-semibold">Contact</h3>
+              <p className="flex items-center gap-2 text-gray-400">
+                <Mail size={16} /> hello@7007studio.com
+              </p>
+              <p className="flex items-center gap-2 text-gray-400">
+                <Phone size={16} /> +880 1XXXXXXXXX
+              </p>
+              <p className="flex items-center gap-2 text-gray-400">
+                <MapPin size={16} /> Bangladesh
+              </p>
+            </div>
+
+            {/* Jobs */}
+            <div className="space-y-2">
+              <h3 className="text-red-500 font-semibold">Jobs</h3>
+              <p className="text-gray-400">
+                We’re always looking for creative minds.
+              </p>
+              <a href="#" className="text-white hover:text-red-500 transition">
+                careers@7007studio.com
+              </a>
+            </div>
+
+            {/* Press Kit */}
+            <div className="space-y-2">
+              <h3 className="text-red-500 font-semibold">Press Kit</h3>
+              <p className="text-gray-400">
+                Download our logo, brand assets & company info.
+              </p>
+              <a href="#" className="text-white hover:text-red-500 transition">
+                Download Press Kit
+              </a>
+            </div>
+
           </nav>
-          <nav>
-            <div className="grid grid-flow-col gap-4">
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="fill-current">
-                  <path
-                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                </svg>
+
+          {/* Social Icons */}
+          <nav className="mt-8">
+            <div className="grid grid-flow-col gap-6">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <Facebook className="hover:text-red-500 transition" />
               </a>
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="fill-current">
-                  <path
-                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-                </svg>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <Instagram className="hover:text-red-500 transition" />
               </a>
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="fill-current">
-                  <path
-                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-                </svg>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="hover:text-red-500 transition" />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                <Youtube className="hover:text-red-500 transition" />
               </a>
             </div>
           </nav>
-          <aside>
-            <p>Copyright © {new Date().getFullYear()} - All right reserved by 7007Studio Industries Ltd</p>
-          </aside>
+
+          {/* Copyright */}
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4 
+            text-gray-400 mt-8 text-sm">
+            <p>
+              © {new Date().getFullYear()} — All rights reserved by{" "}
+              <span className="text-red-500">7007 Studio</span>
+            </p>
+            <span className="hidden md:inline text-red-500">|</span>
+            <p>
+              Developed by{" "}
+              <span className="text-white">Techof Solution Ltd.</span>
+            </p>
+          </div>
+
         </footer>
       </div>
-
     </div>
-  )
-}
+  );
+};
+
 export default Footer;
