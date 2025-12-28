@@ -12,7 +12,7 @@ const Home = () => {
 
   useGSAP(() => {
     gsap.to('#intro-logo', {
-      scale: 60,
+      scale: 70,
       opacity: 1,
       scrollTrigger: {
         trigger: '#intro-section',
@@ -21,7 +21,7 @@ const Home = () => {
         scrub: 1,
         pin: true,       // 🔥 THIS STOPS SCROLL
         anticipatePin: 1,
-        markers: true,
+        markers: false,
         onLeave: () => {
           gsap.set('#intro-logo', { display: 'none' })
         },
@@ -30,10 +30,25 @@ const Home = () => {
       }
       }
     })
+    gsap.from('.navlinks-li', {
+      y:-100,
+      opacity: 1,
+      stagger:0.1,
+      scrollTrigger: {
+        trigger: '#navtrigger',
+        start: 'top top',
+        end:'top 7%',
+        markers: false,
+        
+        
+        
+        
+      }
+    })
   })
 
   return (
-    <div>
+    <div className='relative'>
       {/* 🔒 PINNED SECTION */}
       <section
         id="intro-section"
@@ -48,6 +63,7 @@ const Home = () => {
 
         <Banner />
       </section>
+      <div id='navtrigger'  className=' h-60 w-60 absolute top-20'></div>
 
       {/* 🚀 NORMAL SCROLL AFTER */}
       <SecondTitle />

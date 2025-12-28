@@ -57,40 +57,48 @@ const Root = () => {
       opacity: 1,
     });
 
-    tl.to("#loading_video", {
-      opacity: 0,
-      duration: 0.35,
-    });
+            duration: 4.5
+        })
+        tl.to('#intro-logo',{
+            opacity:1
+            
+        })
+        
+        tl.to('#loading_video', {
+            opacity: 0,
+            duration: 0.35
+        })
+        
+        tl.to('#loading_video', {
+            display: 'none'
+        })
+        // tl.to('.navlinks-li', {
+        //     display: 'none'
+        // })
+        // tl.from('#title-logo', {
+        //     y: 50,
+        //     opacity: 0
+        // })
+        // tl.to('#title-logo', {
+        //     y: 0,
+        //     opacity: 1,
+        //     duration: 0.5,
+        //     ease: "power4.out",
+        // })
 
-    tl.to("#loading_video", {
-      display: "none",
-    });
-    // tl.from('#title-logo', {
-    //     y: 50,
-    //     opacity: 0
-    // })
-    // tl.to('#title-logo', {
-    //     y: 0,
-    //     opacity: 1,
-    //     duration: 0.5,
-    //     ease: "power4.out",
-    // })
-  });
-  return (
-    <div className=" relative  h-screen text-white">
-      <Nav></Nav>
-      <Outlet></Outlet>
-      {/* <video
-        src={logovideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-        id="loading_video"
-        className="w-full h-screen object-cover absolute top-0 "
-      ></video> */}
-      <Footer></Footer>
-      {/* <ReactLenis
+    })
+    return (
+        <div className='   h-screen text-white'>
+            <Nav></Nav>
+            <Outlet></Outlet>
+            <video  src={logovideo} autoPlay
+                muted
+                loop
+                playsInline
+                id='loading_video'
+                className="w-full h-screen object-cover absolute top-0 "></video>
+            <Footer></Footer>
+            {/* <ReactLenis
                 root
                 options={{
                     duration: 1.2,        // scroll duration in seconds (default: 1.2)
