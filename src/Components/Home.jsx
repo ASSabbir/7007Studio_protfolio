@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import BlackScreen from './Shared/BlackScreen';
 import SplineSection from './Home/SplineSection';
 import ThiredTitle from './Home/ThiredTitle';
+import { Skiper17 } from './Home/Skiper17';
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
 
@@ -72,6 +73,7 @@ const Home = () => {
       {/* 🚀 NORMAL SCROLL AFTER */}
       <SecondTitle />
       <ThiredTitle></ThiredTitle>
+      <Skiper17></Skiper17>
       {/* <SplineSection></SplineSection> */}
     </div>
   )
