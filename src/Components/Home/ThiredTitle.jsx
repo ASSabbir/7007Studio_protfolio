@@ -40,21 +40,22 @@ const ThiredTitle=()=>{
 ];
     return (
          <ul className="bs flex min-h-full w-full flex-1 flex-col items-center justify-center gap-1.5 rounded-2xl px-7 py-3 backdrop-blur-sm">
-      {navigationItems.map((item, index) => (
-        <li
+      {/* {navigationItems.map((item, index) => (
+        
+      ))} */}
+      <li
           className="relative flex cursor-pointer flex-col items-center overflow-visible"
-          key={index}
+          
         >
           <div className="relative flex items-start">
             <TextRoll
               center
               className="text-4xl font-extrabold uppercase leading-[0.8] tracking-[-0.03em] transition-colors lg:text-5xl"
             >
-              {item.name}
+              7007 Studio is a CGI, VFX,
             </TextRoll>
           </div>
         </li>
-      ))}
     </ul>
   );
 };
