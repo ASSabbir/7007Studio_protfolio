@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Spline from "@splinetool/react-spline";
-import { Send, Mail, User, MessageSquare } from "lucide-react";
+import { Send, Mail, User, MessageSquare, AlertCircle } from "lucide-react";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,19 +14,48 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init("TK4LdjfFC8t5RlY6Y"); // Replace with your EmailJS public key
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    setError(""); // Clear error on input change
   };
 
-  const handleSubmit = () => {
-    setIsSubmitting(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    // Simulate form submission
-    setTimeout(() => {
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setError("Please fill in all required fields");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        'service_6f0bitd',      // Replace with your EmailJS service ID
+        'template_gtjt2dn',     // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'TechOfSolution',  // Replace with recipient name
+        }
+      );
+
+      console.log('Email sent successfully:', result);
       setIsSubmitting(false);
       setSubmitted(true);
 
@@ -38,7 +69,11 @@ const Contact = () => {
           message: ""
         });
       }, 3000);
-    }, 1500);
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setIsSubmitting(false);
+      setError("Failed to send message. Please try again.");
+    }
   };
 
   return (
@@ -67,7 +102,15 @@ const Contact = () => {
 
             {/* Form */}
             {!submitted ? (
-              <div className="space-y-4 md:space-y-5">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
+                {/* Error Message */}
+                {error && (
+                  <div className="flex items-center gap-2 p-3 bg-red-500/20 border border-red-500/50 rounded-xl text-red-200 text-sm">
+                    <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                    <span>{error}</span>
+                  </div>
+                )}
+
                 {/* Name Input */}
                 <div className="relative">
                   <User className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 w-4 h-4 sm:w-5 sm:h-5" />
@@ -76,7 +119,8 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Your Name"
+                    placeholder="Your Name *"
+                    required
                     className="w-full pl-10 sm:pl-12 pr-4 py-3 sm:py-3.5 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all backdrop-blur-sm text-sm sm:text-base"
                   />
                 </div>
@@ -89,7 +133,8 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="Your Email"
+                    placeholder="Your Email *"
+                    required
                     className="w-full pl-10 sm:pl-12 pr-4 py-3 sm:py-3.5 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all backdrop-blur-sm text-sm sm:text-base"
                   />
                 </div>
@@ -113,15 +158,16 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Your Message"
+                    placeholder="Your Message *"
                     rows="4"
+                    required
                     className="w-full px-4 py-3 sm:py-3.5 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all resize-none backdrop-blur-sm text-sm sm:text-base"
                   ></textarea>
                 </div>
 
                 {/* Submit Button */}
                 <button
-                  onClick={handleSubmit}
+                  type="submit"
                   disabled={isSubmitting}
                   className="w-full py-3 sm:py-3.5 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-sm sm:text-base"
                 >
@@ -137,7 +183,7 @@ const Contact = () => {
                     </>
                   )}
                 </button>
-              </div>
+              </form>
             ) : (
               <div className="text-center py-6 sm:py-8">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
