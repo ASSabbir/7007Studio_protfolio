@@ -8,6 +8,7 @@ import SecondTitle from './Home/SecondTitle';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import BlackScreen from './Shared/BlackScreen';
 import SplineSection from './Home/SplineSection';
+import ThiredTitle from './Home/ThiredTitle';
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
 
@@ -62,7 +63,7 @@ const Home = () => {
           className="absolute inset-0 h-full w-full object-cover z-20"
           alt=""
         />
-        
+
 
         <Banner />
       </section>
@@ -70,6 +71,7 @@ const Home = () => {
 
       {/* 🚀 NORMAL SCROLL AFTER */}
       <SecondTitle />
+      <ThiredTitle></ThiredTitle>
       {/* <SplineSection></SplineSection> */}
     </div>
   )
