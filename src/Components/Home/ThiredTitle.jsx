@@ -1,8 +1,9 @@
 
 import { motion } from "framer-motion";
 import React from "react";
+import { cn } from './../../lib/utils';
 
-import { cn } from "@/lib/utils";
+
 
 
 const ThiredTitle=()=>{
@@ -41,11 +42,11 @@ const ThiredTitle=()=>{
     return (
          <ul className="bs flex min-h-full w-full flex-1 flex-col items-center justify-center gap-1.5 rounded-2xl px-7 py-3 backdrop-blur-sm">
       {/* {navigationItems.map((item, index) => (
-        
+
       ))} */}
       <li
           className="relative flex cursor-pointer flex-col items-center overflow-visible"
-          
+
         >
           <div className="relative flex items-start">
             <TextRoll
