@@ -4,7 +4,7 @@ import { Play, X, Award, Users, ChevronRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger); 
 
 const OurStudio = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -256,7 +256,7 @@ const CircleItem = ({ item, onHover, hoveredItem }) => {
 
         {/* Info Reveal on Hover */}
         <AnimatePresence>
-          {isLocalHovered && (
+          {isLocalHovered && ( 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
