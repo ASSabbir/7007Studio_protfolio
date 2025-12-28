@@ -7,33 +7,51 @@ import { useGSAP } from '@gsap/react';
 import SecondTitle from './Home/SecondTitle';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import BlackScreen from './Shared/BlackScreen';
+import SplineSection from './Home/SplineSection';
+import ThiredTitle from './Home/ThiredTitle';
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
 
   useGSAP(() => {
     gsap.to('#intro-logo', {
-      scale: 60,
+      scale: 70,
       opacity: 1,
       scrollTrigger: {
         trigger: '#intro-section',
         start: 'top top',
-        end: '+=130%',   // scroll distance
+        end: '+=130%',
         scrub: 1,
-        pin: true,       // 🔥 THIS STOPS SCROLL
+        pin: true,
         anticipatePin: 1,
-        markers: true,
+        refreshPriority: -1, // 👈 Add this
+        markers: false,
         onLeave: () => {
           gsap.set('#intro-logo', { display: 'none' })
         },
         onEnterBack: () => {
-        gsap.set('#intro-logo', { display: 'block' })
+          gsap.set('#intro-logo', { display: 'block' })
+        }
       }
+    })
+    gsap.from('.navlinks-li', {
+      y: -100,
+      opacity: 1,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: '#navtrigger',
+        start: 'top top',
+        end: 'top 7%',
+        markers: false,
+
+
+
+
       }
     })
   })
 
   return (
-    <div>
+    <div className='relative'>
       {/* 🔒 PINNED SECTION */}
       <section
         id="intro-section"
@@ -46,11 +64,15 @@ const Home = () => {
           alt=""
         />
 
+
         <Banner />
       </section>
+      <div id='navtrigger' className=' h-60 w-60 absolute top-20'></div>
 
       {/* 🚀 NORMAL SCROLL AFTER */}
       <SecondTitle />
+      <ThiredTitle></ThiredTitle>
+      {/* <SplineSection></SplineSection> */}
     </div>
   )
 }

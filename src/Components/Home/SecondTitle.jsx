@@ -1,25 +1,65 @@
-import { div } from 'framer-motion/client';
 import React from 'react';
 import { IoMdArrowUp } from "react-icons/io";
-const SecondTitle = () => {
-    return (
-        <div className='bg-black'>
-            <div className=" text-9xl  px-20 leading-none pt-[10vw] normal-case w-full bg-black  font-font2">
-                <h1 className="relative leading-28 ">
-                    High-End 3D Visuals. Built for Impact.
-                </h1>
-                <h1 className='text-3xl  font-extralight font-dmsans mt-10'>We turn complex ideas into effortless experiences</h1>
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
+const SecondTitle = () => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "end start"] // Animation range
+    });
+
+    // Transform scroll progress to Y position
+    const y = useTransform(scrollYProgress, [0, 0.5], [100, 0]);
+    const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+
+    const text = "7007Studio";
+
+    return (
+        <div ref={ref} className='bg-red-600 h-screen flex flex-col justify-center items-center'>
+            <div className="text-[12vw] text-center text-black px-20 leading-none pt-[10vw] normal-case w-full font-font2">
+                <motion.div 
+                    style={{ y, opacity }}
+                    className="relative  p-10 overflow-hidden leading-28"
+                >
+                    {text.split('').map((char, i) => (
+                        <motion.span
+                            key={i}
+                            initial={{ x: -20, opacity: 0 }}
+                            whileInView={{ x: 0, opacity: 1 }}
+                            viewport={{ once: false, amount: 0.3 }}
+                            transition={{ 
+                                delay: i * 0.05,
+                                duration: 0.4 
+                            }}
+                            className="inline-block"
+                        >
+                            {char}
+                        </motion.span>
+                    ))}
+                </motion.div>
+
+                <motion.h1 
+                    style={{ y, opacity }}
+                    className='text-3xl font-extralight font-dmsans mt-20'
+                >
+                    7007 Studio is a CGI, VFX, post-production, and gaming studio; 
+                    we specialize in 3D animation and visual effects
+                </motion.h1>
             </div>
-            <div className=' flex justify-end px-[10vw] pb-[10vw]'>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/JFNUVJtlQDU?si=zLHjhD3NwWulf5ig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div className="flex group  mt-36  gap-2">
-                            <button className="uppercase text-xl  group-hover:text-white group-hover:bg-zinc-900 border-[1px] px-4 py-2 rounded-full duration-500 border-zinc-900 tracking-tighter">Investor deck</button>
-                            <div className="w-12 h-12 group-hover:bg-zinc-900 border-[1px] border-zinc-900 rounded-full flex duration-500 justify-center items-center text-2xl ">
-                                <IoMdArrowUp className="rotate-45 duration-500 group-hover:rotate-[405deg] group-hover:text-white "></IoMdArrowUp>
-                            </div>
-                        </div>
+
+            <motion.div 
+                style={{ y, opacity }}
+                className="flex group mt-36 gap-2"
+            >
+                <button className="uppercase text-xl text-black group-hover:text-red-600 group-hover:bg-zinc-900 border-[1px] px-4 py-2 rounded-full duration-500 border-black tracking-tighter">
+                    Contact Us
+                </button>
+                <div className="w-12 h-12 group-hover:bg-zinc-900 border-[1px] border-black rounded-full flex duration-500 justify-center items-center text-2xl">
+                    <IoMdArrowUp className="rotate-45 duration-500 group-hover:rotate-[405deg] text-black group-hover:text-red-600" />
+                </div>
+            </motion.div>
         </div>
     );
 };
