@@ -71,9 +71,12 @@ const Home = () => {
       <div id='navtrigger' className=' h-60 w-60 absolute top-20'></div>
 
       {/* 🚀 NORMAL SCROLL AFTER */}
-      <SecondTitle />
       <ThiredTitle></ThiredTitle>
+      <SecondTitle />
       <Skiper17></Skiper17>
+      <Marque></Marque>
+      
+      
       {/* <SplineSection></SplineSection> */}
     </div>
   )

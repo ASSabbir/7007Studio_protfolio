@@ -82,7 +82,7 @@ const Root = () => {
 });
 
     return (
-        <div className='   h-screen text-white'>
+        <div className='   h-screen bg-black text-white'>
             <Nav></Nav>
             <Outlet></Outlet>
             <video  src={logovideo} autoPlay

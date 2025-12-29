@@ -1,125 +1,89 @@
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Facebook, 
-  Instagram, 
-  Linkedin, 
-  Youtube 
-} from 'lucide-react';
-
+import React from 'react';
+import { Youtube, Home, Info, Briefcase } from 'lucide-react';
+import { TfiLinkedin } from "react-icons/tfi";
+import AnimatedButton from './AnimatedButton';
 const Footer = () => {
   return (
-    <div className="bg-black lg:h-screen">
-      <div className="text-[12vw] lg:text-[12vw] md:text-[16vw] sm:text-[18vw] text-center text-white 
-        lg:px-20 md:px-10 px-4 leading-none pt-[10vw] font-font2">
+    <footer className="bg-black text-white min-h-screen flex flex-col relative">
+      
 
-        {/* Brand */}
-        <div className="relative w-fit mb-10 leading-40 mx-auto lg:mx-0">
-          <h1>7007</h1>
-          <h1 className="relative 
-            lg:left-70 
-            md:left-40 
-            sm:left-0 
-            text-red-500">
-            Studio
+      {/* Main Content */}
+      <div className="flex-1 flex  flex-col lg:flex-row items-center justify-between px-6 py-20 md:px-12 md:py-24 lg:px-20 lg:py-0 gap-12 lg:gap-0">
+        {/* Left Side - Logo */}
+        <div className="w-full lg:w-1/2">
+          <div className="flex flex-col font-normal
+           items-center lg:items-start ">
+          <h1 className="text-[25vw] sm:text-[20vw] md:text-[18vw] lg:text-[15vw] xl:text-[17vw] font-black leading-none text-red-600">
+            7007
           </h1>
+          <h2 className="text-[10vw] font-dmsans text-left px-2 w-f sm:text-[8vw] md:text-[7vw] lg:text-[6vw] xl:text-[7vw] font-black leading-none text-white -mt-2 md:-mt-4 lg:-mt-6 xl:-mt-">
+            STUDIO
+          </h2>
+          
+          {/* Bottom Icons - Desktop */}
+          <div className="hidden lg:flex gap-4 mt-8 lg:mt-12">
+            <AnimatedButton></AnimatedButton>
+          </div>
+        </div>
         </div>
 
-        <footer className="footer footer-horizontal footer-center border-t border-white/20 
-          p-10 text-white">
+        {/* Right Side - Info Sections */}
+        <div className="w-full lg:w-1/2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 lg:gap-16 text-center sm:text-right max-w-2xl mx-auto lg:mx-0">
+            {/* About Us - Top Left */}
+            <div>
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 md:mb-3">about us</h3>
+              <p className="text-white text-xs md:text-sm mb-1">hello@7007studio.com</p>
+              <p className="text-white text-xs md:text-sm mb-1">+880 1XXXXXXXXX</p>
+              <p className="text-white text-xs md:text-sm">Bangladesh</p>
+            </div>
 
-          {/* Main Sections */}
-          <nav
-            className="grid 
-            lg:grid-cols-4 
-            md:grid-cols-2 
-            sm:grid-cols-1 
-            w-full gap-10 text-sm"
-          >
-
-            {/* About */}
-            <div className="space-y-2">
-              <h3 className="text-red-500 font-semibold">About Us</h3>
-              <p className="text-gray-400">
-                7007 Studio is a creative design & digital production studio
-                focused on premium visuals, branding, and motion experiences.
+            {/* About Us - Top Right */}
+            <div>
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 md:mb-3">about us</h3>
+              <p className="text-white text-xs md:text-sm leading-relaxed">
+                7007 Studio is a creative design & digital
+                production studiofocused on premium
+                visuals, branding, and motion experiences.
               </p>
             </div>
 
-            {/* Contact */}
-            <div className="space-y-2">
-              <h3 className="text-red-500 font-semibold">Contact</h3>
-              <p className="flex items-center gap-2 text-gray-400">
-                <Mail size={16} /> hello@7007studio.com
-              </p>
-              <p className="flex items-center gap-2 text-gray-400">
-                <Phone size={16} /> +880 1XXXXXXXXX
-              </p>
-              <p className="flex items-center gap-2 text-gray-400">
-                <MapPin size={16} /> Bangladesh
-              </p>
-            </div>
-
-            {/* Jobs */}
-            <div className="space-y-2">
-              <h3 className="text-red-500 font-semibold">Jobs</h3>
-              <p className="text-gray-400">
-                We’re always looking for creative minds.
-              </p>
-              <a href="#" className="text-white hover:text-red-500 transition">
+            {/* About Us - Bottom Left */}
+            <div>
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 md:mb-3">about us</h3>
+              <p className="text-white text-xs md:text-sm mb-1">We're always looking for creative minds.</p>
+              <a href="mailto:careers@7007studio.com" className="text-white text-xs md:text-sm underline hover:text-red-600 transition-colors">
                 careers@7007studio.com
               </a>
             </div>
 
-            {/* Press Kit */}
-            <div className="space-y-2">
-              <h3 className="text-red-500 font-semibold">Press Kit</h3>
-              <p className="text-gray-400">
-                Download our logo, brand assets & company info.
-              </p>
-              <a href="#" className="text-white hover:text-red-500 transition">
-                Download Press Kit
+            {/* About Us - Bottom Right */}
+            <div>
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 md:mb-3">about us</h3>
+              <p className="text-white text-xs md:text-sm mb-1">We're always looking for creative minds.</p>
+              <a href="mailto:careers@7007studio.com" className="text-white text-xs md:text-sm underline hover:text-red-600 transition-colors">
+                careers@7007studio.com
               </a>
             </div>
-
-          </nav>
-
-          {/* Social Icons */}
-          <nav className="mt-8">
-            <div className="grid grid-flow-col gap-6">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <Facebook className="hover:text-red-500 transition" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <Instagram className="hover:text-red-500 transition" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="hover:text-red-500 transition" />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                <Youtube className="hover:text-red-500 transition" />
-              </a>
-            </div>
-          </nav>
-
-          {/* Copyright */}
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4 
-            text-gray-400 mt-8 text-sm">
-            <p>
-              © {new Date().getFullYear()} — All rights reserved by{" "}
-              <span className="text-red-500">7007 Studio</span>
-            </p>
-            <span className="hidden md:inline text-red-500">|</span>
-            <p>
-              Developed by{" "}
-              <span className="text-white">Techof Solution Ltd.</span>
-            </p>
           </div>
-
-        </footer>
+        </div>
       </div>
-    </div>
+
+      {/* Bottom Icons - Mobile Only */}
+      <div className="flex lg:hidden justify-center gap-4 pb-8">
+        <Youtube className="w-8 h-8 text-red-600 cursor-pointer hover:scale-110 transition-transform" />
+        <Home className="w-8 h-8 text-red-600 cursor-pointer hover:scale-110 transition-transform" />
+        <Info className="w-8 h-8 text-red-600 cursor-pointer hover:scale-110 transition-transform" />
+        <Briefcase className="w-8 h-8 text-red-600 cursor-pointer hover:scale-110 transition-transform" />
+      </div>
+
+      {/* Bottom Copyright */}
+      <div className="py-4 md:py-6 px-6 md:px-12 lg:px-20 text-center sm:text-right">
+        <p className="text-white text-[10px] md:text-xs lg:text-sm">
+          © 2025 — All rights reserved by 7007 Studio/Developed by TechoF Solution Ltd
+        </p>
+      </div>
+    </footer>
   );
 };
 

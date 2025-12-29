@@ -11,7 +11,7 @@ const ThiredTitle=()=>{
   '7007 Studio is a CGI, VFX, post-production, and gaming studio','we specialize in 3D animation and visual effects'
 ];
     return (
-         <ul className="bs flex h-screen w-full flex-1 flex-col items-center justify-center gap-1.5 rounded-2xl px-7 py-3 backdrop-blur-sm">
+         <ul className="bs bg-black flex h-screen w-full flex-1 flex-col items-center justify-center gap-1.5 rounded-2xl px-7 py-3 backdrop-blur-sm">
       {/* {navigationItems.map((item, index) => (
 
       ))} */}
@@ -22,7 +22,7 @@ const ThiredTitle=()=>{
           <div className="relative flex items-start">
             <TextRoll
               center
-              className="text-4xl font-extrabold uppercase leading-[0.8] tracking-[-0.03em] transition-colors lg:text-[12vw]"
+              className="text-4xl text-red-600 font-extrabold uppercase leading-[0.8] tracking-[-0.03em] transition-colors lg:text-[12vw]"
             >
               7007 Studio
             </TextRoll>
