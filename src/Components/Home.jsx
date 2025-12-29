@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import BlackScreen from './Shared/BlackScreen';
 import SplineSection from './Home/SplineSection';
 import ThiredTitle from './Home/ThiredTitle';
+import { Skiper17 } from './Home/Skiper17';
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
 
@@ -70,8 +71,12 @@ const Home = () => {
       <div id='navtrigger' className=' h-60 w-60 absolute top-20'></div>
 
       {/* 🚀 NORMAL SCROLL AFTER */}
-      <SecondTitle />
       <ThiredTitle></ThiredTitle>
+      <SecondTitle />
+      <Skiper17></Skiper17>
+      <Marque></Marque>
+      
+      
       {/* <SplineSection></SplineSection> */}
     </div>
   )

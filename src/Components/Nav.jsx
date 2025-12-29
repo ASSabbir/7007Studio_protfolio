@@ -35,7 +35,7 @@ const Nav = () => {
 
 
   return (
-    <div className={`flex fixed  op indent-0 z-999 text-white top-0 justify-between items-center font-urbanist flex-row w-full  px-20 py-10`}>
+    <div className={`flex fixed mix-blend-difference  op indent-0 z-999 text-white top-0 justify-between items-center font-urbanist flex-row w-full  px-20 py-10`}>
       <div className="overflow-hidden">
         <img src={logo} className="w-20  navlinks-li" alt="" />
       </div>

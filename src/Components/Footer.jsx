@@ -1,64 +1,90 @@
-
-
+import React from 'react';
+import { Youtube, Home, Info, Briefcase } from 'lucide-react';
+import { TfiLinkedin } from "react-icons/tfi";
+import AnimatedButton from './AnimatedButton';
 const Footer = () => {
   return (
-    <div className="h-screen bg-black">
-      <div className=" text-[12vw] text-center text-white px-20 leading-none pt-[10vw] normal-case w-full   font-font2">
-        <div className="relative w-fit mb-10 leading-40 ">
-          <h1 className="relative ">7007</h1>
-          <h1 className="relative left-70">Studio</h1>
+    <footer className="bg-black text-white min-h-screen flex flex-col relative">
+      
+
+      {/* Main Content */}
+      <div className="flex-1 flex  flex-col lg:flex-row items-center justify-between px-6 py-20 md:px-12 md:py-24 lg:px-20 lg:py-0 gap-12 lg:gap-0">
+        {/* Left Side - Logo */}
+        <div className="w-full lg:w-1/2">
+          <div className="flex flex-col font-normal
+           items-center lg:items-start ">
+          <h1 className="text-[25vw] sm:text-[20vw] md:text-[18vw] lg:text-[15vw] xl:text-[17vw] font-black leading-none text-red-600">
+            7007
+          </h1>
+          <h2 className="text-[10vw] font-dmsans text-left px-2 w-f sm:text-[8vw] md:text-[7vw] lg:text-[6vw] xl:text-[7vw] font-black leading-none text-white -mt-2 md:-mt-4 lg:-mt-6 xl:-mt-">
+            STUDIO
+          </h2>
+          
+          {/* Bottom Icons - Desktop */}
+          <div className="hidden lg:flex gap-4 mt-8 lg:mt-12">
+            <AnimatedButton></AnimatedButton>
+          </div>
         </div>
-        <footer className="footer footer-horizontal footer-center border-t-[1px] text-base-content p-10">
-          <nav className="grid grid-cols-4  w-full gap-10">
-            <a className="link link-hover">About us</a>
-            <a className="link link-hover">Contact</a>
-            <a className="link link-hover">Jobs</a>
-            <a className="link link-hover">Press kit</a>
-          </nav>
-          <nav>
-            <div className="grid grid-flow-col gap-4">
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="fill-current">
-                  <path
-                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                </svg>
-              </a>
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="fill-current">
-                  <path
-                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-                </svg>
-              </a>
-              <a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  className="fill-current">
-                  <path
-                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-                </svg>
+        </div>
+
+        {/* Right Side - Info Sections */}
+        <div className="w-full lg:w-1/2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 lg:gap-16 text-center sm:text-right max-w-2xl mx-auto lg:mx-0">
+            {/* About Us - Top Left */}
+            <div>
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 md:mb-3">about us</h3>
+              <p className="text-white text-xs md:text-sm mb-1">hello@7007studio.com</p>
+              <p className="text-white text-xs md:text-sm mb-1">+880 1XXXXXXXXX</p>
+              <p className="text-white text-xs md:text-sm">Bangladesh</p>
+            </div>
+
+            {/* About Us - Top Right */}
+            <div>
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 md:mb-3">about us</h3>
+              <p className="text-white text-xs md:text-sm leading-relaxed">
+                7007 Studio is a creative design & digital
+                production studiofocused on premium
+                visuals, branding, and motion experiences.
+              </p>
+            </div>
+
+            {/* About Us - Bottom Left */}
+            <div>
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 md:mb-3">about us</h3>
+              <p className="text-white text-xs md:text-sm mb-1">We're always looking for creative minds.</p>
+              <a href="mailto:careers@7007studio.com" className="text-white text-xs md:text-sm underline hover:text-red-600 transition-colors">
+                careers@7007studio.com
               </a>
             </div>
-          </nav>
-          <aside>
-            <p>Copyright © {new Date().getFullYear()} - All right reserved by 7007Studio Industries Ltd</p>
-          </aside>
-        </footer>
+
+            {/* About Us - Bottom Right */}
+            <div>
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 md:mb-3">about us</h3>
+              <p className="text-white text-xs md:text-sm mb-1">We're always looking for creative minds.</p>
+              <a href="mailto:careers@7007studio.com" className="text-white text-xs md:text-sm underline hover:text-red-600 transition-colors">
+                careers@7007studio.com
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
-    </div>
-  )
-}
+      {/* Bottom Icons - Mobile Only */}
+      <div className="flex lg:hidden justify-center gap-4 pb-8">
+        <Youtube className="w-8 h-8 text-red-600 cursor-pointer hover:scale-110 transition-transform" />
+        <Home className="w-8 h-8 text-red-600 cursor-pointer hover:scale-110 transition-transform" />
+        <Info className="w-8 h-8 text-red-600 cursor-pointer hover:scale-110 transition-transform" />
+        <Briefcase className="w-8 h-8 text-red-600 cursor-pointer hover:scale-110 transition-transform" />
+      </div>
+
+      {/* Bottom Copyright */}
+      <div className="py-4 md:py-6 px-6 md:px-12 lg:px-20 text-center sm:text-right">
+        <p className="text-white text-[10px] md:text-xs lg:text-sm">
+          © 2025 — All rights reserved by 7007 Studio/Developed by TechoF Solution Ltd
+        </p>
+      </div>
+    </footer>
+  );
+};
+
 export default Footer;

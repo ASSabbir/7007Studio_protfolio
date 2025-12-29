@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X, Award, Users, ChevronRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import HeroSectionStudio from './HeroSectionStudio';
 
-gsap.registerPlugin(ScrollTrigger);
+
+gsap.registerPlugin(ScrollTrigger); 
 
 const OurStudio = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -134,42 +136,20 @@ const OurStudio = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
+
+
+      <div className=" top-0 left-0 w-full h-screen z-0">
+        <HeroSectionStudio />
+      </div>
+
       {/* Hero Section with Fade */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative pt-20 md:pt-32 pb-32 px-4 md:px-8"
+        className="relative  pb-32 px-4 md:px-8"
       >
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ scale: 0, rotate: -180 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ duration: 0.8, type: "spring" }}
-            className="inline-block mb-6"
-          >
-            <Award className="w-16 h-16 md:w-20 md:h-20 text-red-500" />
-          </motion.div>
 
-          <motion.h1
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl md:text-7xl lg:text-9xl font-bold mb-6 tracking-wide"
-          >
-            Our
-            <span className="text-red-500"> Studio</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto tracking-wider leading-relaxed"
-          >
-            Explore our favorite projects and meet the creative minds behind them
-          </motion.p>
-        </div>
 
         {/* Fade to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black pointer-events-none" />
@@ -256,7 +236,7 @@ const CircleItem = ({ item, onHover, hoveredItem }) => {
 
         {/* Info Reveal on Hover */}
         <AnimatePresence>
-          {isLocalHovered && (
+          {isLocalHovered && ( 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -324,7 +304,7 @@ const InfoReveal = ({ children, delay = 0 }) => {
       >
         {children}
       </motion.div>
-      
+
       {/* Red slide effect */}
       <motion.div
         initial={{ x: '-100%' }}
