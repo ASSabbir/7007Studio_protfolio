@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, X, Award, Users } from 'lucide-react';
+import { X } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import HeroSectionStudio from '../OurStudio/HeroSectionStudio';
+import HeroSectionStudio from './HeroSectionStudio';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const OurStudio = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
-  const leftColumnRef = useRef(null);
-  const rightColumnRef = useRef(null);
+  const [selectedService, setSelectedService] = useState(null);
   const dotRef = useRef(null);
 
   // Sample data
@@ -25,7 +24,8 @@ const OurStudio = () => {
       thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=600&fit=crop',
       client: 'TechCorp Inc.',
       year: '2024',
-      duration: '6 months'
+      duration: '6 months',
+      image: '🎨'
     },
     {
       id: 2,
@@ -35,7 +35,9 @@ const OurStudio = () => {
       bio: 'Leading creative vision with 10+ years of experience in 3D animation and motion graphics.',
       avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=600&fit=crop',
       specialty: '3D Animation',
-      projects: '50+ Projects'
+      projects: '50+ Projects',
+      category: 'Team Member',
+      image: '👤'
     },
     {
       id: 3,
@@ -47,7 +49,8 @@ const OurStudio = () => {
       thumbnail: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=600&fit=crop',
       client: 'StartupX',
       year: '2024',
-      duration: '4 months'
+      duration: '4 months',
+      image: '🎬'
     },
     {
       id: 4,
@@ -57,47 +60,23 @@ const OurStudio = () => {
       bio: 'Expert in photorealistic rendering and complex 3D modeling with a passion for detail.',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop',
       specialty: '3D Modeling',
-      projects: '80+ Projects'
+      projects: '80+ Projects',
+      category: 'Team Member',
+      image: '👨‍💻'
     }
   ];
 
   const leftColumn = projects.filter((_, index) => index % 2 === 0);
   const rightColumn = projects.filter((_, index) => index % 2 !== 0);
 
-  // GSAP Scroll Animation
+  // GSAP Scroll Animation - Only for dot
   useEffect(() => {
-    const leftCol = leftColumnRef.current;
-    const rightCol = rightColumnRef.current;
     const dot = dotRef.current;
-
-    if (leftCol && rightCol) {
-      gsap.to(leftCol, {
-        y: -800,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: leftCol,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1,
-        }
-      });
-
-      gsap.to(rightCol, {
-        y: 800,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: rightCol,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1,
-        }
-      });
-    }
 
     // Dot animation
     if (dot) {
       gsap.to(dot, {
-        y: 800,
+        y: 500,
         ease: 'none',
         scrollTrigger: {
           trigger: '.scroll-section',
@@ -115,21 +94,19 @@ const OurStudio = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-
       <div className="">
         <HeroSectionStudio />
       </div>
-      
       {/* Two Column Scroll Section */}
       <div className="scroll-section relative py-20">
         {/* Section Titles */}
-        <div className="max-w-xl mx-auto px-4 md:px-8 mb-16 ">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
           <div className="flex justify-between mb-20 items-center">
             <motion.h2
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-silverblack text-white"
+              className="text-4xl md:text-6xl font-bold text-white"
             >
               Our <span className="text-red-500">Work</span>
             </motion.h2>
@@ -137,14 +114,14 @@ const OurStudio = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-silverblack text-white"
+              className="text-4xl md:text-6xl font-bold text-white"
             >
               Our <span className="text-red-500">Team</span>
             </motion.h2>
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 md:px-8 ">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="relative flex gap-8 md:gap-16 justify-center">
             
             {/* Vertical Center Line */}
@@ -162,27 +139,31 @@ const OurStudio = () => {
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full shadow-lg shadow-red-500/50" />
             </div>
 
-            {/* Left Column - Scrolls Up */}
-            <div ref={leftColumnRef} className="flex-1 max-w-md space-y-16 mt-50">
-              {leftColumn.map((item) => (
-                <CircleItem
+            {/* Left Column - No scroll animation */}
+            <div className="flex-1 max-w-md space-y-16">
+              {leftColumn.map((item, index) => (
+                <CardItem
                   key={item.id}
                   item={item}
+                  index={index}
                   onHover={() => setHoveredItem(item)}
-                  hoveredItem={hoveredItem}
+                  selectedService={selectedService}
+                  setSelectedService={setSelectedService}
                   align="right"
                 />
               ))}
             </div>
 
-            {/* Right Column - Scrolls Down */}
-            <div ref={rightColumnRef} className="flex-1 max-w-md space-y-16 mb-70">
-              {rightColumn.map((item) => (
-                <CircleItem
+            {/* Right Column - No scroll animation */}
+            <div className="flex-1 max-w-md space-y-16">
+              {rightColumn.map((item, index) => (
+                <CardItem
                   key={item.id}
                   item={item}
+                  index={index}
                   onHover={() => setHoveredItem(item)}
-                  hoveredItem={hoveredItem}
+                  selectedService={selectedService}
+                  setSelectedService={setSelectedService}
                   align="left"
                 />
               ))}
@@ -201,100 +182,103 @@ const OurStudio = () => {
   );
 };
 
-// Circle Item Component
-const CircleItem = ({ item, onHover, hoveredItem, align }) => {
-  const [isLocalHovered, setIsLocalHovered] = useState(false);
+// Card Item Component (replacing Circle Item)
+const CardItem = ({ item, index, onHover, selectedService, setSelectedService, align }) => {
+  const isSelected = selectedService?.id === item.id;
 
   return (
-    <div 
-      className={`flex items-center gap-6 ${align === 'right' ? 'flex-row-reverse' : 'flex-row'}`}
-      onMouseEnter={() => setIsLocalHovered(true)}
-      onMouseLeave={() => setIsLocalHovered(false)}
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      animate={{
+        scale: isSelected ? 0.95 : 1,
+        opacity: isSelected ? 0.7 : 1,
+      }}
+      className="group relative bg-gradient-to-br from-zinc-900 to-black border border-red-600 overflow-hidden"
     >
-      {/* Circle */}
-      <motion.div
-        onClick={onHover}
-        whileHover={{ scale: 1.05 }}
-        className="relative w-32 h-32 flex-shrink-0 cursor-pointer"
-      >
+      {/* Hover effect overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-600/0 to-red-600/0 group-hover:from-red-600/10 group-hover:to-black/50 transition-all duration-500" />
+
+      {/* Main Grid Layout */}
+      <div className={`grid ${selectedService ? "grid-cols-1" : "grid-cols-[1fr_100px]"}`}>
+        {/* Left Section - Text Content */}
         <div
-          className="relative w-full h-full rounded-full overflow-hidden border-2 border-red-500/30 bg-black"
-          style={{
-            boxShadow: isLocalHovered
-              ? '0 20px 40px -10px rgba(239, 68, 68, 0.6)'
-              : '0 10px 20px -5px rgba(239, 68, 68, 0.3)',
-            transition: 'box-shadow 0.3s ease'
-          }}
+          className={`relative flex flex-col justify-between transition-all duration-300 ${
+            selectedService ? "p-4" : "p-6 border-r-2 border-gray-700"
+          }`}
         >
-          <img
-            src={item.type === 'project' ? item.thumbnail : item.avatar}
-            alt={item.type === 'project' ? item.title : item.name}
-            className="w-full h-full object-cover"
-          />
-          
+          <div>
+            {/* Title */}
+            <h3
+              className={`font-bold text-white font-serif transition-all duration-300 ${
+                selectedService
+                  ? "text-xl h-12 flex items-center"
+                  : "text-2xl lg:text-3xl mb-4 leading-tight"
+              }`}
+            >
+              {item.type === 'project' ? item.title : item.name}
+            </h3>
+
+            {/* Category Badge - Only show when no service selected */}
+            {!selectedService && (
+              <div className="inline-block">
+                <span className="bg-red-700 text-white text-xs font-bold px-3 py-1 uppercase tracking-wide">
+                  {item.category}
+                </span>
+              </div>
+            )}
+          </div>
         </div>
-      </motion.div>
 
-      {/* Info Text */}
-      <motion.div 
-        className={`flex-1 ${align === 'right' ? 'text-right' : 'text-left'}`}
-        initial={{ opacity: 0, x: align === 'right' ? 20 : -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <InfoReveal delay={0} align={align}>
-          <h3 className="text-xl md:text-2xl font-silverblack text-white mb-1">
-            {item.type === 'project' ? item.title : item.name}
-          </h3>
-        </InfoReveal>
-        <InfoReveal delay={0.2} align={align}>
-          <p className="text-red-400 font-dmsans text-sm md:text-base mb-2">
-            {item.type === 'project' ? item.category : item.role}
-          </p>
-        </InfoReveal>
-        <InfoReveal delay={0.4} align={align}>
-          <p className="text-gray-400 font-dmsans text-xs md:text-sm">
-            Click for details →
-          </p>
-        </InfoReveal>
-      </motion.div>
-    </div>
-  );
-};
+        {/* Right Section - Corner Accent */}
+        {!selectedService && (
+          <div className="relative">
+            {/* Top Right Red Corner */}
+            <div className="absolute top-0 right-0 w-12 h-12 border-t-4 border-r-4 border-red-700"></div>
+          </div>
+        )}
+      </div>
 
-// Info Reveal Component with Slow Animation
-const InfoReveal = ({ children, delay = 0, align }) => {
-  return (
-    <div className="relative overflow-hidden">
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay }}
-      >
-        {children}
-      </motion.div>
+      {/* Bottom Section - Full Width */}
+      <div className={`grid ${selectedService ? "grid-cols-1" : "grid-cols-[1fr_100px]"}`}>
+        {/* Bottom Left - Button and Corner */}
+        <div className="relative p-0">
+          {/* More Information Button */}
+          <button
+            onClick={() => onHover()}
+            className={`w-full bg-red-700 hover:bg-zinc-900 text-white text-left font-bold transition-colors ${
+              selectedService
+                ? "px-4 py-2 text-sm border-t border-gray-700"
+                : "px-6 py-4 text-base border-t-2 border-b-2 border-gray-700"
+            }`}
+          >
+            More Information <span className="text-xl">→</span>
+          </button>
 
-      <motion.div
-        initial={{ x: align === 'right' ? '100%' : '-100%' }}
-        whileInView={{ x: align === 'right' ? '-100%' : '100%' }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 1,
-          delay: delay + 0.2,
-          ease: [0.22, 1, 0.36, 1]
-        }}
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/30 to-transparent"
-      />
-    </div>
+          {/* Bottom Left Red Corner - hide when selected */}
+          {!selectedService && (
+            <div className="absolute bottom-0 left-0 w-10 h-10 border-b-4 border-l-4 border-red-700"></div>
+          )}
+        </div>
+
+        {/* Bottom Right - Image/Icon with Glow */}
+        {!selectedService && (
+          <div className="relative border-t-2 border-l-2 border-gray-700 flex items-center justify-center p-4">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-2xl animate-pulse" />
+            </div>
+            <div className="relative text-4xl z-10">{item.image}</div>
+          </div>
+        )}
+      </div>
+    </motion.div>
   );
 };
 
 // Detail Modal Component
 const DetailModal = ({ item, onClose }) => {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -344,26 +328,26 @@ const DetailModal = ({ item, onClose }) => {
                   <span className="text-red-400 text-sm font-semibold uppercase tracking-wider">
                     {item.category}
                   </span>
-                  <h2 className="text-4xl font-silverblack text-white mt-2 mb-4">
+                  <h2 className="text-4xl font-bold text-white mt-2 mb-4">
                     {item.title}
                   </h2>
-                  <p className="text-gray-300 font-dmsans text-lg leading-relaxed">
+                  <p className="text-gray-300 text-lg leading-relaxed">
                     {item.description}
                   </p>
                 </div>
 
                 <div className="space-y-3 pt-4 border-t border-white/10">
                   <div className="flex justify-between">
-                    <span className="text-gray-400 font-dmsans">Client</span>
-                    <span className="text-white font-dmsans font-medium">{item.client}</span>
+                    <span className="text-gray-400">Client</span>
+                    <span className="text-white font-medium">{item.client}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-400 font-dmsans">Year</span>
-                    <span className="text-white font-dmsans font-medium">{item.year}</span>
+                    <span className="text-gray-400">Year</span>
+                    <span className="text-white font-medium">{item.year}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-400 font-dmsans">Duration</span>
-                    <span className="text-white font-dmsans font-medium">{item.duration}</span>
+                    <span className="text-gray-400">Duration</span>
+                    <span className="text-white font-medium">{item.duration}</span>
                   </div>
                 </div>
               </div>
@@ -380,25 +364,25 @@ const DetailModal = ({ item, onClose }) => {
               </div>
 
               <div>
-                <span className="text-red-400 text-sm font-dmsans font-semibold uppercase tracking-wider">
+                <span className="text-red-400 text-sm font-semibold uppercase tracking-wider">
                   {item.role}
                 </span>
-                <h2 className="text-3xl font-silverblack text-white mt-2 mb-4">
+                <h2 className="text-3xl font-bold text-white mt-2 mb-4">
                   {item.name}
                 </h2>
-                <p className="text-gray-300 font-dmsans text-base leading-relaxed max-w-md">
+                <p className="text-gray-300 text-base leading-relaxed max-w-md">
                   {item.bio}
                 </p>
               </div>
 
               <div className="flex gap-8 pt-4 border-t border-white/10 w-full justify-center">
                 <div>
-                  <p className="text-gray-400 font-dmsans text-sm mb-1">Specialty</p>
-                  <p className="text-white font-dmsans font-medium">{item.specialty}</p>
+                  <p className="text-gray-400 text-sm mb-1">Specialty</p>
+                  <p className="text-white font-medium">{item.specialty}</p>
                 </div>
                 <div>
-                  <p className="text-gray-400 font-dmsans text-sm mb-1">Experience</p>
-                  <p className="text-white font-dmsans font-medium">{item.projects}</p>
+                  <p className="text-gray-400 text-sm mb-1">Experience</p>
+                  <p className="text-white font-medium">{item.projects}</p>
                 </div>
               </div>
             </div>
