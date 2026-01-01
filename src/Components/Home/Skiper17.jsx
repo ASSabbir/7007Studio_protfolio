@@ -38,8 +38,9 @@ const Skiper17 = () => {
       <main
         ref={container}
         style={{ paddingBottom: `${projects.length * 10}vh` }}
-        className="relative flex w-full flex-col items-center pt-[50vh]"
+        className="relative bg-black flex w-full flex-col items-center pt-[20vh]"
       >
+        <h1 className=" font-extrabold text-red-600 uppercase leading-[0.8] tracking-[-0.03em] transition-colors lg:text-[12vw]">Our Work</h1>
         
 
 
