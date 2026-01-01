@@ -12,6 +12,7 @@ import ThiredTitle from './Home/ThiredTitle';
 import { Skiper17 } from './Home/Skiper17';
 
 import SkiperVideo from '../SkiperVideo';
+import ClientReview from '../Pages/ClientReview/ClientReview';
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
 
@@ -75,10 +76,12 @@ const Home = () => {
       {/* 🚀 NORMAL SCROLL AFTER */}
       <ThiredTitle></ThiredTitle>
       <SecondTitle />
-      <Skiper17></Skiper17>
       
+       <SkiperVideo></SkiperVideo>
       <Marque></Marque>
-      <SkiperVideo></SkiperVideo>
+      <Skiper17></Skiper17>
+      <ClientReview></ClientReview>
+     
       
       
       {/* <SplineSection></SplineSection> */}

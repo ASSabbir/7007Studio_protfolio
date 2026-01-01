@@ -27,7 +27,7 @@ export default function SkiperVideo() {
   };
 
   return (
-    <section className="relative flex items-center justify-center h-screen bg-black">
+    <section className="relative flex items-center justify-center py-62 bg-black">
       <AnimatePresence>
         {showVideo && <VideoModal close={() => setShowVideo(false)} />}
       </AnimatePresence>

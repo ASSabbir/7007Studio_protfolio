@@ -4,6 +4,7 @@ import vdo1 from '../../assets/video/montage footage.mp4'
 import './style.css'
 import { HiArrowUp } from "react-icons/hi2";
 import { FaWhatsapp } from "react-icons/fa";
+import Curser from './Curser';
 
 
 const openWhatsApp = () => {
@@ -24,6 +25,7 @@ const Banner = () => {
       id="banner-page"
       className="relative h-screen overflow-hidden font-silverblack"
     >
+      
       <video
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
         src={vdo1}
@@ -39,12 +41,12 @@ const Banner = () => {
       >
         <div className="relative">
           {/* Pulse Ring */}
-          <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-30"></div>
+          <div className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-70"></div>
 
           {/* WhatsApp Button */}
           <div
             onClick={openWhatsApp}
-            className="relative bg-green-500 w-fit h-fit text-white p-3 rounded-full text-3xl cursor-pointer hover:scale-110 transition-transform shadow-xl"
+            className="relative bg-red-500 w-fit h-fit text-white p-3 rounded-full text-3xl cursor-pointer hover:scale-110 transition-transform shadow-xl"
           >
             <FaWhatsapp />
           </div>
@@ -57,6 +59,7 @@ const Banner = () => {
           studio
         </h1>
       </div>
+      {/* <a className='text-5xl hover:underline  inset-0 underline-offset-1 cursor-pointer font-silverbold  text-red-500 absolute bottom-9 left-9  tracking-widest'>SHOW REEL</a> */}
     </div>
   )
 }

@@ -31,10 +31,7 @@ const Route = createBrowserRouter([
             path:'/our_studio',
             element:<OurStudio></OurStudio>
         },
-        {
-            path:'/client_review',
-            element:<ClientReview></ClientReview>
-        },
+        
 
         {
             path:'/contact',
