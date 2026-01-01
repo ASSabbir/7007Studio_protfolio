@@ -26,7 +26,7 @@ const Curser = () => {
     })
     return (
         <div>
-            <div id='curser' className='w-7  opacity-0 md:flex pointer-events-none fixed top-0 left-0 z-20 rounded-full h-7 bg-red-500'></div>
+            <div id='curser' className='w-7  opacity-0 md:flex pointer-events-none fixed top-0 left-0 z-20 rounded-full h-7 bg-red-600'></div>
         </div>
     );
 };

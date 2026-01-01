@@ -1,17 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, X, Award, Users, ChevronRight } from 'lucide-react';
+import { X } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import HeroSectionStudio from './HeroSectionStudio';
 
-
-gsap.registerPlugin(ScrollTrigger); 
+gsap.registerPlugin(ScrollTrigger);
 
 const OurStudio = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
-  const leftColumnRef = useRef(null);
-  const rightColumnRef = useRef(null);
+  const [selectedService, setSelectedService] = useState(null);
+  const dotRef = useRef(null);
 
   // Sample data
   const projects = [
@@ -21,11 +20,12 @@ const OurStudio = () => {
       title: 'E-Commerce Platform',
       category: '3D Animation',
       description: 'Revolutionary shopping experience with immersive 3D product visualization and interactive animations.',
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+      video: '/src/assets/video/montage footage.mp4',
       thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=600&fit=crop',
       client: 'TechCorp Inc.',
       year: '2024',
-      duration: '6 months'
+      duration: '6 months',
+      image: '🎨'
     },
     {
       id: 2,
@@ -35,7 +35,9 @@ const OurStudio = () => {
       bio: 'Leading creative vision with 10+ years of experience in 3D animation and motion graphics.',
       avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=600&fit=crop',
       specialty: '3D Animation',
-      projects: '50+ Projects'
+      projects: '50+ Projects',
+      category: 'Team Member',
+      image: '👤'
     },
     {
       id: 3,
@@ -43,11 +45,12 @@ const OurStudio = () => {
       title: 'Brand Identity Campaign',
       category: 'Motion Graphics',
       description: 'Complete brand transformation with stunning motion graphics and visual storytelling.',
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+      video: '/src/assets/video/montage footage.mp4',
       thumbnail: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=600&fit=crop',
       client: 'StartupX',
       year: '2024',
-      duration: '4 months'
+      duration: '4 months',
+      image: '🎬'
     },
     {
       id: 4,
@@ -57,73 +60,28 @@ const OurStudio = () => {
       bio: 'Expert in photorealistic rendering and complex 3D modeling with a passion for detail.',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop',
       specialty: '3D Modeling',
-      projects: '80+ Projects'
-    },
-    {
-      id: 5,
-      type: 'project',
-      title: 'Product Launch Video',
-      category: 'VFX',
-      description: 'High-impact product reveal with cinematic VFX and dynamic camera movements.',
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-      thumbnail: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=600&fit=crop',
-      client: 'Digital Ventures',
-      year: '2024',
-      duration: '3 months'
-    },
-    {
-      id: 6,
-      type: 'team',
-      name: 'Emily Rodriguez',
-      role: 'Animation Lead',
-      bio: 'Specializing in character animation and bringing stories to life through motion.',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=600&fit=crop',
-      specialty: 'Character Animation',
-      projects: '60+ Projects'
-    },
-    {
-      id: 7,
-      type: 'project',
-      title: 'Corporate Presentation',
-      category: 'UI Animation',
-      description: 'Interactive presentation with smooth UI transitions and data visualization.',
-      video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
-      thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=600&fit=crop',
-      client: 'InnovateCo',
-      year: '2023',
-      duration: '2 months'
+      projects: '80+ Projects',
+      category: 'Team Member',
+      image: '👨‍💻'
     }
   ];
 
   const leftColumn = projects.filter((_, index) => index % 2 === 0);
   const rightColumn = projects.filter((_, index) => index % 2 !== 0);
 
-  // GSAP Scroll Animation
+  // GSAP Scroll Animation - Only for dot
   useEffect(() => {
-    const leftCol = leftColumnRef.current;
-    const rightCol = rightColumnRef.current;
+    const dot = dotRef.current;
 
-    if (leftCol && rightCol) {
-      // Left column scrolls up
-      gsap.to(leftCol, {
-        y: -500,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: leftCol,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1,
-        }
-      });
-
-      // Right column scrolls down
-      gsap.to(rightCol, {
+    // Dot animation
+    if (dot) {
+      gsap.to(dot, {
         y: 500,
         ease: 'none',
         scrollTrigger: {
-          trigger: rightCol,
-          start: 'top bottom',
-          end: 'bottom top',
+          trigger: '.scroll-section',
+          start: 'top center',
+          end: 'bottom center',
           scrub: 1,
         }
       });
@@ -136,49 +94,77 @@ const OurStudio = () => {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-
-
-      <div className=" top-0 left-0 w-full h-screen z-0">
+      <div className="">
         <HeroSectionStudio />
       </div>
-
-      {/* Hero Section with Fade */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="relative  pb-32 px-4 md:px-8"
-      >
-
-
-        {/* Fade to next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black pointer-events-none" />
-      </motion.div>
-
       {/* Two Column Scroll Section */}
-      <div className="relative py-20">
+      <div className="scroll-section relative py-20">
+        {/* Section Titles */}
+        <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
+          <div className="flex justify-between mb-20 items-center">
+            <motion.h2
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-bold text-white"
+            >
+              Our <span className="text-red-500">Work</span>
+            </motion.h2>
+            <motion.h2
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-bold text-white"
+            >
+              Our <span className="text-red-500">Team</span>
+            </motion.h2>
+          </div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex gap-8 md:gap-16 justify-center">
-            {/* Left Column - Scrolls Up */}
-            <div ref={leftColumnRef} className="flex-1 max-w-md space-y-8">
-              {leftColumn.map((item) => (
-                <CircleItem
+          <div className="relative flex gap-8 md:gap-16 justify-between">
+            
+            {/* Vertical Center Line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-red-500/50 via-red-500 to-red-500/50 -translate-x-1/2">
+              {/* Top Dot */}
+              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full shadow-lg shadow-red-500/50" />
+              
+              {/* Animated Middle Dot */}
+              <div 
+                ref={dotRef}
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 bg-red-500 rounded-full shadow-xl shadow-red-500/70 border-2 border-black"
+              />
+              
+              {/* Bottom Dot */}
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full shadow-lg shadow-red-500/50" />
+            </div>
+
+            {/* Left Column - No scroll animation */}
+            <div className="flex-1 max-w-md space-y-16">
+              {leftColumn.map((item, index) => (
+                <CardItem
                   key={item.id}
                   item={item}
+                  index={index}
                   onHover={() => setHoveredItem(item)}
-                  hoveredItem={hoveredItem}
+                  selectedService={selectedService}
+                  setSelectedService={setSelectedService}
+                  align="right"
                 />
               ))}
             </div>
 
-            {/* Right Column - Scrolls Down */}
-            <div ref={rightColumnRef} className="flex-1 max-w-md space-y-8 mt-20">
-              {rightColumn.map((item) => (
-                <CircleItem
+            {/* Right Column - No scroll animation */}
+            <div className="flex-1 max-w-md space-y-16">
+              {rightColumn.map((item, index) => (
+                <CardItem
                   key={item.id}
                   item={item}
+                  index={index}
                   onHover={() => setHoveredItem(item)}
-                  hoveredItem={hoveredItem}
+                  selectedService={selectedService}
+                  setSelectedService={setSelectedService}
+                  align="left"
                 />
               ))}
             </div>
@@ -196,134 +182,103 @@ const OurStudio = () => {
   );
 };
 
-// Circle Item Component
-const CircleItem = ({ item, onHover, hoveredItem }) => {
-  const [isLocalHovered, setIsLocalHovered] = useState(false);
-  const isThisHovered = hoveredItem?.id === item.id;
+// Card Item Component (replacing Circle Item)
+const CardItem = ({ item, index, onHover, selectedService, setSelectedService, align }) => {
+  const isSelected = selectedService?.id === item.id;
 
   return (
     <motion.div
-      onHoverStart={() => {
-        setIsLocalHovered(true);
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      animate={{
+        scale: isSelected ? 0.95 : 1,
+        opacity: isSelected ? 0.7 : 1,
       }}
-      onHoverEnd={() => {
-        setIsLocalHovered(false);
-      }}
-      onClick={onHover}
-      whileHover={{ scale: 1.05 }}
-      className="relative w-full cursor-pointer mx-auto"
-      style={{
-        perspective: '1000px'
-      }}
+      className="group relative bg-gradient-to-br from-zinc-900 to-black border border-red-600 overflow-hidden"
     >
-      <div
-        className="relative w-full h-full rounded-full overflow-hidden border-2 border-red-500/30 bg-black"
-        style={{
-          transform: 'translateZ(30px)',
-          transformStyle: 'preserve-3d',
-          boxShadow: isLocalHovered
-            ? '0 30px 60px -15px rgba(239, 68, 68, 0.6), 0 0 0 1px rgba(239, 68, 68, 0.3)'
-            : '0 20px 40px -15px rgba(239, 68, 68, 0.3)',
-          transition: 'box-shadow 0.3s ease'
-        }}
-      >
-        {/* Background Image */}
-        <img
-          src={item.type === 'project' ? item.thumbnail : item.avatar}
-          alt={item.type === 'project' ? item.title : item.name}
-          className="w-full h-full object-cover"
-        />
+      {/* Hover effect overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-600/0 to-red-600/0 group-hover:from-red-600/10 group-hover:to-black/50 transition-all duration-500" />
 
-        {/* Info Reveal on Hover */}
-        <AnimatePresence>
-          {isLocalHovered && ( 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center"
+      {/* Main Grid Layout */}
+      <div className={`grid ${selectedService ? "grid-cols-1" : "grid-cols-[1fr_100px]"}`}>
+        {/* Left Section - Text Content */}
+        <div
+          className={`relative flex flex-col justify-between transition-all duration-300 ${
+            selectedService ? "p-4" : "p-6 border-r-2 border-gray-700"
+          }`}
+        >
+          <div>
+            {/* Title */}
+            <h3
+              className={`font-bold text-white font-serif transition-all duration-300 ${
+                selectedService
+                  ? "text-xl h-12 flex items-center"
+                  : "text-2xl lg:text-3xl mb-4 leading-tight"
+              }`}
             >
-              {item.type === 'project' ? (
-                <>
-                  <Award className="w-12 h-12 text-red-500 mb-4" />
-                  <InfoReveal delay={100}>
-                    <h3 className="text-white text-xl md:text-2xl font-bold mb-2">
-                      {item.title}
-                    </h3>
-                  </InfoReveal>
-                  <InfoReveal delay={1.10}>
-                    <p className="text-red-400 text-sm md:text-base font-medium mb-3">
-                      {item.category}
-                    </p>
-                  </InfoReveal>
-                  <InfoReveal delay={0.2}>
-                    <p className="text-gray-300 text-xs md:text-sm border-2">
-                      Click for details
-                    </p>
-                  </InfoReveal>
-                </>
-              ) : (
-                <>
-                  <Users className="w-12 h-12 text-red-500 mb-4" />
-                  <InfoReveal delay={0}>
-                    <h3 className="text-white text-xl md:text-2xl font-bold mb-2">
-                      {item.name}
-                    </h3>
-                  </InfoReveal>
-                  <InfoReveal delay={0.1}>
-                    <p className="text-red-400 text-sm md:text-base font-medium mb-3">
-                      {item.role}
-                    </p>
-                  </InfoReveal>
-                  <InfoReveal delay={0.2}>
-                    <p className="text-gray-300 text-xs md:text-sm">
-                      Click for details
-                    </p>
-                  </InfoReveal>
-                </>
-              )}
-            </motion.div>
-          )}
-        </AnimatePresence>
+              {item.type === 'project' ? item.title : item.name}
+            </h3>
 
-        {/* Outer Glow */}
-        <div className="absolute -inset-2 bg-red-500/20 blur-xl rounded-full -z-10" />
+            {/* Category Badge - Only show when no service selected */}
+            {!selectedService && (
+              <div className="inline-block">
+                <span className="bg-red-700 text-white text-xs font-bold px-3 py-1 uppercase tracking-wide">
+                  {item.category}
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Right Section - Corner Accent */}
+        {!selectedService && (
+          <div className="relative">
+            {/* Top Right Red Corner */}
+            <div className="absolute top-0 right-0 w-12 h-12 border-t-4 border-r-4 border-red-700"></div>
+          </div>
+        )}
+      </div>
+
+      {/* Bottom Section - Full Width */}
+      <div className={`grid ${selectedService ? "grid-cols-1" : "grid-cols-[1fr_100px]"}`}>
+        {/* Bottom Left - Button and Corner */}
+        <div className="relative p-0">
+          {/* More Information Button */}
+          <button
+            onClick={() => onHover()}
+            className={`w-full bg-red-700 hover:bg-zinc-900 text-white text-left font-bold transition-colors ${
+              selectedService
+                ? "px-4 py-2 text-sm border-t border-gray-700"
+                : "px-6 py-4 text-base border-t-2 border-b-2 border-gray-700"
+            }`}
+          >
+            More Information <span className="text-xl">→</span>
+          </button>
+
+          {/* Bottom Left Red Corner - hide when selected */}
+          {!selectedService && (
+            <div className="absolute bottom-0 left-0 w-10 h-10 border-b-4 border-l-4 border-red-700"></div>
+          )}
+        </div>
+
+        {/* Bottom Right - Image/Icon with Glow */}
+        {!selectedService && (
+          <div className="relative border-t-2 border-l-2 border-gray-700 flex items-center justify-center p-4">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-2xl animate-pulse" />
+            </div>
+            <div className="relative text-4xl z-10">{item.image}</div>
+          </div>
+        )}
       </div>
     </motion.div>
   );
 };
 
-// Info Reveal Component with Left-to-Right Color Slide
-const InfoReveal = ({ children, delay = 0 }) => {
-  return (
-    <div className="relative overflow-hidden">
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.4, delay }}
-      >
-        {children}
-      </motion.div>
-
-      {/* Red slide effect */}
-      <motion.div
-        initial={{ x: '-100%' }}
-        animate={{ x: '100%' }}
-        transition={{
-          duration: 0.6,
-          delay: delay + 0.1,
-          ease: [0.22, 1, 0.36, 1]
-        }}
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/30 to-transparent"
-      />
-    </div>
-  );
-};
-
 // Detail Modal Component
 const DetailModal = ({ item, onClose }) => {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -337,13 +292,14 @@ const DetailModal = ({ item, onClose }) => {
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.8, y: 50 }}
         transition={{ type: 'spring', damping: 25 }}
-        className="relative max-w-5xl w-full bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden border border-red-500/30"
+        className={`relative ${
+          item.type === 'team' ? 'max-w-2xl' : 'max-w-5xl'
+        } w-full bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden border border-red-500/30`}
         style={{
           boxShadow: '0 50px 100px -20px rgba(239, 68, 68, 0.5)'
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-50 w-10 h-10 bg-red-500/20 hover:bg-red-500 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 border border-red-500/30"
@@ -351,38 +307,22 @@ const DetailModal = ({ item, onClose }) => {
           <X className="w-5 h-5 text-white" />
         </button>
 
-        {/* Glossy Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none" />
 
         <div className="relative p-8 md:p-12">
           {item.type === 'project' ? (
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Left - Video/Image */}
               <div className="relative">
-                {isVideoPlaying && item.video ? (
-                  <video
-                    src={item.video}
-                    autoPlay
-                    controls
-                    className="w-full aspect-video rounded-2xl"
-                  />
-                ) : (
-                  <div className="relative group cursor-pointer" onClick={() => setIsVideoPlaying(true)}>
-                    <img
-                      src={item.thumbnail}
-                      alt={item.title}
-                      className="w-full aspect-video object-cover rounded-2xl"
-                    />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all rounded-2xl flex items-center justify-center">
-                      <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <Play className="w-8 h-8 text-white ml-1" />
-                      </div>
-                    </div>
-                  </div>
-                )}
+                <video
+                  src={item.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full aspect-video rounded-2xl object-cover"
+                />
               </div>
 
-              {/* Right - Details */}
               <div className="space-y-6">
                 <div>
                   <span className="text-red-400 text-sm font-semibold uppercase tracking-wider">
@@ -413,40 +353,36 @@ const DetailModal = ({ item, onClose }) => {
               </div>
             </div>
           ) : (
-            <div className="grid md:grid-cols-[300px,1fr] gap-8 items-center">
-              {/* Left - Avatar */}
-              <div className="relative mx-auto">
+            <div className="flex flex-col items-center text-center space-y-6">
+              <div className="relative">
                 <div className="absolute inset-0 bg-red-500/30 blur-3xl rounded-full" />
                 <img
                   src={item.avatar}
                   alt={item.name}
-                  className="relative w-full aspect-square rounded-full object-cover border-4 border-red-500/30"
+                  className="relative w-32 h-32 rounded-full object-cover border-4 border-red-500/30"
                 />
               </div>
 
-              {/* Right - Info */}
-              <div className="space-y-6">
-                <div>
-                  <span className="text-red-400 text-sm font-semibold uppercase tracking-wider">
-                    {item.role}
-                  </span>
-                  <h2 className="text-4xl font-bold text-white mt-2 mb-4">
-                    {item.name}
-                  </h2>
-                  <p className="text-gray-300 text-lg leading-relaxed">
-                    {item.bio}
-                  </p>
-                </div>
+              <div>
+                <span className="text-red-400 text-sm font-semibold uppercase tracking-wider">
+                  {item.role}
+                </span>
+                <h2 className="text-3xl font-bold text-white mt-2 mb-4">
+                  {item.name}
+                </h2>
+                <p className="text-gray-300 text-base leading-relaxed max-w-md">
+                  {item.bio}
+                </p>
+              </div>
 
-                <div className="flex gap-6 pt-4 border-t border-white/10">
-                  <div>
-                    <p className="text-gray-400 text-sm mb-1">Specialty</p>
-                    <p className="text-white font-medium">{item.specialty}</p>
-                  </div>
-                  <div>
-                    <p className="text-gray-400 text-sm mb-1">Experience</p>
-                    <p className="text-white font-medium">{item.projects}</p>
-                  </div>
+              <div className="flex gap-8 pt-4 border-t border-white/10 w-full justify-center">
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">Specialty</p>
+                  <p className="text-white font-medium">{item.specialty}</p>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm mb-1">Experience</p>
+                  <p className="text-white font-medium">{item.projects}</p>
                 </div>
               </div>
             </div>

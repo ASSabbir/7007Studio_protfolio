@@ -271,13 +271,11 @@ const ContactPage = () => {
           transition={{ duration: 0.8 }}
           className="w-full max-w-md pointer-events-auto"
         >
-          <div className="bg-black/70 backdrop-blur-xl border border-red-500/30 rounded-2xl p-8 shadow-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 text-center">
+          <div className="bg-black/70 backdrop-blur-xl border border-red-500/30 rounded-2xl p-9 ">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-7 text-center">
               Get In <span className="text-red-500">Touch</span>
             </h2>
-            <p className="text-gray-400 text-center mb-8 text-sm">
-              Let's create something amazing together
-            </p>
+            
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>

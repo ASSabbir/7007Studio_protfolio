@@ -11,6 +11,7 @@ const AnimatedButton = () => {
       <motion.div
         className="relative overflow-hidden bg-red-600 flex items-center justify-center text-xl w-fit h-fit p-2 text-black cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
+        
         onMouseLeave={() => setIsHovered(false)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}

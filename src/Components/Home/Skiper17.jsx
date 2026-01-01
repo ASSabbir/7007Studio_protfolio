@@ -1,28 +1,21 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import ReactLenis from "lenis/react";
 import React, { useRef } from "react";
-
+import vdo1 from '../../assets/video/montage footage.mp4'
 const projects = [
   {
     title: "Project 1",
-    src: "https://veikk.com/image/catalog/news/new-9/1591348563266576.jpg",
+    src: vdo1,
   },
   {
     title: "Project 2",
-    src: "https://d1a9v60rjx2a4v.cloudfront.net/2020/10/22/18_09_06_462_grizzltWireframe.jpg",
+    src: vdo1
   },
   {
     title: "Project 3",
-    src: "https://miro.medium.com/v2/resize:fit:1400/0*2grHU-ATndUd7VNA.jpg",
+    src: vdo1
   },
-  {
-    title: "Project 3",
-    src: "https://s3.amazonaws.com/redvector-public-assets/cms-content/production/uploads/2016/09/3d-modeling-for-construction.png",
-  },
-  {
-    title: "Project 3",
-    src: "https://arcadium3d.com/build/assets/Arcadium3DDesignA-CyhRRK7I.png",
-  },
+  
 ];
 
 const Skiper17 = () => {
@@ -38,7 +31,7 @@ const Skiper17 = () => {
       <main
         ref={container}
         style={{ paddingBottom: `${projects.length * 10}vh` }}
-        className="relative bg-black flex w-full flex-col items-center pt-[20vh]"
+        className="relative bg-black flex w-full flex-col items-center pt-[40vh]"
       >
         <h1 className=" font-extrabold text-red-600 uppercase leading-[0.8] tracking-[-0.03em] transition-colors lg:text-[12vw]">Our Work</h1>
         
@@ -85,14 +78,18 @@ const StickyCard = ({
         }}
         className="relative h-[70vh] w-[80vw] origin-top overflow-hidden rounded-3xl shadow-xl"
       >
-        <img
+        <motion.video
           src={src}
-          alt={title}
           className="h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
       </motion.div>
     </div>
   );
 };
+
 
 export { Skiper17 };
