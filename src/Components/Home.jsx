@@ -10,6 +10,8 @@ import BlackScreen from './Shared/BlackScreen';
 import SplineSection from './Home/SplineSection';
 import ThiredTitle from './Home/ThiredTitle';
 import { Skiper17 } from './Home/Skiper17';
+
+import SkiperVideo from '../SkiperVideo';
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
 
@@ -74,7 +76,9 @@ const Home = () => {
       <ThiredTitle></ThiredTitle>
       <SecondTitle />
       <Skiper17></Skiper17>
+      
       <Marque></Marque>
+      <SkiperVideo></SkiperVideo>
       
       
       {/* <SplineSection></SplineSection> */}
