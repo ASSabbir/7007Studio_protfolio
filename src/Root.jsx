@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 import Footer from "./Components/Footer";
 import { ReactLenis, useLenis } from "lenis/react";
 import Lenis from "lenis";
+import Curser from "./Components/Home/Curser";
 
 gsap.registerPlugin(useGSAP);
 
@@ -85,6 +86,7 @@ const Root = () => {
     <div className='   h-screen text-white'>
       <Nav></Nav>
       <Outlet></Outlet>
+      <Curser></Curser>
       <video src={logovideo} autoPlay
         muted
         loop

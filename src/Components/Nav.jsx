@@ -28,7 +28,7 @@ const Nav = () => {
     { to: "/", label: "Home" },
     { to: "/services", label: "Services" },
     { to: "/our_studio", label: "Our Studio" },
-    { to: "/client_review", label: "Client Review" },
+   
     { to: "/contact", label: "Contact" }
   ];
 
