@@ -5,10 +5,7 @@ import { Zap, ArrowRight } from "lucide-react";
 const BottomCTA = () => {
   return (
     <motion.div
-      initial={{ y: 100, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ once: false, amount: 0.3 }}
+      
       className="bg-black relative py-20 px-4 md:px-8 min-h-screen flex items-center justify-center"
     >
       <div className="max-w-4xl mx-auto text-center">

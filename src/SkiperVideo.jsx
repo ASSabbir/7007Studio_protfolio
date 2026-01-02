@@ -27,7 +27,7 @@ export default function SkiperVideo() {
   };
 
   return (
-    <section className="relative flex items-center justify-center py-62 bg-black">
+    <section id="showreels" className="relative flex items-center justify-center py-32 bg-black">
       <AnimatePresence>
         {showVideo && <VideoModal close={() => setShowVideo(false)} />}
       </AnimatePresence>
@@ -36,7 +36,7 @@ export default function SkiperVideo() {
         onMouseMove={handleMouseMove}
         onMouseLeave={() => opacity.set(0)}
         onClick={() => setShowVideo(true)}
-        className="relative w-80 h-48 cursor-pointer"
+        className="relative w-200 h-80 cursor-pointer"
       >
         <motion.div
           style={{ x, y, opacity }}

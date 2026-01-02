@@ -83,7 +83,7 @@ const Root = () => {
   });
 
   return (
-    <div className='   h-screen text-white'>
+    <div className=' font-OdibeeSans  h-screen text-white'>
       <Nav></Nav>
       <Outlet></Outlet>
       <Curser></Curser>

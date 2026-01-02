@@ -18,8 +18,8 @@ const SecondTitle = () => {
                     we specialize in 3D animation and visual effects`;
 
     return (
-        <div ref={ref} className='bg-red-600 h-screen flex flex-col justify-center items-center'>
-            <div className="text-8xl text-center text-black px-20 leading-none  normal-case w-full font-font2">
+        <div ref={ref} className='bg-red-600 h-[80vh] flex flex-col justify-center items-center'>
+            <div className="text-9xl text-center text-black px-20 leading-none  normal-case w-full">
 
                 <motion.div
                     style={{ y, opacity }}

@@ -17,7 +17,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <div className="bg-black px-4 md:px-8 py-60 bg-gradient-to-b from-black to-red-950/5">
+    <div className="bg-black px-4 md:px-8 py- bg-gradient-to-b from-black to-red-950/5">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => (
@@ -98,14 +98,14 @@ const ClientReview = () => {
       {/* Reviews Section - Updated with Service Card Style */}
       <div className="bg-black px-4 md:px-8 py-24 w-screen overflow-hidden">
         <div className="max-w-7xl mx-auto mb-16">
-          <motion.h2
+          {/* <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-9xl font-bold text-center"
           >
             What Our <span className="text-red-600">Clients Say</span>
-          </motion.h2>
+          </motion.h2> */}
         </div>
 
         {/* Single Marquee Row with Updated Cards */}
