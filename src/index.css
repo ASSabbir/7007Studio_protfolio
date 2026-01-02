@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
 @font-face {
   font-family: silverlineblack;
   src: url(../src/assets/fonts/SilverlineSans-Black.ttf);
@@ -32,6 +33,7 @@
   --font-font1: font1,"sans-serif";
   --font-font2: font2,"sans-serif";
   --font-font2: font2,"sans-serif";
+  --font-OdibeeSans: "Odibee Sans", sans-serif;
   --font-silverblack: silverlineblack,"sans-serif";
   --font-silverbold: silverlinebold,"sans-serif";
   --font-dmsans:"DM Sans", sans-serif;
