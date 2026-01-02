@@ -11,10 +11,10 @@ const projects = [
     title: "Project 2",
     src: vdo1
   },
-  {
-    title: "Project 3",
-    src: vdo1
-  },
+  // {
+  //   title: "Project 3",
+  //   src: vdo1
+  // },
   
 ];
 
@@ -31,9 +31,9 @@ const Skiper17 = () => {
       <main
         ref={container}
         style={{ paddingBottom: `${projects.length * 10}vh` }}
-        className="relative bg-black flex w-full flex-col items-center pt-[40vh]"
+        className="relative bg-black flex w-full flex-col items-center "
       >
-        <h1 className=" font-extrabold text-red-600 uppercase leading-[0.8] tracking-[-0.03em] transition-colors lg:text-[12vw]">Our Work</h1>
+        <h1 className=" font-extrabold tracking-wide text-red-600  leading-[0.8] py-20 tracking-[-0.03em] transition-colors lg:text-[8vw]">show reels</h1>
         
 
 
@@ -76,7 +76,7 @@ const StickyCard = ({
           scale,
           top: `${i * 28}px`,
         }}
-        className="relative h-[70vh] w-[80vw] origin-top overflow-hidden rounded-3xl shadow-xl"
+        className="relative w-full h-full origin-top overflow-hidden rounded-3xl shadow-xl"
       >
         <motion.video
           src={src}

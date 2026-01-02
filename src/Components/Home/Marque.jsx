@@ -11,7 +11,7 @@ const Marque = () => {
 
 
           
-            className="text-[12vw] text-black bg-red-600 font-black font-dmsans "
+            className="text-[7vw] tracking-wide text-black bg-red-600 font-black  "
             style={{}}                   
             gradient={true}              
             gradientColor="red"           

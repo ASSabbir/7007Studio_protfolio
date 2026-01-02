@@ -35,11 +35,11 @@ const Nav = () => {
 
 
   return (
-    <div className={`flex fixed mix-blend-difference  op indent-0 z-999 text-white top-0 justify-between items-center font-urbanist flex-row w-full  px-20 py-10`}>
+    <div className={`flex fixed mix-blend-difference  op indent-0 z-999 text-white top-0 justify-between items-center font-OdibeeSans tracking-wider flex-row w-full  px-20 py-10`}>
       <div className="overflow-hidden">
-        <img src={logo} className="w-20  navlinks-li" alt="" />
+        <img src={logo} className="w-12  navlinks-li" alt="" />
       </div>
-      <div className="flex overflow-hidden list-none gap-20 text-lg ">
+      <div className="flex overflow-hidden list-none gap-20 text-xl ">
         {navLinks.map((link, index) => (
           <li
             key={link.to}

@@ -52,6 +52,7 @@ const Home = () => {
 
       }
     })
+    
   })
 
   return (
@@ -77,10 +78,12 @@ const Home = () => {
       <ThiredTitle></ThiredTitle>
       <SecondTitle />
       
-       <SkiperVideo></SkiperVideo>
-      <Marque></Marque>
+       {/* <SkiperVideo></SkiperVideo> */}
+      
       <Skiper17></Skiper17>
+
       <ClientReview></ClientReview>
+      <Marque></Marque>
      
       
       

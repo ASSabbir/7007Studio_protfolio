@@ -42,12 +42,12 @@ const AnimatedButton = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white min-h-screen flex flex-col relative">
+    <footer className="bg-black text-white font-dmsans pt-30 border-red-400 flex flex-col relative">
       {/* Main Content */}
-      <div className="flex-1 flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-0 gap-12 lg:gap-20">
+      <div className="flex-1 flex flex-col lg:flex-row items-center justify-between px-6 mb-10  md:px-12 md:py-16 lg:px-20 lg:py-0 gap-12 lg:gap-20">
         {/* Left Side - Logo */}
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-          <div className="flex flex-col items-center lg:items-start">
+          <div className="flex flex-col items-center font-OdibeeSans lg:items-start">
             <h1 className="text-[25vw] sm:text-[20vw] md:text-[18vw] lg:text-[12vw] xl:text-[14vw] font-black leading-none text-red-600">
               7007
             </h1>
@@ -68,7 +68,7 @@ const Footer = () => {
             {/* Contact Information */}
             <div className="text-center sm:text-left">
               <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
-                contact
+                Contact
               </h3>
               <div className="space-y-2">
                 <a 
