@@ -39,10 +39,10 @@ const StatsSection = () => {
                 >
                   <stat.icon className="w-6 h-6 md:w-8 md:h-8 text-red-600" />
                 </motion.div>
-                <div className="text-3xl md:text-5xl font-bold text-red-600 mb-2 tracking-wider">
+                <div className="text-3xl md:text-6xl font-bold text-red-600 mb-2 tracking-wider">
                   <Counter end={stat.value} suffix={stat.suffix} duration={2.5} />
                 </div>
-                <p className="text-gray-300 text-sm md:text-base tracking-wide">{stat.label}</p>
+                <p className="text-gray-300 text-sm md:text-3xl tracking-wide">{stat.label}</p>
               </div>
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-500" />
             </motion.div>
@@ -59,7 +59,7 @@ const ClientReview = () => {
       name: 'Sarah Johnson',
       role: 'CEO & Founder',
       company: 'TechCorp Industries',
-      text: 'Exceptional work! They transformed our vision into reality with incredible attention to detail and creativity that exceeded all expectations.',
+      text: 'Exceptional quality with outstanding attention to detail.',
       rating: 5,
       avatar: 'SJ',
       image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
@@ -69,7 +69,7 @@ const ClientReview = () => {
       name: 'Michael Chen',
       role: 'CTO',
       company: 'StartupX',
-      text: 'Professional, creative, and delivered beyond expectations. The 3D animations brought our product to life in ways we never imagined.',
+      text: 'Professional delivery that brought our product to life.',
       rating: 5,
       avatar: 'MC',
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
@@ -79,7 +79,7 @@ const ClientReview = () => {
       name: 'Emily Rodriguez',
       role: 'Marketing Director',
       company: 'Digital Ventures',
-      text: 'The team at 7007 Studio brings innovation and expertise to every project. Absolutely phenomenal results every single time.',
+      text: 'Consistently innovative results with a cinematic finish.',
       rating: 5,
       avatar: 'ER',
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
@@ -87,10 +87,11 @@ const ClientReview = () => {
     }
   ];
 
+
   return (
     <div className="min-h-screen text-white overflow-hidden">
       {/* Hero Banner */}
-      
+
 
       {/* Stats Section */}
       <StatsSection />
@@ -129,7 +130,7 @@ const ReviewCard3D = ({ review }) => {
           <div className="relative flex flex-col justify-between p-8 border-r-2 border-gray-700">
             <div>
               {/* Name */}
-              <h3 className="text-4xl lg:text-5xl font-bold text-white font-serif mb-6 leading-tight">
+              <h3 className="text-4xl lg:text-2xl font-bold text-white font-serif mb-6 leading-tight">
                 {review.name}
               </h3>
 
@@ -141,11 +142,10 @@ const ReviewCard3D = ({ review }) => {
               </div>
 
               {/* Category Badge */}
-              <div className="inline-block">
-                <span className="bg-red-700 text-white text-sm font-bold px-4 py-2 uppercase tracking-wide">
-                  {review.projectType}
-                </span>
-              </div>
+              <span className="letter bg-red-700 text-white text-sm font-semibold px-4 py-2 uppercase tracking-[0.15em]">
+                {review.projectType}
+              </span>
+
             </div>
           </div>
 
@@ -160,16 +160,16 @@ const ReviewCard3D = ({ review }) => {
         <div className="grid grid-cols-[1fr_200px]">
           {/* Bottom Left - Review Text */}
           <div className="relative p-8 border-t-2 border-b-2 border-gray-700">
-            <p className="text-white/90 text-lg font-light leading-relaxed mb-4">
+            <p className="text-white/90 text-base font-serif leading-relaxed mb-4">
               "{review.text}"
             </p>
-            
+
             {/* Author Details */}
             <div className="space-y-1">
-              <p className="text-red-400 text-base font-medium">
+              <p className="text-red-400 text-base font-serif">
                 {review.role}
               </p>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-400 text-sm font-serif">
                 {review.company}
               </p>
             </div>
@@ -183,7 +183,7 @@ const ReviewCard3D = ({ review }) => {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-24 h-24 rounded-full bg-gradient-to-br from-red-600/20 to-red-800/20 blur-2xl animate-pulse" />
             </div>
-            
+
             <div className="relative z-10 w-full h-full">
               {review.image ? (
                 <img
