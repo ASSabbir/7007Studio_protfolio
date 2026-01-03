@@ -4,7 +4,7 @@ import { X } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import HeroSectionStudio from './HeroSectionStudio';
-import HowHelp from '../Service/HowHelp';
+import HowHelp from './HowHelp';
 
 gsap.registerPlugin(ScrollTrigger);
 

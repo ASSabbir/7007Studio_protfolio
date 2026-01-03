@@ -1,7 +1,9 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const HowHelp = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="min-h-screen bg-black flex items-center justify-center overflow-hidden px-4 py-20">
       <div className="max-w-6xl w-full">
@@ -16,7 +18,9 @@ const HowHelp = () => {
               initial={{ x: -200, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.3, type: "spring" }}
-              className="relative z-10"
+              className="relative z-10 cursor-pointer"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
             >
               <div className="relative">
                 
@@ -28,7 +32,7 @@ const HowHelp = () => {
                     cy="50"
                     r="35"
                     fill="#ff4444"
-                    animate={{ y: [0, -5, 0] }}
+                    animate={isHovered ? {} : { y: [0, -5, 0] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                   />
                   
@@ -38,11 +42,11 @@ const HowHelp = () => {
                   
                   {/* Smile */}
                   <motion.path
-                    d="M 85 55 Q 100 62 115 55"
                     stroke="white"
                     strokeWidth="2"
                     fill="none"
-                    animate={{ d: ["M 85 55 Q 100 62 115 55", "M 85 55 Q 100 65 115 55", "M 85 55 Q 100 62 115 55"] }}
+                    d={isHovered ? "M 85 55 Q 100 68 115 55" : "M 85 55 Q 100 62 115 55"}
+                    animate={isHovered ? {} : { d: ["M 85 55 Q 100 62 115 55", "M 85 55 Q 100 65 115 55", "M 85 55 Q 100 62 115 55"] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
                   
@@ -58,7 +62,7 @@ const HowHelp = () => {
                     transition={{ duration: 2, repeat: Infinity }}
                   />
                   
-                  {/* Left Arm (Reaching) */}
+                  {/* Left Arm (Reaching/Waving) */}
                   <motion.rect
                     x="130"
                     y="100"
@@ -66,8 +70,8 @@ const HowHelp = () => {
                     height="15"
                     rx="7"
                     fill="#ff4444"
-                    animate={{ rotate: [0, -5, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
+                    animate={isHovered ? { rotate: -45, y: -20 } : { rotate: [0, -5, 0] }}
+                    transition={{ duration: isHovered ? 0.3 : 2, repeat: isHovered ? 0 : Infinity }}
                     style={{ transformOrigin: "130px 107px" }}
                   />
                   
@@ -82,6 +86,22 @@ const HowHelp = () => {
                   <ellipse cx="85" cy="240" rx="15" ry="8" fill="#660000" />
                   <ellipse cx="115" cy="240" rx="15" ry="8" fill="#660000" />
                 </svg>
+
+                {/* "Hi!" Text beside hand */}
+                <AnimatePresence>
+                  {isHovered && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0, x: 200, y: 60 }}
+                      animate={{ opacity: 1, scale: 1, x: 200, y: 60 }}
+                      exit={{ opacity: 0, scale: 0 }}
+                      transition={{ duration: 0.3, type: "spring", bounce: 0.5 }}
+                      className="absolute text-white font-bold text-4xl"
+                      style={{ top: 0, left: 0 }}
+                    >
+                      Hi...
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </motion.div>
 
