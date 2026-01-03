@@ -90,7 +90,7 @@ const ClientReview = () => {
   return (
     <div className="min-h-screen text-white overflow-hidden">
       {/* Hero Banner */}
-      
+
 
       {/* Stats Section */}
       <StatsSection />
@@ -163,7 +163,7 @@ const ReviewCard3D = ({ review }) => {
             <p className="text-white/90 text-lg font-light leading-relaxed mb-4">
               "{review.text}"
             </p>
-            
+
             {/* Author Details */}
             <div className="space-y-1">
               <p className="text-red-400 text-base font-medium">
@@ -183,7 +183,7 @@ const ReviewCard3D = ({ review }) => {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-24 h-24 rounded-full bg-gradient-to-br from-red-600/20 to-red-800/20 blur-2xl animate-pulse" />
             </div>
-            
+
             <div className="relative z-10 w-full h-full">
               {review.image ? (
                 <img
