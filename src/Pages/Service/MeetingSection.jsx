@@ -382,7 +382,7 @@ export default function MeetingSection() {
             >
               <div ref={chairRef} className="relative">
                 <motion.div className="text-center">
-                  <ThreeChair position={[0, 0, 0]} rotation={Math.PI / 4} delay={0} />
+                  <ThreeChair position={[0, 0, 0]} rotation={Math.PI / 2} delay={0} />
                   <motion.div
                     animate={{
                       boxShadow: [
@@ -406,7 +406,7 @@ export default function MeetingSection() {
                 >
                   <div className="absolute inset-0 bg-linear-to-r from-red-600 to-red-800 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity" />
                   <div className="relative bg-linear-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white px-12 py-6 rounded-2xl font-bold text-2xl flex items-center gap-4 border-2 border-red-400/50">
-                    <Sparkles className="w-8 h-8" />
+                    <Sparkles className="w-8 h-8 font-Urbanist" />
                     <span>Ready for a Meeting?</span>
                     <Sparkles className="w-8 h-8" />
                   </div>
@@ -415,7 +415,7 @@ export default function MeetingSection() {
                 <motion.div
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 2, repeat: Infinity }}
-                  className="text-red-400 text-center mt-4 text-lg"
+                  className="text-gray-400 text-center mt-4 text-9xl"
                 >
                   Let&apos;s create something amazing together
                 </motion.div>
@@ -480,7 +480,7 @@ export default function MeetingSection() {
                     transition={{ duration: 1.5, repeat: Infinity }}
                     className="mt-4 text-6xl"
                   >
-                    📞
+                  
                   </motion.div>
                 </motion.div>
               )}
@@ -492,7 +492,7 @@ export default function MeetingSection() {
                   transition={{ delay: 0.8 }}
                   className="text-center"
                 >
-                  <h2 className="text-4xl font-bold text-white mb-2">Perfect! 🎨</h2>
+                  <h2 className="text-4xl font-bold text-white mb-2">Perfect! </h2>
                   <p className="text-red-400 text-xl">Preparing to connect...</p>
                 </motion.div>
               )}
@@ -500,11 +500,6 @@ export default function MeetingSection() {
           )}
         </AnimatePresence>
       </div>
-
-      <div className="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-red-500/30" />
-      <div className="absolute top-0 right-0 w-32 h-32 border-t-4 border-r-4 border-red-500/30" />
-      <div className="absolute bottom-0 left-0 w-32 h-32 border-b-4 border-l-4 border-red-500/30" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-red-500/30" />
     </div>
   );
 }

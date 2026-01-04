@@ -42,7 +42,7 @@ const AnimatedButton = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white font-dmsans pt-30 border-red-400 flex flex-col relative">
+    <footer className="bg-black text-white font-dmsans pt-5 border-red-400 flex flex-col relative">
       {/* Main Content */}
       <div className="flex-1 flex flex-col lg:flex-row items-center justify-between px-6 mb-10  md:px-12 md:py-16 lg:px-20 lg:py-0 gap-12 lg:gap-20">
         {/* Left Side - Logo */}
