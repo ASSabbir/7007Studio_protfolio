@@ -35,7 +35,7 @@ const ServiceCard = ({ service, index, isGig, selectedService, setSelectedServic
           <div>
             {/* Title */}
             <h3
-              className={`font-bold text-white font-serif transition-all duration-300 ${
+              className={`font-bold text-white font-OdibeeSans transition-all duration-300 ${
                 selectedService
                   ? "text-2xl h-16 flex items-center"
                   : "text-4xl lg:text-5xl mb-6 leading-tight"
