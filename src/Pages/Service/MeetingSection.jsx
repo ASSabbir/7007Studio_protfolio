@@ -405,8 +405,8 @@ export default function MeetingSection() {
                   className="relative group"
                 >
                   <div className="absolute inset-0 bg-linear-to-r from-red-600 to-red-800 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative bg-linear-to-r from-red-600 to-red-800 hover:from-red-500 hover:to-red-700 text-white px-12 py-6 rounded-2xl font-bold text-2xl flex items-center gap-4 border-2 border-red-400/50">
-                    <Sparkles className="w-8 h-8 font-Urbanist" />
+                  <div className="relative hover:from-red-500 hover:to-red-700 text-white px-12 py-6 rounded-2xl font-bold text-2xl flex items-center gap-4 border-2 border-red-400/50">
+                    <Sparkles className="w-8 h-8" />
                     <span>Ready for a Meeting?</span>
                     <Sparkles className="w-8 h-8" />
                   </div>
