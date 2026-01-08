@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Marque = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -32,38 +33,45 @@ const Marque = () => {
         }
     ];
 
-
     return (
         <div className="bg-black py-8 text-center space-y-4">
             {services.map((service, index) => (
                 <div
                     key={index}
-                    className="relative overflow-hidden transition-all duration-300"
-                    style={{
-                        height: hoveredIndex === index ? '120px' : '80px'
-                    }}
+                    className="relative overflow-hidden"
                     onMouseEnter={() => setHoveredIndex(index)}
                     onMouseLeave={() => setHoveredIndex(null)}
                 >
+                    {/* Title - Always visible */}
+                    <div className="h-[100px] flex items-center justify-center px-8">
+                        <h2 className="text-4xl md:text-7xl tracking-tight transition-transform duration-300 text-gray-400">
+                            {service.title}
+                        </h2>
+                    </div>
 
-                    {hoveredIndex === index ? (
-                        <Marquee
-                            speed={150}
-                            direction="left"
-                            gradient={false}
-                            className="h-full flex items-center bg-white"
-                        >
-                            <h2 className="text-5xl md:text-9xl text-red-600 w-full tracking-tight px-8 py-6">
-                                {service.details}
-                            </h2>
-                        </Marquee>
-                    ) : (
-                        <div className="h-full flex items-center justify-center px-8">
-                            <h2 className="text-4xl md:text-7xl tracking-tight transition-transform duration-300 text-gray-400">
-                                {service.title}
-                            </h2>
-                        </div>
-                    )}
+                    {/* Marquee - Slides from bottom */}
+                    <AnimatePresence>
+                        {hoveredIndex === index && (
+                            <motion.div
+                                initial={{ y: "100%", opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                exit={{ y: "100%", opacity: 0 }}
+                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                className="absolute top-0 left-0 w-full h-[100px] bg-white flex items-center"
+                            >
+                                <Marquee
+                                    speed={160}
+                                    direction={index%2==0?"left":"right"}
+                                    gradient={false}
+                                    className="h-full"
+                                >
+                                    <h2 className="text-5xl md:text-7xl text-red-600 tracking-tight px-8 whitespace-nowrap">
+                                        {service.details}
+                                    </h2>
+                                </Marquee>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
             ))}
         </div>

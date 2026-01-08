@@ -10,11 +10,11 @@ const ThiredTitle = () => {
 
   return (
     <ul className=" border-red-600 relative bs flex h-[80vh] w-full flex-1 flex-col items-center justify-center gap-1.5 px-7 py-3 overflow-hidden">
-      
+
       {/* 🎥 Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/src/assets/video/bg1.mp4"   
+        src="/src/assets/video/bg1.mp4"
         autoPlay
         loop
         muted
@@ -22,78 +22,23 @@ const ThiredTitle = () => {
       />
 
       {/* Optional overlay (keep/remove as you want) */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black via-black/40 to-transparent" />
 
       {/* Content */}
-      <li className="relative z-10 flex cursor-pointer flex-col items-center overflow-visible">
-        <div className="relative flex items-start">
-          <TextRoll
+      <li className="relative z-10 flex cursor-pointer h-full flex-col items-center overflow-visible">
+        <div className="relative justify-end flex pb-12 h-full flex-col items-center text-red-600 font-semibold uppercase leading-[0.8] tracking-[0.9em] transition-colors">
+          <h1
             center
-            className="text-4xl text-red-600 font-extrabold uppercase leading-[0.8] tracking-wide transition-colors lg:text-[12vw]"
+            className="text-4xl lg:text-[10vw]"
           >
-            7007&nbsp;&nbsp;Studio
-          </TextRoll>
+            7007
+          </h1>
+          <br></br>
+          <h1 className="text-[14vw]">Studio</h1>
         </div>
       </li>
 
     </ul>
-  );
-};
-
-const STAGGER = 0.035;
-
-const TextRoll = ({ children, className, center = false }) => {
-  return (
-    <motion.span
-      initial="initial"
-      whileHover="hovered"
-      className={cn("relative block overflow-hidden", className)}
-      style={{ lineHeight: 0.75 }}
-    >
-      <div>
-        {children.split("").map((l, i) => {
-          const delay = center
-            ? STAGGER * Math.abs(i - (children.length - 1) / 2)
-            : STAGGER * i;
-
-          return (
-            <motion.span
-              key={i}
-              variants={{
-                initial: { y: 0 },
-                hovered: { y: "-100%" },
-              }}
-              transition={{ ease: "easeInOut", delay }}
-              className="inline-block"
-            >
-              {l}
-            </motion.span>
-          );
-        })}
-      </div>
-
-      <div className="absolute inset-0">
-        {children.split("").map((l, i) => {
-          const delay = center
-            ? STAGGER * Math.abs(i - (children.length - 1) / 2)
-            : STAGGER * i;
-
-          return (
-            <motion.span
-              key={i}
-              variants={{
-                initial: { y: "100%" },
-                hovered: { y: 0 },
-              }}
-              transition={{ ease: "easeInOut", delay }}
-              className="inline-block"
-            >
-              {l}
-            </motion.span>
-          );
-        })}
-      </div>
-    </motion.span>
   );
 };
 

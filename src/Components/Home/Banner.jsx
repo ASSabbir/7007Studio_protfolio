@@ -25,7 +25,7 @@ const Banner = () => {
       id="banner-page"
       className="relative h-screen overflow-hidden font-silverblack"
     >
-      
+
       <video
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
         src={vdo1}
@@ -37,29 +37,32 @@ const Banner = () => {
 
       <div
         id="banner-text"
-        className="absolute flex text-xl items-center gap-5 left-5/8 bottom-30 uppercase font-font2"
+        className="absolute  flex text-xl items-center gap-5 left-5/8 bottom-30 uppercase font-font2"
       >
-        <div className="relative">
+        <div id='banner-whatapp-icon' className="relative ">
           {/* Pulse Ring */}
           <div className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-70"></div>
 
           {/* WhatsApp Button */}
-          <div
-            onClick={openWhatsApp}
-            className="relative bg-red-500 w-fit h-fit text-white p-3 rounded-full text-3xl cursor-pointer hover:scale-110 transition-transform shadow-xl"
+          <div onClick={openWhatsApp} className="relative bg-red-600 w-fit h-fit text-white p-3 rounded-full text-3xl cursor-pointer hover:scale-110 transition-transform shadow-xl"
           >
             <FaWhatsapp />
           </div>
         </div>
 
-        <h1>
+        <div id='banner-text-effect' className='overflow-hidden'>
+          <h1 className='text-red-500 text-2xl font-KronaOne'>
           pixel and polygon <br />
           3d games <br />
           post production <br />
           studio
         </h1>
+        </div>
       </div>
-      {/* <a className='text-5xl hover:underline  inset-0 underline-offset-1 cursor-pointer font-silverbold  text-red-500 absolute bottom-9 left-9  tracking-widest'>SHOW REEL</a> */}
+
+      <div className='overflow-hidden absolute bottom-20 left-20'>
+        <a id='showreels-btn' className='text-5xl hover:underline   underline-offset-1 cursor-pointer font-OdibeeSans  text-red-500   '>showreel</a>
+      </div>
     </div>
   )
 }
