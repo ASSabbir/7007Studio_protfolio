@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import HeroSection from "./HeroSection";
 import ServicesContent from "./ServicesContent";
-import BottomCTA from "./BottomCTA";
 import MeetingSection from "./MeetingSection"; // Import
 import { gigServices, customServices } from "./servicesData";
 import "./styles";
@@ -41,10 +40,6 @@ const Services = () => {
       {/* Meeting Section - Add here */}
       <div className="relative z-15">
         <MeetingSection />
-      </div>
-
-      <div className="relative z-20">
-        <BottomCTA />
       </div>
     </div>
   );

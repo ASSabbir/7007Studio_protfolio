@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import HeroSectionStudio from './HeroSectionStudio';
 import HowHelp from './HowHelp';
+import { ArrowDown } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,46 +100,91 @@ const OurStudio = () => {
         <HeroSectionStudio />
       </div>
       {/* Two Column Scroll Section */}
-      <div className="scroll-section relative py-20">
-         {/* Floating Particles */}
-                  {[...Array(20)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute w-1 h-1 bg-white rounded-full opacity-50"
-                      style={{
-                        left: `${Math.random() * 100}%`,
-                        top: `${Math.random() * 100}%`,
-                      }}
-                      animate={{
-                        y: [0, -30, 0],
-                        opacity: [0.2, 0.8, 0.2]
-                      }}
-                      transition={{
-                        duration: 3 + Math.random() * 2,
-                        repeat: Infinity,
-                        delay: Math.random() * 2,
-                      }}
-                    />
-                  ))}
+      <div className="scroll-section relative pt-20">
+        {/* Floating Particles */}
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full opacity-50"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.2, 0.8, 0.2]
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
         {/* Section Titles */}
         <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
-          <div className="flex justify-between mb-20 items-center">
-            <motion.h2
+          <div className="relative flex justify-between items-center mb-20">
+
+            {/* Left Title */}
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-bold text-white tracking-wider"
+              whileHover={{ scale: 1.05 }}
+              className="group flex items-center gap-4 cursor-pointer"
             >
-              Our <span className="text-red-500">Work</span>
-            </motion.h2>
-            <motion.h2
+              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-wider">
+                Our <span className="text-red-500">Work</span>
+              </h2>
+
+              {/* Arrow */}
+              <motion.span
+                initial={{ y: 0 }}
+                animate={{ y: [0, 8, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+                className="text-red-500"
+              >
+                <ArrowDown size={32} />
+              </motion.span>
+
+              {/* Hover underline */}
+              <span className="absolute left-0 -bottom-3 h-[2px] w-0 bg-red-500 group-hover:w-full transition-all duration-500" />
+            </motion.div>
+
+            {/* Middle Divider */}
+            <motion.div
+              initial={{ height: 0 }}
+              whileInView={{ height: '80px' }}
+              viewport={{ once: true }}
+              className="absolute left-1/2 -translate-x-1/2 w-[2px] bg-red-500"
+            />
+
+            {/* Right Title */}
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-bold text-white tracking-wider"
+              whileHover={{ scale: 1.05 }}
+              className="group flex items-center gap-4 cursor-pointer"
             >
-              Our <span className="text-red-500">Team</span>
-            </motion.h2>
+              <h2 className="text-4xl md:text-6xl font-bold text-white tracking-wider">
+                Our <span className="text-red-500">Team</span>
+              </h2>
+
+              {/* Arrow */}
+              <motion.span
+                initial={{ y: 0 }}
+                animate={{ y: [0, 8, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5, delay: 0.2 }}
+                className="text-red-500"
+              >
+                <ArrowDown size={32} />
+              </motion.span>
+
+              {/* Hover underline */}
+              <span className="absolute right-0 -bottom-3 h-[2px] w-0 bg-red-500 group-hover:w-full transition-all duration-500" />
+            </motion.div>
+
           </div>
         </div>
 
@@ -191,7 +237,7 @@ const OurStudio = () => {
         </div>
       </div>
       <div className="">
-        <HowHelp/>
+        <HowHelp />
       </div>
     </div>
   );
@@ -228,7 +274,7 @@ const CardItem = ({ item, index, selectedService, setSelectedService, align }) =
 
               {/* Category Badge */}
               <div className="inline-block">
-                <span className="bg-gradient-to-r from-red-600 to-red-700 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest">
+                <span className="bg-gradient-to-r from-red-600 to-red-700 text-white text-xs font-bold font-serif px-3 py-1 uppercase tracking-widest">
                   {item.category}
                 </span>
               </div>
@@ -304,13 +350,13 @@ const CardItem = ({ item, index, selectedService, setSelectedService, align }) =
                 {/* Content */}
                 <div className="space-y-5">
                   <div>
-                    <span className="text-red-400 text-xs font-semibold uppercase tracking-widest">
+                    <span className="text-red-600 text-2xl font-semibold uppercase tracking-widest">
                       {item.category}
                     </span>
-                    <h2 className="text-3xl font-bold text-white mt-2 mb-3 tracking-wide">
+                    <h2 className="text-3xl font-bold font-serif text-white mt-2 mb-3 tracking-wide">
                       {item.title}
                     </h2>
-                    <p className="text-gray-300 text-sm leading-relaxed tracking-wide">
+                    <p className="text-gray-300 text-sm leading-relaxed tracking-wide font-serif">
                       {item.description}
                     </p>
                   </div>
@@ -319,15 +365,15 @@ const CardItem = ({ item, index, selectedService, setSelectedService, align }) =
                   <div className="space-y-3 pt-4 border-t border-white/10">
                     <div className="flex justify-between">
                       <span className="text-gray-400 text-sm tracking-wider">C L I E N T</span>
-                      <span className="text-white font-medium tracking-wide">{item.client}</span>
+                      <span className="text-white font-medium font-serif tracking-wide">{item.client}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400 text-sm tracking-wider">Y E A R</span>
-                      <span className="text-white font-medium tracking-wide">{item.year}</span>
+                      <span className="font-serif text-white font-medium tracking-wide">{item.year}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400 text-sm tracking-wider">D U R A T I O N</span>
-                      <span className="text-white font-medium tracking-wide">{item.duration}</span>
+                      <span className="font-serif text-white font-medium tracking-wide">{item.duration}</span>
                     </div>
                   </div>
                 </div>
@@ -346,13 +392,13 @@ const CardItem = ({ item, index, selectedService, setSelectedService, align }) =
 
                 {/* Content */}
                 <div>
-                  <span className="text-red-400 text-xs font-semibold uppercase tracking-widest">
+                  <span className="text-red-600 text-2xl font-semibold uppercase tracking-widest">
                     {item.role}
                   </span>
-                  <h2 className="text-3xl font-bold text-white mt-2 mb-4 tracking-wide">
+                  <h2 className="text-3xl font-bold font-serif text-white mt-2 mb-4 tracking-wide">
                     {item.name}
                   </h2>
-                  <p className="text-gray-300 text-sm leading-relaxed max-w-sm tracking-wide">
+                  <p className="text-gray-300 text-sm leading-relaxed max-w-sm tracking-wide font-serif">
                     {item.bio}
                   </p>
                 </div>
@@ -361,11 +407,11 @@ const CardItem = ({ item, index, selectedService, setSelectedService, align }) =
                 <div className="flex gap-8 pt-4 border-t border-white/10 w-full justify-center">
                   <div>
                     <p className="text-gray-400 text-xs mb-1 tracking-widest">S P E C I A L T Y</p>
-                    <p className="text-white font-medium tracking-wide">{item.specialty}</p>
+                    <p className="font-serif text-white font-medium tracking-wide">{item.specialty}</p>
                   </div>
                   <div>
                     <p className="text-gray-400 text-xs mb-1 tracking-widest">E X P E R I E N C E</p>
-                    <p className="text-white font-medium tracking-wide">{item.projects}</p>
+                    <p className="font-serif text-white font-medium tracking-wide">{item.projects}</p>
                   </div>
                 </div>
               </div>
