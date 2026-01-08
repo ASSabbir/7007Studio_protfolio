@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
 
         {/* Right Side - Info Sections */}
-        <div className="w-full lg:w-[30%] pb-16">
+        <div className="w-full lg:w-[30%] pb-16 font-KronaOne ">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8">
 
             {/* About Us */}

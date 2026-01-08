@@ -4,6 +4,7 @@ import ServicesContent from "./ServicesContent";
 import MeetingSection from "./MeetingSection"; // Import
 import { gigServices, customServices } from "./servicesData";
 import "./styles";
+import ServiceMotivation from "./serviceMotivation";
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState("gig");
@@ -40,6 +41,7 @@ const Services = () => {
       {/* Meeting Section - Add here */}
       <div className="relative z-15">
         {/* <MeetingSection /> */}
+        <ServiceMotivation></ServiceMotivation>
       </div>
     </div>
   );
