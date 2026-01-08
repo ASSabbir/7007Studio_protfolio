@@ -40,7 +40,7 @@ const SecondTitle = () => {
           {/* Motion Title*/}
           <motion.div
             style={{ y, opacity }}
-            className="px-15 pt-15 text-red-600 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 
+            className="font-KronaOne px-15 pt-15 text-red-600 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl 
               font-bold tracking-tight leading-tight relative"
           >
             <span className="relative z-10"
@@ -55,7 +55,7 @@ const SecondTitle = () => {
 
           {/* Bottom White Text */}
           <div className="px-15 mt-10 md:mt-12 pb-15">
-            <p className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug md:leading-tight tracking-wide">
+            <p className="font-KronaOne text-white text-2xl sm:text-3xl md:text-4xl lg:text-2xl leading-snug md:leading-tight tracking-wide">
               We collaborate <br />
               with studios, agencies, and brands to deliver <br />
               production-ready digital content.

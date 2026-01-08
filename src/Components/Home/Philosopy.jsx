@@ -13,7 +13,7 @@ const Philosophy = () => {
   ];
 
   return (
-    <div className=" min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="font-KronaOne  min-h-screen bg-black text-white relative overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
 
         {/* Left Side - Text */}
@@ -35,7 +35,7 @@ const Philosophy = () => {
               />
 
               {/* Text */}
-              <h2 className="text-7xl md:text-8xl font-bold text-red-600 tracking-tighter relative z-10 tracking-wide">
+              <h2 className="text-7xl md:text-6xl font-bold text-red-600 tracking-tighter relative z-10 tracking-wide">
                 OUR PHILOSOPHY
               </h2>
             </div>
@@ -49,7 +49,7 @@ const Philosophy = () => {
                   whileInView={{ backgroundPosition: '200% 50%' }}
                   transition={{ duration: 2.2, ease: 'linear' }}
                   viewport={{ once: true }}
-                  className={`text-2xl md:text-4xl leading-[1.2] tracking-wide bg-[linear-gradient(110deg,#ffffff,rgba(255,255,255,0.3),#ffffff)] bg-[length:200%_100%] bg-clip-text text-transparent`}
+                  className={`text-2xl md:text-2xl leading-[1.2] tracking-wide bg-[linear-gradient(110deg,#ffffff,rgba(255,255,255,0.3),#ffffff)] bg-[length:200%_100%] bg-clip-text text-transparent`}
                   style={{
                     color: line.color === "red" ? '#ff0000' : '#ffffff',
                     letterSpacing: '0.08em'
