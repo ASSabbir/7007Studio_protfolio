@@ -2,16 +2,12 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Philosophy = () => {
-  const [hoveredLine, setHoveredLine] = useState(null);
-  const [videoHover, setVideoHover] = useState(false);
-
   const philosophyLines = [
-    "Achievement is not the end — it's the breaking point.",
-    "Beyond every completed goal lies a new vision waiting to be built.",
-    "That's where we begin again.",
-    "We believe powerful visuals are crafted through structure, clarity, and discipline.",
-    "Each frame tells a story — not just how it looks, but why it exists.",
-    "We dream. We build. We evolve."
+    { text: "Achievement is not the end — it’s the breaking point.", color: "red" },
+    { text: "Beyond every completed goal lies a new vision waiting to be built. That’s where we begin again.", color: "white" },
+    { text: "We believe powerful visuals are crafted through structure, clarity, and discipline.", color: "red" },
+    { text: "Each frame tells a story — not just how it looks, but why it exists.", color: "red" },
+    { text: "We dream. We build. We evolve.", color: "white" }
   ];
 
   return (
@@ -19,10 +15,10 @@ const Philosophy = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
 
         {/* Left Side - Text */}
-        <div className="flex flex-col justify-center items-start px-12 md:px-28 lg:px-32 py-20 lg:py-0 z-10 relative">
+        <div className="flex flex-col justify-center items-center px-12 md:px-28 lg:px-32 py-20 lg:py-0 z-10 relative">
           <div className="max-w-5xl w-full">
 
-            {/* 🔥 Title Reveal */}
+            {/* Title Reveal */}
             <motion.h2
               initial={{ y: 120, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -35,34 +31,20 @@ const Philosophy = () => {
 
             <ul className="space-y-12">
               {philosophyLines.map((line, index) => (
-                <li
+                <motion.li
                   key={index}
-                  className="flex items-start gap-6 cursor-default"
-                  onMouseEnter={() => setHoveredLine(index)}
-                  onMouseLeave={() => setHoveredLine(null)}
+                  initial={{ backgroundPosition: '0% 50%' }}
+                  whileInView={{ backgroundPosition: '200% 50%' }}
+                  transition={{ duration: 2.2, ease: 'linear' }}
+                  viewport={{ once: true }}
+                  className={`text-3xl md:text-4xl leading-[1.2] tracking-wide bg-[linear-gradient(110deg,#ffffff,rgba(255,255,255,0.3),#ffffff)] bg-[length:200%_100%] bg-clip-text text-transparent`}
+                  style={{
+                    color: line.color === "red" ? '#ff0000' : '#ffffff',
+                    letterSpacing: '0.08em' 
+                  }}
                 >
-                  {/* Bullet */}
-                  <span
-                    className="mt-4 w-3 h-3 rounded-full bg-red-600 transition-transform duration-500"
-                    style={{
-                      transform: hoveredLine === index ? 'scale(1.6)' : 'scale(1)'
-                    }}
-                  />
-
-                  {/* 🔥 Text Shadow Run Animation */}
-                  <motion.p
-                    initial={{ backgroundPosition: '0% 50%' }}
-                    whileInView={{ backgroundPosition: '200% 50%' }}
-                    transition={{ duration: 2.2, ease: 'linear' }}
-                    viewport={{ once: true }}
-                    className="text-4xl md:text-6xl leading-[1.1] transition-transform duration-500 bg-[linear-gradient(110deg,#ffffff,rgba(255,255,255,0.3),#ffffff)] bg-[length:200%_100%] bg-clip-text text-transparent"
-                    style={{
-                      transform: hoveredLine === index ? 'scale(1.06)' : 'scale(1)'
-                    }}
-                  >
-                    {line}
-                  </motion.p>
-                </li>
+                  {line.text}
+                </motion.li>
               ))}
             </ul>
 
@@ -70,20 +52,13 @@ const Philosophy = () => {
         </div>
 
         {/* Right Side - Video */}
-        <div
-          className="relative h-screen overflow-hidden"
-          onMouseEnter={() => setVideoHover(true)}
-          onMouseLeave={() => setVideoHover(false)}
-        >
+        <div className="relative h-screen overflow-hidden">
           <video
             autoPlay
             loop
             muted
             playsInline
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out"
-            style={{
-              transform: videoHover ? 'translateX(-40px) scale(1.05)' : 'translateX(0) scale(1)'
-            }}
           >
             <source src="/src/assets/video/vid1.mp4" type="video/mp4" />
           </video>

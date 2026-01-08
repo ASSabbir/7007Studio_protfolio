@@ -9,7 +9,7 @@ const ThiredTitle = () => {
   ];
 
   return (
-    <ul className="border-b-2 border-red-600 relative bs flex h-[80vh] w-full flex-1 flex-col items-center justify-center gap-1.5 px-7 py-3 overflow-hidden">
+    <ul className=" border-red-600 relative bs flex h-[80vh] w-full flex-1 flex-col items-center justify-center gap-1.5 px-7 py-3 overflow-hidden">
       
       {/* 🎥 Background Video */}
       <video
