@@ -35,7 +35,7 @@ const ServiceMotivation = () => {
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <div className="relative w-64 h-64 md:w-80 md:h-80" style={{ perspective: '1000px' }}>
+              <div className="relative w-64 h-64 md:w-24 md:h-24" style={{ perspective: '1000px' }}>
                 <motion.div
                   className="w-full h-full relative"
                   style={{ transformStyle: 'preserve-3d' }}
