@@ -13,6 +13,9 @@ import { Skiper17 } from './Home/Skiper17';
 
 import SkiperVideo from '../SkiperVideo';
 import ClientReview from '../Pages/ClientReview/ClientReview';
+import Philosophy from './Home/Philosopy';
+import Project from './Home/Project';
+import TextAnimation from './Shared/TextAnimation';
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
 
@@ -57,7 +60,7 @@ const Home = () => {
 
   return (
     <div className='relative'>
-      {/* 🔒 PINNED SECTION */}
+      {/* PINNED SECTION */}
       <section
         id="intro-section"
         className="relative h-screen overflow-hidden"
@@ -75,12 +78,19 @@ const Home = () => {
       <div id='navtrigger' className=' h-60 w-60 absolute top-20'></div>
 
       {/* 🚀 NORMAL SCROLL AFTER */}
+      
       <ThiredTitle></ThiredTitle>
+
+      
+
       <SecondTitle />
+      <Philosophy></Philosophy>
       
        {/* <SkiperVideo></SkiperVideo> */}
       
       <Skiper17></Skiper17>
+
+      <Project></Project>      
 
       <ClientReview></ClientReview>
       <Marque></Marque>
