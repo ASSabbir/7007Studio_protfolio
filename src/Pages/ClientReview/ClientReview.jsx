@@ -28,9 +28,9 @@ const StatsSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: stat.delay }}
               whileHover={{ y: -10 }}
-              className="group relative bg-black border border-red-900/30 hover:border-red-600 p-6 md:p-8 text-center transition-all duration-500"
+              className="group relative bg-black hover:border-red-600 p-6 md:p-8 text-center transition-all duration-500"
             >
-              <div className="absolute inset-0 bg-red-600/0 group-hover:bg-red-600/5 transition-all duration-500" />
+              <div className="absolute inset-0 transition-all duration-500" />
               <div className="relative">
                 <motion.div
                   whileHover={{ rotate: 360 }}
