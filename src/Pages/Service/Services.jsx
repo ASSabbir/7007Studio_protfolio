@@ -39,7 +39,7 @@ const Services = () => {
 
       {/* Meeting Section - Add here */}
       <div className="relative z-15">
-        <MeetingSection />
+        {/* <MeetingSection /> */}
       </div>
     </div>
   );
