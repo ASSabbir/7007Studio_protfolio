@@ -125,9 +125,9 @@ const ReviewCard3D = ({ review }) => {
         <div className="absolute inset-0 bg-gradient-to-br from-red-600/0 to-red-600/0 group-hover:from-red-600/10 group-hover:to-black/50 transition-all duration-500" />
 
         {/* Main Grid Layout */}
-        <div className="grid grid-cols-[1fr_200px]">
+        <div className=" ">
           {/* Left Section - Text Content */}
-          <div className="relative flex flex-col justify-between p-8 border-r-2 border-gray-700">
+          <div className="relative flex flex-col justify-between p-8  border-gray-700">
             <div>
               {/* Name */}
               <h3 className="text-4xl lg:text-2xl font-bold text-white font-serif mb-6 leading-tight">
@@ -149,24 +149,21 @@ const ReviewCard3D = ({ review }) => {
             </div>
           </div>
 
-          {/* Right Section - Corner Accent */}
-          <div className="relative">
-            {/* Top Right Red Corner */}
-            <div className="absolute top-0 right-0 w-20 h-20 border-t-8 border-r-8 border-red-700"></div>
-          </div>
+          
+          <div className="absolute top-0 right-0 w-20 h-20 border-t-8 border-r-8 border-red-700"></div>
         </div>
 
         {/* Bottom Section - Full Width */}
         <div className="grid grid-cols-[1fr_200px]">
           {/* Bottom Left - Review Text */}
-          <div className="relative p-8 border-t-2 border-b-2 border-gray-700">
+          <div className="relative p-8 border-t-2  border-gray-700">
             <p className="text-white/90 text-base font-serif leading-relaxed mb-4">
               "{review.text}"
             </p>
 
             {/* Author Details */}
             <div className="space-y-1">
-              <p className="text-red-400 text-base font-serif">
+              <p className="text-red-500 text-base font-serif">
                 {review.role}
               </p>
               <p className="text-gray-400 text-sm font-serif">
@@ -213,7 +210,7 @@ const MarqueeRow = ({ reviews }) => {
 
   return (
     <div
-      className="relative overflow-hidden py-8"
+      className="relative  overflow-hidden py-8"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
