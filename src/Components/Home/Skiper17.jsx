@@ -15,7 +15,7 @@ const projects = [
   //   title: "Project 3",
   //   src: vdo1
   // },
-  
+
 ];
 
 const Skiper17 = () => {
@@ -33,8 +33,23 @@ const Skiper17 = () => {
         style={{ paddingBottom: `${projects.length * 10}vh` }}
         className="relative bg-black flex w-full flex-col items-center "
       >
-        <h1 className=" font-extrabold tracking-wide text-red-600  leading-[0.8] py-20 tracking-[-0.03em] transition-colors lg:text-[8vw]">show reels</h1>
-        
+        <h1
+          className="
+    font-extrabold
+    text-red-600
+    transition-colors
+
+    tracking-[-0.03em] lg:tracking-wide
+    leading-[0.9] sm:leading-[0.85] lg:leading-[0.8]
+
+    py-10 sm:py-14 md:py-16 lg:py-20
+
+    text-4xl sm:text-5xl md:text-6xl lg:text-[8vw]
+  "
+        >
+          SHOWREEL
+        </h1>
+
 
 
         {projects.map((project, i) => {
