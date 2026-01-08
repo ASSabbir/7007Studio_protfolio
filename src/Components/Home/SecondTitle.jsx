@@ -1,5 +1,4 @@
 import React from 'react';
-import { IoMdArrowUp } from "react-icons/io";
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -14,36 +13,55 @@ const SecondTitle = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
   return (
-    <div
-      ref={ref}
-      className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] flex flex-col justify-center items-center overflow-hidden"
-    >
-      {/* 🔥 Background Video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src="/src/assets/video/bg2.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-
-      {/* Optional Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
-
-      {/* Content */}
-      <div className="relative z-10 w-full text-center text-red-600 
-        px-6 sm:px-10 md:px-16 lg:px-20
-        text-3xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-9xl
-        leading-tight sm:leading-snug lg:leading-none normal-case"
+    <div>
+      {/* Main Section with Video */}
+      <div
+        ref={ref}
+        className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] flex flex-col justify-center items-start overflow-hidden"
       >
-        <motion.div
-          style={{ y, opacity }}
-          className="relative py-6 sm:py-8 md:py-10 overflow-hidden break-words"
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/src/assets/video/bg2.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+
+        {/* Black Overlay */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* Content */}
+        <div className="relative z-10 w-full 
+          px-6 sm:px-10 md:px-16 lg:px-20
+          flex flex-col justify-center items-start"
         >
-          7007 Studio is a CGI, VFX, post-production, and gaming studio.
-          we specialize in 3D animation and visual effects
-        </motion.div>
+          {/* Motion Title*/}
+          <motion.div
+            style={{ y, opacity }}
+            className="px-15 pt-15 text-red-600 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 
+              font-bold tracking-tight leading-tight relative"
+          >
+            <span className="relative z-10"
+              style={{
+                WebkitTextStroke: '2px black',
+              }}
+            >
+              7007 Studio is a CGI, VFX, post-production, and gaming studio.
+              we specialize in 3D animation and visual effects
+            </span>
+          </motion.div>
+
+          {/* Bottom White Text */}
+          <div className="px-15 mt-10 md:mt-12 pb-15">
+            <p className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug md:leading-tight tracking-wide">
+              We collaborate <br />
+              with studios, agencies, and brands to deliver <br />
+              production-ready digital content.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

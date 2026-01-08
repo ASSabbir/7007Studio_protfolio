@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Philosophy = () => {
+  const [titleHover, setTitleHover] = useState(false);
+
   const philosophyLines = [
     { text: "Achievement is not the end — it’s the breaking point.", color: "red" },
     { text: "Beyond every completed goal lies a new vision waiting to be built. That’s where we begin again.", color: "white" },
@@ -11,24 +13,34 @@ const Philosophy = () => {
   ];
 
   return (
-    <div className="py-10 min-h-screen bg-black text-white relative overflow-hidden">
+    <div className=" min-h-screen bg-black text-white relative overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
 
         {/* Left Side - Text */}
-        <div className="flex flex-col justify-center items-center px-12 md:px-28 lg:px-32 py-20 lg:py-0 z-10 relative">
+        <div className="flex flex-col justify-center items-start px-12 md:px-28 lg:px-32 py-20 lg:py-0 z-10 relative">
           <div className="max-w-5xl w-full">
 
-            {/* Title Reveal */}
-            <motion.h2
-              initial={{ y: 120, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              viewport={{ once: true }}
-              className="tracking-wide text-7xl md:text-9xl font-bold mb-24 tracking-tighter text-left text-red-600 overflow-hidden"
+            {/* Title with White Slide Hover Effect */}
+            <div
+              className="relative inline-block overflow-hidden cursor-pointer mb-24"
+              onMouseEnter={() => setTitleHover(true)}
+              onMouseLeave={() => setTitleHover(false)}
             >
-              OUR PHILOSOPHY
-            </motion.h2>
+              {/* White Background Slide */}
+              <motion.div
+                className="absolute inset-0 bg-white"
+                initial={{ x: '-100%' }}
+                animate={{ x: titleHover ? '100%' : '-100%' }}
+                transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
+              />
 
+              {/* Text */}
+              <h2 className="text-7xl md:text-8xl font-bold text-red-600 tracking-tighter relative z-10 tracking-wide">
+                OUR PHILOSOPHY
+              </h2>
+            </div>
+
+            {/* Philosophy Lines */}
             <ul className="space-y-12">
               {philosophyLines.map((line, index) => (
                 <motion.li
@@ -37,10 +49,10 @@ const Philosophy = () => {
                   whileInView={{ backgroundPosition: '200% 50%' }}
                   transition={{ duration: 2.2, ease: 'linear' }}
                   viewport={{ once: true }}
-                  className={`text-3xl md:text-4xl leading-[1.2] tracking-wide bg-[linear-gradient(110deg,#ffffff,rgba(255,255,255,0.3),#ffffff)] bg-[length:200%_100%] bg-clip-text text-transparent`}
+                  className={`text-2xl md:text-4xl leading-[1.2] tracking-wide bg-[linear-gradient(110deg,#ffffff,rgba(255,255,255,0.3),#ffffff)] bg-[length:200%_100%] bg-clip-text text-transparent`}
                   style={{
                     color: line.color === "red" ? '#ff0000' : '#ffffff',
-                    letterSpacing: '0.08em' 
+                    letterSpacing: '0.08em'
                   }}
                 >
                   {line.text}
