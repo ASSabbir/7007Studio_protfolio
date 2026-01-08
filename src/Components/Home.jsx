@@ -15,11 +15,17 @@ import SkiperVideo from '../SkiperVideo';
 import ClientReview from '../Pages/ClientReview/ClientReview';
 import Philosophy from './Home/Philosopy';
 import Project from './Home/Project';
-import TextAnimation from './Shared/TextAnimation';
+import { CustomEase } from "gsap/CustomEase";
+
+
+
 const Home = () => {
+
+  gsap.registerPlugin(CustomEase);
   gsap.registerPlugin(ScrollTrigger)
 
   useGSAP(() => {
+    CustomEase.create("myEase", "0.7, 0, 0.84, 0");
     gsap.to('#intro-logo', {
       scale: 70,
       opacity: 1,
@@ -40,22 +46,49 @@ const Home = () => {
         }
       }
     })
-    gsap.from('.navlinks-li', {
-      y: -100,
-      opacity: 1,
-      stagger: 0.1,
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '#navtrigger',
         start: 'top top',
         end: 'top 7%',
         markers: false,
-
-
-
-
       }
-    })
-    
+    });
+
+    // All animations in sequence
+    tl.from('.navlinks-li', {
+      y: -100,
+      delay:0.4,
+      opacity: 0,
+      ease:'power2.in',
+      duration: 0.6
+    });
+    tl.from('#nav-close-btn', {
+      y: -100,
+      opacity: 0,
+      
+      duration: 0.6
+    }, "-=0.4");
+    tl.from('#showreels-btn', {
+      y: 100,
+      opacity: 0,
+      ease:'power2.in',
+      duration: 0.6
+    }, "-=0.4");
+    tl.from('#banner-whatapp-icon', {
+      x: 50,
+      opacity: 0,
+      ease:'power2.in',
+      duration: 0.3
+    }, );
+    tl.from('#banner-text-effect', {
+      x: -50,
+      opacity: 0,
+      ease:'power2.in',
+      duration: 0.3
+    }, "-=0.3");
+
+
   })
 
   return (
@@ -78,25 +111,25 @@ const Home = () => {
       <div id='navtrigger' className=' h-60 w-60 absolute top-20'></div>
 
       {/* 🚀 NORMAL SCROLL AFTER */}
-      
+
       <ThiredTitle></ThiredTitle>
 
-      
+
 
       <SecondTitle />
       <Philosophy></Philosophy>
-      
-       {/* <SkiperVideo></SkiperVideo> */}
-      
+
+      {/* <SkiperVideo></SkiperVideo> */}
+
       <Skiper17></Skiper17>
 
-      <Project></Project>      
+      <Project></Project>
 
       <ClientReview></ClientReview>
       <Marque></Marque>
-     
-      
-      
+
+
+
       {/* <SplineSection></SplineSection> */}
     </div>
   )
