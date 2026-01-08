@@ -16,6 +16,7 @@ import ClientReview from '../Pages/ClientReview/ClientReview';
 import Philosophy from './Home/Philosopy';
 import Project from './Home/Project';
 import { CustomEase } from "gsap/CustomEase";
+import HomeContact from './HomeContact';
 
 
 
@@ -128,7 +129,7 @@ const Home = () => {
       <ClientReview></ClientReview>
       <Marque></Marque>
 
-
+<HomeContact></HomeContact>
 
       {/* <SplineSection></SplineSection> */}
     </div>
