@@ -38,7 +38,7 @@ const Marque = () => {
             {services.map((service, index) => (
                 <div
                     key={index}
-                    className="relative overflow-hidden transition-all duration-300"
+                    className="relative  transition-all duration-300"
                     style={{
                         height: hoveredIndex === index ? '120px' : '80px'
                     }}
@@ -53,7 +53,7 @@ const Marque = () => {
                             gradient={false}
                             className="h-full flex items-center"
                         >
-                            <h2 className="text-5xl border-2 py-5 md:text-9xl text-red-600 tracking-tight px-8">
+                            <h2 className="text-5xl  py-5 md:text-9xl text-red-600  tracking-tight px-8">
                                 {service.details}
                             </h2>
                         </Marquee>
