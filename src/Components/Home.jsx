@@ -13,6 +13,7 @@ import { Skiper17 } from './Home/Skiper17';
 
 import SkiperVideo from '../SkiperVideo';
 import ClientReview from '../Pages/ClientReview/ClientReview';
+import Philosophy from './Home/Philosopy';
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger)
 
@@ -76,11 +77,16 @@ const Home = () => {
 
       {/* 🚀 NORMAL SCROLL AFTER */}
       <ThiredTitle></ThiredTitle>
+
+      
+
       <SecondTitle />
+      <Philosophy></Philosophy>
       
        {/* <SkiperVideo></SkiperVideo> */}
       
       <Skiper17></Skiper17>
+      
 
       <ClientReview></ClientReview>
       <Marque></Marque>

@@ -51,9 +51,9 @@ const Marque = () => {
                             speed={150}
                             direction="left"
                             gradient={false}
-                            className="h-full flex items-center"
+                            className="h-full flex items-center bg-white"
                         >
-                            <h2 className="text-5xl bg-red-600 py-10 md:text-9xl text-white w-full tracking-tight px-8">
+                            <h2 className="text-5xl md:text-9xl text-red-600 w-full tracking-tight">
                                 {service.details}
                             </h2>
                         </Marquee>
