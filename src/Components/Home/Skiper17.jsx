@@ -35,16 +35,7 @@ const Skiper17 = () => {
       >
         <h1
           className="
-    font-extrabold
-    text-red-600
-    transition-colors
-
-    tracking-[-0.03em] lg:tracking-wide
-    leading-[0.9] sm:leading-[0.85] lg:leading-[0.8]
-
-    py-10 sm:py-14 md:py-16 lg:py-20
-
-    text-4xl sm:text-5xl md:text-6xl lg:text-[8vw]
+    font-extrabold font-KronaOne text-red-600 transition-colors tracking-[-0.03em] lg:tracking-wide leading-[0.9] sm:leading-[0.85] lg:leading-[0.8] py-10 sm:py-14 md:py-16 lg:py-20 text-4xl sm:text-5xl md:text-6xl lg:text-[6vw]
   "
         >
           SHOWREEL

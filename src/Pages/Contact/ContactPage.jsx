@@ -264,27 +264,27 @@ const ContactPage = () => {
       />
 
       {/* Small contact form overlay */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center px-4 py-20 pointer-events-none">
+      <div className="relative  z-10 min-h-screen flex items-center justify-center px-4 py-20 pointer-events-none">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           className="w-full max-w-md pointer-events-auto"
         >
-          <div className="bg-black/70 backdrop-blur-xl border border-red-500/30 rounded-2xl p-9 ">
+          <div className="bg-black/70 font-KronaOne backdrop-blur-xl border border-red-500/30 rounded-xl p-9 ">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-7 text-center">
               Get In <span className="text-red-500">Touch</span>
             </h2>
             
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5 font-dmsans">
               <div>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-black/60 border border-red-500/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors"
+                  className="w-full bg-black/60 border-b border-red-500/30  px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors"
                   placeholder="Your Name"
                   required
                 />
@@ -296,7 +296,7 @@ const ContactPage = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-black/60 border border-red-500/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors"
+                  className="w-full bg-black/60 border-b border-red-500/30 px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors"
                   placeholder="Your Email"
                   required
                 />
@@ -308,7 +308,7 @@ const ContactPage = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="4"
-                  className="w-full bg-black/60 border border-red-500/30 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors resize-none"
+                  className="w-full bg-black/60 border-b border-red-500/30  px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-red-500 transition-colors resize-none"
                   placeholder="Your Message"
                   required
                 ></textarea>
@@ -316,7 +316,7 @@ const ContactPage = () => {
 
               <button
                 type="submit"
-                className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group shadow-lg shadow-red-500/50"
+                className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-3  transition-all duration-300 flex items-center justify-center gap-2 group shadow-lg shadow-red-500/50"
               >
                 Send Message
                 <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

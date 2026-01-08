@@ -39,13 +39,13 @@ const Project = () => {
 
             {/* Section Title */}
             <div className="text-center mb-24">
-                <h2 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-[0.35em] text-red-600">
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold font-KronaOne text-red-600">
                     OUR HANDPICK PROJECT
                 </h2>
             </div>
 
             {/* Project Grid Wrapper (Big Side Padding) */}
-            <div className="px-10 md:px-32 lg:px-52">
+            <div className="px-10 md:px-32 lg:px-52 font-KronaOne">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
                     {projects.map((item, index) => (
                         <motion.div
@@ -78,7 +78,7 @@ const Project = () => {
                                         {item.category}
                                     </span>
 
-                                    <h3 className="text-3xl md:text-4xl font-bold font-serif leading-tight tracking-wide">
+                                    <h3 className="text-3xl md:text-4xl font-bold font- leading-tight tracking-wide">
                                         {item.title}
                                     </h3>
                                 </div>
