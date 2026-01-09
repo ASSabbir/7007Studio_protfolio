@@ -5,6 +5,7 @@ import MeetingSection from "./MeetingSection"; // Import
 import { gigServices, customServices } from "./servicesData";
 import "./styles";
 import ServiceMotivation from "./serviceMotivation";
+import Package from "./Package";
 import Calender from "./Calender";
 
 const Services = () => {
@@ -27,22 +28,12 @@ const Services = () => {
       <div className="h-screen"></div>
 
       <div className="relative z-10">
-        <ServicesContent
-          containerRef={containerRef}
-          detailsRef={detailsRef}
-          activeTab={activeTab}
-          selectedService={selectedService}
-          setSelectedService={setSelectedService}
-          handleTabChange={handleTabChange}
-          gigServices={gigServices}
-          customServices={customServices}
-        />
+        <Package></Package>
       </div>
       <Calender></Calender>
 
       {/* Meeting Section - Add here */}
       <div className="relative z-15">
-        {/* <MeetingSection /> */}
         <ServiceMotivation></ServiceMotivation>
       </div>
     </div>
