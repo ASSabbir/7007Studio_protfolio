@@ -6,6 +6,7 @@ import { gigServices, customServices } from "./servicesData";
 import "./styles";
 import ServiceMotivation from "./serviceMotivation";
 import Package from "./Package";
+import Calender from "./Calender";
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState("gig");
@@ -20,7 +21,7 @@ const Services = () => {
 
   return (
     <div className="relative min-h-screen text-white">
-      <div className="fixed top-0 left-0 w-full h-screen z-0">
+      <div className="left-0 w-full h-screen z-0">
         <HeroSection />
       </div>
 
@@ -29,6 +30,7 @@ const Services = () => {
       <div className="relative z-10">
         <Package></Package>
       </div>
+      <Calender></Calender>
 
       {/* Meeting Section - Add here */}
       <div className="relative z-15">
