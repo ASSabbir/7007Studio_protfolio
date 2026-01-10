@@ -5,7 +5,7 @@ const HowHelp = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center overflow-hidden px-4">
+    <div className="bg-black flex items-center justify-center overflow-hidden px-4 pt-20">
       <div className="max-w-6xl w-full">
         {/* Main Content Container */}
         <div className="relative">
@@ -106,24 +106,6 @@ const HowHelp = () => {
             </motion.div>
 
           </div>
-
-          {/* CTA Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.8 }}
-            className="text-center relative z-10 mt-10"
-          >
-            
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2.2 }}
-              className="text-gray-400 text-4xl lg:text-9xl"
-            >
-              Ready to start your next project? We're here to help!
-            </motion.p>
-          </motion.div>
 
           {/* Floating Particles */}
           {[...Array(20)].map((_, i) => (
