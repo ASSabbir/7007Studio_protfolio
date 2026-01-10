@@ -395,13 +395,6 @@ const CaseStudyModal = ({ project, onClose }) => {
           onClick={(e) => e.stopPropagation()}
           className="relative bg-zinc-900 border border-red-500/30 max-w-6xl mx-auto my-8 font-KronaOne"
         >
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            className="fixed top-8 right-189 z-50 p-3 bg-black/80 hover:bg-red-600 text-white rounded-full transition-colors duration-300 border border-red-500/30"
-          >
-            <X size={34} />
-          </button>
 
           <div className="p-8 md:p-16">
             {/* Header */}
