@@ -44,7 +44,7 @@ const Project = () => {
                 </h2>
             </div>
 
-            {/* Project Grid Wrapper (Big Side Padding) */}
+            {/* Project Grid Wrapper */}
             <div className="px-10 md:px-32 lg:px-52 font-KronaOne">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
                     {projects.map((item, index) => (
