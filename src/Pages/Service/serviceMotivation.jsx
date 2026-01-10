@@ -5,9 +5,9 @@ const ServiceMotivation = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black flex items-center justify-center overflow-hidden px-4">
+    <div className="bg-black flex items-center justify-center overflow-hidden px-4 py-30">
       <div className="max-w-7xl w-full">
-        
+
         {/* Main Container */}
         <div className="relative">
 
@@ -18,14 +18,14 @@ const ServiceMotivation = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-16 relative z-10"
           >
-            <p className="text-gray-400 text-xl md:text-9xl">
+            <p className="text-gray-400 text-xl md:text-7xl">
               Experience the future of design with our 3D services
             </p>
           </motion.div>
 
           {/* 3D Cube Visualization */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
-            
+
             {/* Animated 3D Cube */}
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
@@ -56,31 +56,31 @@ const ServiceMotivation = () => {
                   >
                     3D
                   </motion.div>
-                  
+
                   {/* Back Face */}
                   <div
                     className="absolute w-full h-full bg-gradient-to-br from-pink-600 to-red-600 border-2 border-pink-400 rounded-lg"
                     style={{ transform: 'translateZ(-80px) rotateY(180deg)' }}
                   />
-                  
+
                   {/* Right Face */}
                   <div
                     className="absolute w-full h-full bg-gradient-to-br from-blue-600 to-purple-600 border-2 border-blue-400 rounded-lg"
                     style={{ transform: 'rotateY(90deg) translateZ(80px)' }}
                   />
-                  
+
                   {/* Left Face */}
                   <div
                     className="absolute w-full h-full bg-gradient-to-br from-red-600 to-orange-600 border-2 border-red-400 rounded-lg"
                     style={{ transform: 'rotateY(-90deg) translateZ(80px)' }}
                   />
-                  
+
                   {/* Top Face */}
                   <div
                     className="absolute w-full h-full bg-gradient-to-br from-green-600 to-blue-600 border-2 border-green-400 rounded-lg"
                     style={{ transform: 'rotateX(90deg) translateZ(80px)' }}
                   />
-                  
+
                   {/* Bottom Face */}
                   <div
                     className="absolute w-full h-full bg-gradient-to-br from-yellow-600 to-green-600 border-2 border-yellow-400 rounded-lg"
