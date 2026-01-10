@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import video1 from '../../assets/video/montage footage.mp4'
 
 const HeroSection = () => {
   return (
@@ -7,7 +8,7 @@ const HeroSection = () => {
       {/* Background Video */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
-        src="/src/assets/video/montage footage.mp4"
+        src={video1}
         autoPlay
         loop
         muted

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import video1 from '../../assets/video/bg2.mp4'
 
 const SecondTitle = () => {
   const ref = useRef(null);
@@ -22,7 +23,7 @@ const SecondTitle = () => {
         {/* Background Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/src/assets/video/bg2.mp4"
+          src={video1}
           autoPlay
           loop
           muted
