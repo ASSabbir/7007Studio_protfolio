@@ -5,7 +5,7 @@ const ServiceMotivation = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="bg-black flex items-center justify-center overflow-hidden px-4 py-30">
+    <div className="bg-black flex items-center justify-center overflow-hidden px-4 py-15">
       <div className="max-w-7xl w-full">
 
         {/* Main Container */}

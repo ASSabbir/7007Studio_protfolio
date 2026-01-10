@@ -32,7 +32,7 @@ const HeroSectionStudio = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-6xl md:text-8xl lg:text-9xl font-bold mb-12 text-red-600 uppercase tracking-wider"
           >
-            Welcome
+            Welcome 
           </motion.h1>
 
           {/* Subtitle */}
@@ -68,7 +68,7 @@ const HeroSectionStudio = () => {
           </motion.p>
 
         </div>
-      </motion.div>
+      </motion.div> 
     </div>
   );
 };
