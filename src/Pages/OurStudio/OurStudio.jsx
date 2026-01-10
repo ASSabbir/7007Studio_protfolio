@@ -179,10 +179,10 @@ const OurStudio = () => {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-center">
-              Team <span className="text-red-500">MEMBER'S</span>
+            <h2 className="text-5xl md:text-7xl font-bold mb-20 text-center">
+              Team <span className="text-red-600">MEMBER'S</span>
             </h2>
-            <p className="text-gray-400 text-lg w-full mx-auto text-center">
+            <p className="text-gray-300 text-4xl w-full mx-auto text-center">
               7007 Studio is a focused, founder-led creative studio, collaborating with a small network of trusted artists and specialists when needed.
             </p>
           </motion.div>
@@ -205,10 +205,10 @@ const OurStudio = () => {
             className="mb-16"
           >
             <h2 className="text-5xl md:text-7xl font-bold mb-6 text-center">
-              Case <span className="text-red-500">Studies</span>
+              Case <span className="text-red-600">Studies</span>
             </h2>
-            <p className="text-gray-400 text-lg text-center w-full mx-auto">
-             <span className='text-5xl text-red-500'>We begin </span> by understanding the project from the client’s perspective. From there, we translate that vision into a functional solution — breaking complex ideas down into clear, manageable parts and building them with intention and precision.
+            <p className="text-gray-300 text-lg text-center w-full mx-auto">
+             <span className='text-5xl text-red-600'>We begin </span> by understanding the project from the <span className='text-red-600'>client’s perspective</span>. From there, we translate that vision into a functional solution — breaking complex ideas down into clear, manageable parts and building them with intention and precision.
             </p>
           </motion.div>
 

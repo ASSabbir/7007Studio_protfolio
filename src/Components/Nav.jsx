@@ -93,7 +93,7 @@ const Nav = () => {
 
   return (
     <div>
-      <div className="fixed top-0  z-[999] w-full text-white px-20 py-10 flex justify-between items-center font-OdibeeSans tracking-wider">
+      <div className="fixed top-0  z-[999] w-full text-white px-5  md:px-20 py-10 flex justify-between items-center font-OdibeeSans tracking-wider">
         {/* Logo */}
         <div className="overflow-hidden">
           <img src={logo} className="w-12 navlinks-li" alt="logo" />
@@ -103,7 +103,7 @@ const Nav = () => {
         <div className=" p-2 overflow-hidden">
           {!menuOpen && (
             <button
-              id="nav-close-btn" className="text-red-600   relative z-[1001]"
+              id="nav-close-btn" className="text-red-600 hover:text-white cursor-pointer relative z-[1001]"
               onClick={() => setMenuOpen(true)}
             >
               <Menu size={36} />
@@ -121,7 +121,7 @@ const Nav = () => {
           {/* Close Button */}
           <button
             id="close-btn"
-            className="absolute top-10 right-20 text-red-600 z-[1001]"
+            className="absolute top-10 right-20 text-red-600 hover:text-white duration-200 cursor-pointer z-[1001]"
             onClick={handleClose}
           >
             <X size={36} />
