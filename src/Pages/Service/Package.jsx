@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Clock, CheckCircle, Star, Box } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import vdo1 from '../../assets/video/montage footage.mp4'
 gsap.registerPlugin(ScrollTrigger);
 
 const Package = () => {
@@ -19,7 +19,7 @@ const Package = () => {
       category: 'Gig-Based Service',
       description: 'Photorealistic rendering with smooth transitions',
       priceRange: '$299 - $999',
-      video: '/src/assets/video/montage footage.mp4',
+      video: vdo1,
       thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=600&fit=crop',
       rating: 4.9,
       reviews: 127,
@@ -56,7 +56,7 @@ const Package = () => {
       category: 'Custom Service',
       description: 'Tailored visual effects for films & commercials',
       priceRange: 'Starting at $2,500',
-      video: '/src/assets/video/footage2.mp4',
+      video: vdo1,
       thumbnail: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=600&fit=crop',
       rating: 5.0,
       reviews: 89,
@@ -82,7 +82,7 @@ const Package = () => {
       category: 'Gig-Based Service',
       description: 'Eye-catching animations for brand identity',
       priceRange: '$149 - $499',
-      video: '/src/assets/video/footage3.mp4',
+      video: vdo1,
       thumbnail: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&h=600&fit=crop',
       rating: 4.8,
       reviews: 203,
@@ -119,7 +119,7 @@ const Package = () => {
       category: 'Custom Service',
       description: 'Complete brand storytelling solutions',
       priceRange: 'Starting at $5,000',
-      video: '/src/assets/video/vid1.mp4',
+      video: vdo1,
       thumbnail: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=600&fit=crop',
       rating: 5.0,
       reviews: 45,

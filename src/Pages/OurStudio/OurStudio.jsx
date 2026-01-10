@@ -4,6 +4,7 @@ import HeroSectionStudio from './HeroSectionStudio';
 import HowHelp from './HowHelp';
 import Pipeline from './Pipeline';
 import FAQ from './FAQ';
+import vdo1 from '../../assets/video/vid1.mp4';
 
 
 
@@ -57,7 +58,7 @@ const OurStudio = () => {
       title: 'E-Commerce Platform',
       category: '3D Animation',
       description: 'Revolutionary shopping experience with immersive 3D product visualization.',
-      video: '/src/assets/video/vid1.mp4',
+      video: vdo1,
       logo: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop',
       client: 'TechCorp Inc.',
       year: '2024',
@@ -84,7 +85,7 @@ const OurStudio = () => {
       title: 'Brand Identity Campaign',
       category: 'Motion Graphics',
       description: 'Complete brand transformation with stunning motion graphics and visual storytelling.',
-      video: '/src/assets/video/bg2.mp4',
+      video: vdo1,
       logo: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=200&h=200&fit=crop',
       client: 'StartupX',
       year: '2024',
@@ -111,7 +112,7 @@ const OurStudio = () => {
       title: 'Product Launch Video',
       category: 'VFX',
       description: 'Cinematic product reveal with breathtaking visual effects and CGI integration.',
-      video: '/src/assets/video/bg1.mp4',
+video: vdo1,
       logo: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=200&h=200&fit=crop',
       client: 'Innovation Labs',
       year: '2024',
@@ -138,7 +139,7 @@ const OurStudio = () => {
       title: 'Architectural Visualization',
       category: '3D Rendering',
       description: 'Photorealistic architectural renders for luxury real estate development.',
-      video: '/src/assets/video/footage3.mp4',
+     video: vdo1,
       logo: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=200&h=200&fit=crop',
       client: 'Skyline Properties',
       year: '2024',
