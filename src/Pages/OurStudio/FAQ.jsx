@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus, MessageCircle } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 
 const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
@@ -12,23 +12,23 @@ const FAQ = () => {
         },
         {
             question: 'What is the cost range for 3D projects?',
-            answer: 'Costs depend on project complexity, duration, and requirements. Simple product renders typically start at $2,000-$5,000, while comprehensive animation projects range from $10,000 to $100,000+. We provide detailed quotes after understanding your specific needs during the initial consultation. Payment is structured in milestones: 30% deposit, 40% mid-project, and 30% on delivery.'
+            answer: 'Costs depend on project complexity, duration, and requirements. Simple product renders typically start at $2,000-$5,000, while comprehensive animation projects range from $10,000 to $100,000+. We provide detailed quotes after understanding your specific needs during the initial consultation.'
         },
         {
             question: 'What do you need from me to get started?',
-            answer: 'To begin your project, we need: (1) A project brief describing your goals and vision, (2) Reference materials like images or videos you like, (3) Brand guidelines or style preferences, (4) Timeline requirements, and (5) Budget range. If you have CAD files, product photos, or existing 3D assets, those are helpful but not required.'
+            answer: 'To begin your project, we need a project brief, reference materials, brand guidelines, timeline requirements, and budget range. CAD files or existing assets are helpful but not required.'
         },
         {
             question: 'How many revisions are included in the project?',
-            answer: 'We include 2-3 rounds of revisions at key stages: concept approval, modeling/animation review, and final delivery. This ensures the project aligns with your vision while maintaining efficient workflow. Additional revisions beyond this can be accommodated and quoted separately. We encourage detailed feedback during review stages to minimize extensive revisions.'
+            answer: 'We include 2-3 revision rounds at key stages. Additional revisions can be accommodated separately. Clear feedback helps ensure smooth progress.'
         },
         {
             question: 'What file formats will I receive upon completion?',
-            answer: 'We deliver industry-standard formats based on your needs: Videos (MP4, MOV), Images (PNG, JPEG, TIFF), and 3D Files (FBX, OBJ, GLTF for web). We can also provide optimized files for specific platforms like web, mobile, VR/AR, or social media. Upon full payment, you receive full rights to all final deliverables and rendered content.'
+            answer: 'We deliver MP4, MOV, PNG, JPEG, TIFF, FBX, OBJ, and GLTF formats. Optimized versions for web, mobile, or AR/VR can also be provided.'
         },
         {
             question: 'What if I need changes after the project is delivered?',
-            answer: 'After delivery, we offer a 30-day warranty period for any technical issues with the files. For modifications or updates beyond this, we\'re available for future adjustments at a quoted rate. Many clients work with us on retainer for ongoing support. We maintain project archives, making it easy to retrieve and modify assets if you need variations or updates in the future.'
+            answer: 'We offer a 30-day warranty for technical issues. Updates or changes afterward can be handled through additional quotes or retainers.'
         }
     ];
 
@@ -37,25 +37,26 @@ const FAQ = () => {
     };
 
     return (
-        <div className="min-h-screen bg-black text-white pb-20 px-4 md:px-8 font-KronaOne">
+        <div className="min-h-screen bg-black text-white pb-16 sm:pb-20 px-4 sm:px-6 md:px-8 font-KronaOne">
             <div className="max-w-5xl mx-auto">
+                
                 {/* Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mb-20 text-center"
+                    className="mb-14 sm:mb-16 md:mb-20 text-center"
                 >
-                    <h1 className="text-5xl md:text-5xl font-bold mb-6 tracking-wider">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 tracking-wider">
                         Frequently Asked <span className="text-red-500">Questions</span>
                     </h1>
-                    <p className="text-gray-400 text-lg mx-auto">
-                        Find answers to the most common questions about our 3D production services. 
+                    <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
+                        Find answers to the most common questions about our 3D production services.
                         Can't find what you're looking for? Feel free to reach out.
                     </p>
                 </motion.div>
 
                 {/* FAQ Items */}
-                <div className="space-y-6">
+                <div className="space-y-5 sm:space-y-6">
                     {faqs.map((item, index) => {
                         const isOpen = openIndex === index;
 
@@ -68,21 +69,28 @@ const FAQ = () => {
                                 transition={{ delay: index * 0.1 }}
                                 className="border border-red-500/30 bg-zinc-900 overflow-hidden relative"
                             >
-                                {/* Question Button */}
+                                {/* Question */}
                                 <button
                                     onClick={() => toggleQuestion(index)}
-                                    className="w-full text-left p-8 flex items-start justify-between gap-6 hover:bg-red-500/5 transition-colors duration-300 group"
+                                    className="w-full text-left p-5 sm:p-6 md:p-8 flex items-start justify-between gap-4 sm:gap-6 hover:bg-red-500/5 transition-colors duration-300 group"
                                 >
-                                    <span className="text-xl md:text-2xl font-bold flex-1 leading-tight group-hover:text-red-500 transition-colors duration-300">
+                                    <span className="text-base sm:text-lg md:text-2xl font-bold flex-1 leading-snug sm:leading-tight group-hover:text-red-500 transition-colors duration-300">
                                         {item.question}
                                     </span>
-                                    <div className={`w-10 h-10 flex-shrink-0 flex items-center justify-center border-2 border-red-500 transition-all duration-300 ${
-                                        isOpen ? 'bg-red-500 rotate-180' : 'bg-transparent'
-                                    }`}>
+
+                                    <div
+                                        className={`
+                                            w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10
+                                            flex items-center justify-center
+                                            border-2 border-red-500
+                                            transition-all duration-300
+                                            ${isOpen ? 'bg-red-500 rotate-180' : 'bg-transparent'}
+                                        `}
+                                    >
                                         {isOpen ? (
-                                            <Minus className="w-6 h-6 text-white" />
+                                            <Minus className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                                         ) : (
-                                            <Plus className="w-6 h-6 text-red-500 group-hover:text-white transition-colors duration-300" />
+                                            <Plus className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 group-hover:text-white transition-colors duration-300" />
                                         )}
                                     </div>
                                 </button>
@@ -97,9 +105,9 @@ const FAQ = () => {
                                             transition={{ duration: 0.3 }}
                                             className="overflow-hidden"
                                         >
-                                            <div className="px-8 pb-8 border-t border-red-500/20">
-                                                <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-transparent mb-6 mt-6" />
-                                                <p className="text-gray-300 leading-relaxed text-base md:text-lg">
+                                            <div className="px-5 sm:px-6 md:px-8 pb-6 sm:pb-8 border-t border-red-500/20">
+                                                <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-red-500 to-transparent my-5 sm:my-6" />
+                                                <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
                                                     {item.answer}
                                                 </p>
                                             </div>
@@ -108,8 +116,8 @@ const FAQ = () => {
                                 </AnimatePresence>
 
                                 {/* Corner Accents */}
-                                <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-red-500/40 pointer-events-none" />
-                                <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-red-500/40 pointer-events-none" />
+                                <div className="absolute top-0 right-0 w-10 sm:w-12 h-10 sm:h-12 border-t-2 border-r-2 border-red-500/40 pointer-events-none" />
+                                <div className="absolute bottom-0 left-0 w-10 sm:w-12 h-10 sm:h-12 border-b-2 border-l-2 border-red-500/40 pointer-events-none" />
                             </motion.div>
                         );
                     })}
