@@ -147,7 +147,7 @@ const Pipeline = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-black text-white py-20 px-4 md:px-8 font-sans">
+        <div className="min-h-screen bg-black  text-white py-20 px-4 md:px-8 font-">
             {/* Header */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -172,7 +172,7 @@ const Pipeline = () => {
                     return (
                         <div key={step.id}>
                             {/* Step Row */}
-                            <div className={`flex items-center gap-8 ${isEven ? 'flex-row' : 'flex-row-reverse'} `}>
+                            <div className={`flex  items-center gap-8 ${isEven ? 'flex-row' : 'flex-row-reverse'} `}>
                                 {/* Step Card */}
                                 <motion.div
                                     ref={el => cardRefs.current[index] = el}
