@@ -20,7 +20,7 @@ const Services = () => {
 
   return (
     <div className="relative min-h-screen text-white">
-      <div className="left-0 w-full h-screen z-0">
+      <div className=" left-0 w-full h-screen z-0">
         <HeroSection />
       </div>
 
