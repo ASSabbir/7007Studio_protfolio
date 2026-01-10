@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import video1 from '../../assets/video/vid1.mp4'
 
 const Philosophy = () => {
   const [titleHover, setTitleHover] = useState(false);
@@ -72,7 +73,7 @@ const Philosophy = () => {
             playsInline
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out"
           >
-            <source src="/src/assets/video/vid1.mp4" type="video/mp4" />
+            <source src={video1} type="video/mp4" />
           </video>
         </div>
 

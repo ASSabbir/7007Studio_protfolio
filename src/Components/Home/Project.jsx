@@ -1,34 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
+import video1 from '../../assets/video/footage2.mp4'
 
 const projects = [
     {
         id: 1,
         title: "Product Visualization",
         category: "3D Animation",
-        video: "/src/assets/video/footage2.mp4",
+        video: video1,
         logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop"
     },
     {
         id: 2,
         title: "Cinematic VFX Shot",
         category: "VFX",
-        video: "/src/assets/video/footage3.mp4",
+        video: video1,
         logo: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=200&h=200&fit=crop"
     },
     {
         id: 3,
         title: "Game Environment",
         category: "Game Art",
-        video: "/src/assets/video/vid1.mp4",
+        video: video1,
         logo: "https://images.unsplash.com/photo-1593642634367-d91a135587b5?w=200&h=200&fit=crop"
     },
     {
         id: 4,
         title: "Brand Motion Film",
         category: "Motion Design",
-        video: "/src/assets/video/bg1.mp4",
+       video: video1,
         logo: "https://images.unsplash.com/photo-1520975916090-3105956dac38?w=200&h=200&fit=crop"
     }
 ];

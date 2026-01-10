@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { cn } from './../../lib/utils';
+import bg1 from '../../assets/video/bg1.mp4'
 
 const ThiredTitle = () => {
   const navigationItems = [
@@ -14,7 +15,7 @@ const ThiredTitle = () => {
       {/* 🎥 Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="/src/assets/video/bg1.mp4"
+        src={bg1}
         autoPlay
         loop
         muted

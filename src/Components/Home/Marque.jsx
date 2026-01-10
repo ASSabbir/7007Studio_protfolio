@@ -65,7 +65,7 @@ const Marque = () => {
                                     gradient={false}
                                     className="h-full"
                                 >
-                                    <h2 className="text-5xl md:text-7xl text-red-600 tracking-tight px-8 whitespace-nowrap">
+                                    <h2 className="text-5xl md:text-6xl font-black font-KronaOne tracking-tight text-red-600  px-8 whitespace-nowrap">
                                         {service.details}
                                     </h2>
                                 </Marquee>

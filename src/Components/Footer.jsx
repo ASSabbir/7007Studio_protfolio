@@ -52,10 +52,10 @@ const Footer = () => {
 
             {/* About Us */}
             <div className="text-center sm:text-left">
-              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-4 uppercase">
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-4 lowercase">
                 About Us
               </h3>
-              <p className="text-white text-sm md:text-base leading-relaxed">
+              <p className="text-white text-sm  leading-relaxed">
                 7007 Studio is a creative design & digital production studio focused on
                 premium visuals, branding, and motion experiences.
               </p>
@@ -63,10 +63,10 @@ const Footer = () => {
 
             {/* Services */}
             <div className="text-center sm:text-left">
-              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-4 uppercase">
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-4 lowercase">
                 Services
               </h3>
-              <ul className="space-y-2 text-white text-sm md:text-base">
+              <ul className="space-y-2 text-white text-sm ">
                 <li className="hover:text-red-600 transition-colors cursor-pointer">3D Animation</li>
                 <li className="hover:text-red-600 transition-colors cursor-pointer">Motion Graphics</li>
                 <li className="hover:text-red-600 transition-colors cursor-pointer">Brand Identity</li>
@@ -76,14 +76,14 @@ const Footer = () => {
 
             {/* Contact */}
             <div className="text-center sm:text-left">
-              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-4 uppercase">
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-4 lowercase">
                 Contact
               </h3>
 
               <div className="space-y-2">
                 <a
                   href="mailto:hello@7007studio.com"
-                  className="flex items-center justify-center sm:justify-start gap-2 text-white text-sm md:text-base hover:text-red-600 transition-colors"
+                  className="flex items-center justify-center sm:justify-start gap-2 text-white text-sm  hover:text-red-600 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   <span>hello@7007studio.com</span>
@@ -91,13 +91,13 @@ const Footer = () => {
 
                 <a
                   href="tel:+8801XXXXXXXXX"
-                  className="flex items-center justify-center sm:justify-start gap-2 text-white text-sm md:text-base hover:text-red-600 transition-colors"
+                  className="flex items-center justify-center sm:justify-start gap-2 text-white text-sm  hover:text-red-600 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   <span>+880 1XXXXXXXXX</span>
                 </a>
 
-                <div className="flex items-center justify-center sm:justify-start gap-2 text-white text-sm md:text-base">
+                <div className="flex items-center justify-center sm:justify-start gap-2 text-white text-sm ">
                   <MapPin className="w-4 h-4" />
                   <span>Dhaka, Bangladesh</span>
                 </div>
@@ -106,7 +106,7 @@ const Footer = () => {
 
             {/* Careers */}
             <div className="text-center sm:text-left">
-              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-4 uppercase">
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-4 lowercase">
                 Careers
               </h3>
               <p className="text-white text-sm md:text-base mb-2">

@@ -30,16 +30,7 @@ const HeroSectionStudio = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="
-              text-4xl 
-              sm:text-5xl 
-              md:text-7xl 
-              lg:text-9xl 
-              font-bold 
-              text-red-600 
-              uppercase 
-              tracking-wider
-            "
+            className="text-6xl md:text-8xl lg:text-9xl font-bold mb-12 text-red-600 uppercase tracking-wider"
           >
             Welcome 
           </motion.h1>
@@ -49,16 +40,7 @@ const HeroSectionStudio = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="
-              text-lg 
-              sm:text-xl 
-              md:text-3xl 
-              lg:text-4xl 
-              font-bold 
-              text-red-500 
-              uppercase 
-              tracking-wide
-            "
+            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-8 text-red-600 uppercase tracking-wide"
           >
             To 7007 Studio
           </motion.h2>
