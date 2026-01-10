@@ -13,16 +13,16 @@ const Philosophy = () => {
   ];
 
   return (
-    <div className="font-KronaOne  min-h-screen bg-black text-white relative overflow-hidden">
+    <div className="font-KronaOne min-h-screen bg-black text-white relative overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
 
         {/* Left Side - Text */}
-        <div className="flex flex-col justify-center items-start px-12 md:px-28 lg:px-32 py-20 lg:py-0 z-10 relative">
-          <div className="max-w-5xl w-full">
+        <div className="flex flex-col justify-center items-start px-6 sm:px-12 md:px-20 lg:px-32 py-16 sm:py-20 lg:py-0 z-10 relative">
+          <div className="max-w-full sm:max-w-3xl lg:max-w-5xl w-full">
 
             {/* Title with White Slide Hover Effect */}
             <div
-              className="relative inline-block overflow-hidden cursor-pointer mb-24"
+              className="relative inline-block overflow-hidden cursor-pointer mb-12 sm:mb-16 lg:mb-24"
               onMouseEnter={() => setTitleHover(true)}
               onMouseLeave={() => setTitleHover(false)}
             >
@@ -35,13 +35,13 @@ const Philosophy = () => {
               />
 
               {/* Text */}
-              <h2 className="text-7xl md:text-6xl font-bold text-red-600 tracking-tighter relative z-10 tracking-wide">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-red-600 tracking-tighter relative z-10">
                 OUR PHILOSOPHY
               </h2>
             </div>
 
             {/* Philosophy Lines */}
-            <ul className="space-y-12">
+            <ul className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12">
               {philosophyLines.map((line, index) => (
                 <motion.li
                   key={index}
@@ -49,10 +49,10 @@ const Philosophy = () => {
                   whileInView={{ backgroundPosition: '200% 50%' }}
                   transition={{ duration: 2.2, ease: 'linear' }}
                   viewport={{ once: true }}
-                  className={`text-2xl md:text-2xl leading-[1.2] tracking-wide bg-[linear-gradient(110deg,#ffffff,rgba(255,255,255,0.3),#ffffff)] bg-[length:200%_100%] bg-clip-text text-transparent`}
+                  className={`text-lg sm:text-xl md:text-2xl leading-[1.2] tracking-wide bg-[linear-gradient(110deg,#ffffff,rgba(255,255,255,0.3),#ffffff)] bg-[length:200%_100%] bg-clip-text text-transparent`}
                   style={{
                     color: line.color === "red" ? '#ff0000' : '#ffffff',
-                    letterSpacing: '0.08em'
+                    letterSpacing: '0.05em',
                   }}
                 >
                   {line.text}
@@ -64,7 +64,7 @@ const Philosophy = () => {
         </div>
 
         {/* Right Side - Video */}
-        <div className="relative h-screen overflow-hidden">
+        <div className="relative h-96 sm:h-[500px] md:h-[600px] lg:h-screen overflow-hidden">
           <video
             autoPlay
             loop
