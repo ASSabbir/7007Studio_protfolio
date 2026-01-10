@@ -177,10 +177,10 @@ const Package = () => {
   }, [selectedService]);
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden py-20 font-KronaOne">
+    <div className="min-h-screen bg-black text-white overflow-hidden pt-20 font-KronaOne">
 
       {/* Section Titles */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16 ">
         <div className="relative flex justify-between items-center mb-20">
           {/* Left Title */}
           <motion.div

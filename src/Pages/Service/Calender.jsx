@@ -79,13 +79,13 @@ const Calender = () => {
     const daysArray = Array.from({ length: daysInMonth }, (_, i) => i + 1);
 
     return (
-        <div className="min-h-screen bg-black font-KronaOne flex items-center justify-center p-4">
+        <div className="min-h-screen bg-black font-KronaOne flex items-center justify-center ">
             <div className="w-full max-w-4xl">
                 {/* Booking Card */}
                 <div className="bg-gray-100 rounded-3xl p-8 mb-6 shadow-2xl">
                     <div className="flex justify-between h-full items-start ">
                         {/* Left Section */}
-                        <div className="flex-1 border-2 space-y-3 flex flex-col justify-between h-full w-full">
+                        <div className="flex-1 space-y-3 flex flex-col justify-between h-full w-full">
                             <img src={png} alt="" className='w-12' />
                             <h1 className="text-3xl  text-red-600 mb-2">Appointment</h1>
                             <h2 className="text-3xl  text-red-600 mb-8">booking</h2>
