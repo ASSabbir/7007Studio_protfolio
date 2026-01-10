@@ -21,9 +21,9 @@ const HeroSectionStudio = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative h-full flex items-center justify-center px-4 md:px-8"
+        className="relative h-full flex items-center justify-center px-4 sm:px-6 md:px-8"
       >
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center space-y-4 sm:space-y-6">
 
           {/* Big Title */}
           <motion.h1
@@ -50,7 +50,18 @@ const HeroSectionStudio = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-sm md:text-lg lg:text-xl text-white leading-relaxed max-w-3xl mx-auto"
+            className="
+              text-xs 
+              sm:text-sm 
+              md:text-base 
+              lg:text-xl 
+              text-white 
+              leading-relaxed 
+              md:leading-loose 
+              max-w-3xl 
+              mx-auto
+              px-2 sm:px-0
+            "
           >
             A place where ideas are shaped with intention, clarity, and craft.
             Everything we create begins with a clear idea and a focused process.

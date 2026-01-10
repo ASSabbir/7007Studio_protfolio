@@ -256,64 +256,87 @@ const TeamCard = ({ member, index }) => {
     >
       {/* Background Image with Heavy Blur and Dark Overlay */}
       <div className="absolute inset-0">
-        <img 
-          src={member.avatar} 
+        <img
+          src={member.avatar}
           alt={member.name}
           className="w-full h-full object-cover blur-xl"
-          style={{ filter: 'blur(10px)' }}
+          style={{ filter: "blur(10px)" }}
         />
         <div className="absolute inset-0 bg-black/65" />
       </div>
 
       {/* Card Content */}
-      <div className="relative z-10 p-10 h-full flex items-center min-h-[400px]">
+      <div className="relative z-10 h-full flex flex-col md:flex-row items-center 
+                      p-6 sm:p-8 md:p-10 
+                      min-h-[360px] sm:min-h-[380px] md:min-h-[400px]">
+        
         {/* Left Side - Content */}
-        <div className="flex-1 pr-8">
-          <span className="inline-block mb-5 bg-gradient-to-r from-red-600 to-red-700 px-4 py-1 text-xs font-bold tracking-[0.35em] uppercase">
+        <div className="flex-1 md:pr-8 text-center md:text-left">
+          <span className="inline-block mb-4 md:mb-5 
+                           bg-gradient-to-r from-red-600 to-red-700 
+                           px-3 py-1 md:px-4 
+                           text-[10px] md:text-xs 
+                           font-bold tracking-[0.25em] md:tracking-[0.35em] 
+                           uppercase">
             {member.role}
           </span>
 
-          <h3 className="text-3xl md:text-4xl font-bold leading-tight tracking-wide mb-4">
+          <h3 className="font-bold leading-tight tracking-wide mb-3 md:mb-4
+                         text-xl sm:text-2xl md:text-4xl">
             {member.name}
           </h3>
 
-          <p className="text-gray-300 text-sm leading-relaxed mb-8">
+          <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6 md:mb-8">
             {member.bio}
           </p>
 
           {/* Bottom Info */}
-          <div className="pt-6 border-t border-white/20">
-            <div className="flex gap-8">
+          <div className="pt-5 md:pt-6 border-t border-white/20">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center md:justify-start">
               <div>
-                <p className="text-gray-500 text-xs mb-1 uppercase tracking-wider">Specialty</p>
-                <p className="text-white text-sm">{member.specialty}</p>
+                <p className="text-gray-500 text-[10px] mb-1 uppercase tracking-wider">
+                  Specialty
+                </p>
+                <p className="text-white text-xs sm:text-sm">
+                  {member.specialty}
+                </p>
               </div>
               <div>
-                <p className="text-gray-500 text-xs mb-1 uppercase tracking-wider">Experience</p>
-                <p className="text-white text-sm">{member.experience}</p>
+                <p className="text-gray-500 text-[10px] mb-1 uppercase tracking-wider">
+                  Experience
+                </p>
+                <p className="text-white text-xs sm:text-sm">
+                  {member.experience}
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right Side - Large Member Photo */}
-        <div className="w-72 h-96 flex-shrink-0 relative overflow-hidden border-2 border-red-500/40 group-hover:border-red-500 transition-all duration-500">
-          <img 
-            src={member.avatar} 
+        {/* Right Side - Member Photo */}
+        <div className="mt-8 md:mt-0 
+                        w-48 h-64 sm:w-56 sm:h-72 md:w-72 md:h-96 
+                        flex-shrink-0 relative overflow-hidden 
+                        border-2 border-red-500/40 
+                        group-hover:border-red-500 
+                        transition-all duration-500">
+          <img
+            src={member.avatar}
             alt={member.name}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
-          {/* Subtle gradient overlay on photo */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent 
+                          opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
       </div>
 
       {/* Corner Accents */}
-      <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-red-500/40 z-20" />
-      <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-red-500/40 z-20" />
+      <div className="absolute top-0 right-0 w-10 h-10 md:w-12 md:h-12 border-t-2 border-r-2 border-red-500/40 z-20" />
+      <div className="absolute bottom-0 left-0 w-10 h-10 md:w-12 md:h-12 border-b-2 border-l-2 border-red-500/40 z-20" />
     </motion.div>
   );
 };
+
 
 // Case Study Card Component
 const CaseStudyCard = ({ project, index, onClick }) => {
@@ -340,25 +363,44 @@ const CaseStudyCard = ({ project, index, onClick }) => {
       <div className="absolute inset-0 bg-black/65 group-hover:bg-black/50 transition-colors duration-500" />
 
       {/* Card Content */}
-      <div className="relative z-10 p-10 h-full flex flex-col justify-between min-h-[500px]">
+      <div className="relative z-10 h-full flex flex-col justify-between 
+                      p-6 sm:p-8 md:p-10 
+                      min-h-[360px] sm:min-h-[420px] md:min-h-[500px]">
+        
         {/* Top */}
         <div>
-          <span className="inline-block mb-5 bg-gradient-to-r from-red-600 to-red-700 px-4 py-1 text-xs font-bold tracking-[0.35em] uppercase">
+          <span className="inline-block mb-4 md:mb-5 
+                           bg-gradient-to-r from-red-600 to-red-700 
+                           px-3 py-1 md:px-4 
+                           text-[10px] md:text-xs 
+                           font-bold tracking-[0.25em] md:tracking-[0.35em] 
+                           uppercase">
             {project.category}
           </span>
 
-          <h3 className="text-3xl md:text-4xl font-bold leading-tight tracking-wide">
+          <h3 className="font-bold leading-tight tracking-wide
+                         text-xl sm:text-2xl md:text-4xl">
             {project.title}
           </h3>
         </div>
 
         {/* Bottom */}
-        <div className="flex items-center justify-between pt-12 border-t border-white/20">
-          <span className="text-sm tracking-[0.4em] text-gray-300 uppercase group-hover:text-red-500 transition-colors duration-300">
+        <div className="flex items-center justify-between 
+                        pt-6 sm:pt-8 md:pt-12 
+                        border-t border-white/20">
+          
+          <span className="text-[10px] sm:text-xs md:text-sm 
+                           tracking-[0.25em] md:tracking-[0.4em] 
+                           text-gray-300 uppercase 
+                           group-hover:text-red-500 
+                           transition-colors duration-300">
             View Breakdown
           </span>
 
-          <div className="relative w-14 h-14 rounded-full overflow-hidden border border-white/30">
+          <div className="relative 
+                          w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 
+                          rounded-full overflow-hidden 
+                          border border-white/30">
             <img
               src={project.logo}
               alt="logo"
@@ -369,11 +411,12 @@ const CaseStudyCard = ({ project, index, onClick }) => {
       </div>
 
       {/* Corner Accents */}
-      <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-red-500/40" />
-      <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-red-500/40" />
+      <div className="absolute top-0 right-0 w-10 h-10 md:w-12 md:h-12 border-t-2 border-r-2 border-red-500/40" />
+      <div className="absolute bottom-0 left-0 w-10 h-10 md:w-12 md:h-12 border-b-2 border-l-2 border-red-500/40" />
     </motion.div>
   );
 };
+
 
 // Case Study Modal Component
 const CaseStudyModal = ({ project, onClose }) => {
@@ -385,41 +428,50 @@ const CaseStudyModal = ({ project, onClose }) => {
       onClick={onClose}
       className="fixed inset-0 bg-black/95 z-50 overflow-y-auto"
     >
-      <div className="min-h-screen p-4 md:p-8">
+      <div className="min-h-screen p-3 sm:p-4 md:p-8">
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.95, opacity: 0 }}
           transition={{ duration: 0.3 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative bg-zinc-900 border border-red-500/30 max-w-6xl mx-auto my-8 font-KronaOne"
+          className="relative bg-zinc-900 border border-red-500/30 
+                     max-w-full sm:max-w-3xl md:max-w-5xl lg:max-w-6xl 
+                     mx-auto my-4 sm:my-6 md:my-8 font-KronaOne"
         >
 
-          <div className="p-8 md:p-16">
+          <div className="p-4 sm:p-6 md:p-16">
             {/* Header */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="mb-12"
+              className="mb-8 sm:mb-10 md:mb-12"
             >
-              <span className="inline-block mb-4 bg-gradient-to-r from-red-600 to-red-700 px-4 py-1 text-xs font-bold tracking-[0.35em] uppercase">
+              <span className="inline-block mb-4 bg-gradient-to-r from-red-600 to-red-700 
+                               px-3 sm:px-4 py-1 text-[10px] sm:text-xs 
+                               font-bold tracking-[0.25em] sm:tracking-[0.35em] uppercase">
                 {project.category}
               </span>
-              <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">{project.title}</h2>
-              
-              <div className="grid grid-cols-3 gap-8 pb-8 border-b border-zinc-800">
+
+              <h2 className="text-2xl sm:text-3xl md:text-6xl font-bold 
+                             mb-6 sm:mb-8 leading-tight">
+                {project.title}
+              </h2>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 
+                              pb-6 sm:pb-8 border-b border-zinc-800">
                 <div>
-                  <p className="text-gray-500 text-xs mb-2 uppercase tracking-wider">Client</p>
-                  <p className="text-white text-lg">{project.client}</p>
+                  <p className="text-gray-500 text-xs mb-1 uppercase tracking-wider">Client</p>
+                  <p className="text-white text-sm sm:text-lg">{project.client}</p>
                 </div>
                 <div>
-                  <p className="text-gray-500 text-xs mb-2 uppercase tracking-wider">Year</p>
-                  <p className="text-white text-lg">{project.year}</p>
+                  <p className="text-gray-500 text-xs mb-1 uppercase tracking-wider">Year</p>
+                  <p className="text-white text-sm sm:text-lg">{project.year}</p>
                 </div>
                 <div>
-                  <p className="text-gray-500 text-xs mb-2 uppercase tracking-wider">Duration</p>
-                  <p className="text-white text-lg">{project.duration}</p>
+                  <p className="text-gray-500 text-xs mb-1 uppercase tracking-wider">Duration</p>
+                  <p className="text-white text-sm sm:text-lg">{project.duration}</p>
                 </div>
               </div>
             </motion.div>
@@ -429,7 +481,7 @@ const CaseStudyModal = ({ project, onClose }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="mb-16"
+              className="mb-10 sm:mb-12 md:mb-16"
             >
               <video
                 src={project.video}
@@ -437,7 +489,9 @@ const CaseStudyModal = ({ project, onClose }) => {
                 loop
                 muted
                 playsInline
-                className="w-full h-[500px] object-cover border border-red-500/30"
+                className="w-full 
+                           h-[220px] sm:h-[320px] md:h-[500px] 
+                           object-cover border border-red-500/30"
               />
             </motion.div>
 
@@ -446,10 +500,12 @@ const CaseStudyModal = ({ project, onClose }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="mb-16"
+              className="mb-10 sm:mb-12 md:mb-16"
             >
-              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-red-500">The Challenge</h3>
-              <p className="text-gray-300 leading-relaxed text-base md:text-lg">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-red-500">
+                The Challenge
+              </h3>
+              <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg">
                 {project.challenge}
               </p>
             </motion.div>
@@ -459,15 +515,17 @@ const CaseStudyModal = ({ project, onClose }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="mb-16"
+              className="mb-10 sm:mb-12 md:mb-16"
             >
-              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-red-500">Our Solution</h3>
-              <p className="text-gray-300 leading-relaxed text-base md:text-lg mb-8">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-red-500">
+                Our Solution
+              </h3>
+              <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg mb-6 sm:mb-8">
                 {project.solution}
               </p>
 
               {/* Image Gallery */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                 {project.images.map((img, idx) => (
                   <motion.img
                     key={idx}
@@ -476,7 +534,10 @@ const CaseStudyModal = ({ project, onClose }) => {
                     transition={{ delay: 0.5 + idx * 0.1 }}
                     src={img}
                     alt={`Project image ${idx + 1}`}
-                    className="w-full h-48 object-cover border border-red-500/30 hover:border-red-500 transition-colors duration-300"
+                    className="w-full 
+                               h-40 sm:h-44 md:h-48 
+                               object-cover border border-red-500/30 
+                               hover:border-red-500 transition-colors duration-300"
                   />
                 ))}
               </div>
@@ -487,10 +548,12 @@ const CaseStudyModal = ({ project, onClose }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="mb-16"
+              className="mb-10 sm:mb-12 md:mb-16"
             >
-              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-red-500">The Process</h3>
-              <p className="text-gray-300 leading-relaxed text-base md:text-lg">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-red-500">
+                The Process
+              </h3>
+              <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg">
                 {project.process}
               </p>
             </motion.div>
@@ -500,14 +563,18 @@ const CaseStudyModal = ({ project, onClose }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="mb-16"
+              className="mb-10 sm:mb-12 md:mb-16"
             >
-              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-red-500">Technologies Used</h3>
-              <div className="flex flex-wrap gap-3">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-red-500">
+                Technologies Used
+              </h3>
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {project.technologies.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-4 py-2 bg-zinc-800 border border-red-500/30 text-sm uppercase tracking-wider"
+                    className="px-3 sm:px-4 py-2 bg-zinc-800 
+                               border border-red-500/30 
+                               text-[10px] sm:text-sm uppercase tracking-wider"
                   >
                     {tech}
                   </span>
@@ -520,10 +587,12 @@ const CaseStudyModal = ({ project, onClose }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="mb-16"
+              className="mb-10 sm:mb-12 md:mb-16"
             >
-              <h3 className="text-2xl md:text-3xl font-bold mb-6 text-red-500">Results & Impact</h3>
-              <p className="text-gray-300 leading-relaxed text-base md:text-lg">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6 text-red-500">
+                Results & Impact
+              </h3>
+              <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg">
                 {project.results}
               </p>
             </motion.div>
@@ -533,19 +602,28 @@ const CaseStudyModal = ({ project, onClose }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
-              className="border-l-4 border-red-500 pl-8 py-6 bg-zinc-800/50"
+              className="border-l-4 border-red-500 
+                         pl-4 sm:pl-6 md:pl-8 
+                         py-4 sm:py-6 
+                         bg-zinc-800/50"
             >
-              <p className="text-gray-300 text-lg italic mb-4">
+              <p className="text-gray-300 text-sm sm:text-lg italic mb-3 sm:mb-4">
                 "{project.testimonial.text}"
               </p>
-              <p className="text-white font-bold">{project.testimonial.author}</p>
-              <p className="text-gray-400 text-sm">{project.testimonial.position}</p>
+              <p className="text-white font-bold text-sm sm:text-base">
+                {project.testimonial.author}
+              </p>
+              <p className="text-gray-400 text-xs sm:text-sm">
+                {project.testimonial.position}
+              </p>
             </motion.div>
+
           </div>
         </motion.div>
       </div>
     </motion.div>
   );
 };
+
 
 export default OurStudio;
