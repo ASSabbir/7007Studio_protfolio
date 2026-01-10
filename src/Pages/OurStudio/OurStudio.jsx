@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
 import HeroSectionStudio from './HeroSectionStudio';
 import HowHelp from './HowHelp';
 import Pipeline from './Pipeline';
