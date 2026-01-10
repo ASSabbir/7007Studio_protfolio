@@ -148,20 +148,34 @@ const Package = () => {
     const dot = dotRef.current;
 
     if (dot) {
+      // Detect screen size for responsive adjustments
+      const screenWidth = window.innerWidth;
+
+      // Set different y-distance for mobile/tablet
+      let yDistance = 800; // default for desktop
+      if (screenWidth < 1024 && screenWidth >= 640) {
+        // Tablet
+        yDistance = 600;
+      } else if (screenWidth < 640) {
+        // Mobile
+        yDistance = 400;
+      }
+
       gsap.to(dot, {
-        y: 800,
-        ease: 'none',
+        y: yDistance,
+        ease: "none",
         scrollTrigger: {
-          trigger: '.scroll-section',
-          start: 'top center',
-          end: 'bottom center',
+          trigger: ".scroll-section",
+          start: "top center",
+          end: "bottom center",
           scrub: 1,
-        }
+        },
       });
     }
 
+    // Cleanup ScrollTriggers
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
@@ -283,7 +297,7 @@ const ServiceCard = ({ item, index, onClick }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7, delay: index * 0.1 }}
-      className="relative overflow-hidden border border-red-500/30 bg-black cursor-pointer group h-[300px] font-KronaOne"
+      className="relative overflow-hidden border border-red-500/30 bg-black cursor-pointer group h-[300px] sm:h-[320px] md:h-[350px] font-KronaOne"
       onClick={onClick}
     >
       {/* Background Video */}
@@ -300,26 +314,26 @@ const ServiceCard = ({ item, index, onClick }) => {
       <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition-all duration-500" />
 
       {/* Card Content - Bottom Only */}
-      <div className="relative z-10 h-full flex flex-col justify-end p-8">
+      <div className="relative z-10 h-full flex flex-col justify-end p-4 sm:p-6 md:p-8">
         {/* Title */}
-        <h3 className="text-2xl md:text-2xl text-white leading-tight tracking-wide mb-2 font-KronaOne">
+        <h3 className="text-xl sm:text-2xl md:text-2xl text-white leading-tight tracking-wide mb-1 sm:mb-2 md:mb-2 font-KronaOne">
           {item.title}
         </h3>
 
         {/* Description */}
-        <p className="text-red-500 text-sm font-medium mb-3 font-KronaOne">
+        <p className="text-red-500 text-sm sm:text-sm md:text-sm font-medium mb-2 sm:mb-3 md:mb-3 font-KronaOne">
           {item.description}
         </p>
 
         {/* Price Range */}
-        <p className="text-gray-300 text-lg font-semibold mb-4 font-KronaOne">
+        <p className="text-gray-300 text-base sm:text-lg md:text-lg font-semibold mb-3 sm:mb-4 md:mb-4 font-KronaOne">
           {item.priceRange}
         </p>
       </div>
 
       {/* Corner Accents */}
-      <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-red-500/40" />
-      <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-red-500/40" />
+      <div className="absolute top-0 right-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 border-t-2 border-r-2 border-red-500/40" />
+      <div className="absolute bottom-0 left-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 border-b-2 border-l-2 border-red-500/40" />
     </motion.div>
   );
 };
@@ -610,6 +624,7 @@ const ServiceModal = ({ service, onClose }) => {
             )}
           </div>
         </div>
+
       </motion.div>
     </motion.div>
   );

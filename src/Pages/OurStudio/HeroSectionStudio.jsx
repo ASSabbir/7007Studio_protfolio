@@ -41,7 +41,7 @@ const HeroSectionStudio = () => {
               tracking-wider
             "
           >
-            Welcome
+            Welcome 
           </motion.h1>
 
           {/* Subtitle */}
@@ -86,7 +86,7 @@ const HeroSectionStudio = () => {
           </motion.p>
 
         </div>
-      </motion.div>
+      </motion.div> 
     </div>
   );
 };
