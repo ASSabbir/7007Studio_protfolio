@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import vdo1 from "../../assets/video/montage footage.mp4";
+import vdo1 from "../../assets/video/montage footage CF.mp4";
 
 const HeroSectionStudio = () => {
   return (
@@ -30,7 +30,7 @@ const HeroSectionStudio = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-8xl lg:text-9xl font-bold mb-12 text-red-600 uppercase tracking-wider"
+            className="text-4xl md:text-8xl lg:text-9xl font-bold mb-6 text-red-600 uppercase tracking-tighter"
           >
             Welcome 
           </motion.h1>
@@ -40,7 +40,7 @@ const HeroSectionStudio = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-8 text-red-600 uppercase tracking-wide"
+            className="text-2xl md:text-4xl lg:text-5xl font-bold mb-8 text-red-600 uppercase tracking-tighter"
           >
             To 7007 Studio
           </motion.h2>

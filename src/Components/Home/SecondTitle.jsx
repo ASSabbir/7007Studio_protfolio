@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
 import video1 from '../../assets/video/bg2.mp4'
 
 const SecondTitle = () => {
@@ -18,7 +17,7 @@ const SecondTitle = () => {
       {/* Main Section with Video */}
       <div
         ref={ref}
-        className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] flex flex-col justify-center items-start overflow-hidden"
+        className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] flex flex-col justify-center items-start overflow-hidden"
       >
         {/* Background Video */}
         <video
@@ -36,21 +35,17 @@ const SecondTitle = () => {
  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black via-black/60 to-transparent" />
         {/* Content */}
         <div className="relative z-10 w-full 
-          px-6 sm:px-10 md:px-16 lg:px-20
+          px-4 sm:px-6 md:px-12 lg:px-20
           flex flex-col justify-center items-start"
         >
-          {/* Motion Title*/}
+          {/* Motion Title */}
           <motion.div
             
             className="font-KronaOne px-15 pt-15 text-red-600 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl 
               font- leading-none tracking-tighter relative"
           >
-            <span className="relative z-10"
-              
-            >
-              7007 Studio is a CGI, VFX, post-production, and gaming studio.
-              we specialize in 3D animation and visual effects
-            </span>
+            7007 Studio is a CGI, VFX, post-production, and gaming studio.
+            We specialize in 3D animation and visual effects.
           </motion.div>
 
           {/* Bottom White Text */}

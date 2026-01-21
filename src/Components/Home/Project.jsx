@@ -39,15 +39,15 @@ const Project = () => {
         <div className="min-h-screen bg-black text-white">
 
             {/* Section Title */}
-            <div className="text-center mb-24">
-                <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold font-KronaOne text-red-600">
+            <div className="text-center mb-16 sm:mb-20 md:mb-24 px-6">
+                <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold font-KronaOne text-red-600">
                     OUR HANDPICK PROJECT
                 </h2>
             </div>
 
             {/* Project Grid Wrapper */}
-            <div className="px-10 md:px-32 lg:px-52 font-KronaOne">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div className="px-4 sm:px-10 md:px-20 lg:px-52 font-KronaOne">
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 md:gap-20">
                     {projects.map((item, index) => (
                         <motion.div
                             key={item.id}
@@ -55,7 +55,7 @@ const Project = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.7, delay: index * 0.1 }}
-                            className="relative overflow-hidden border border-red-500/30 bg-black"
+                            className="relative overflow-hidden border border-red-500/30 bg-black rounded-xl sm:rounded-2xl"
                         >
                             {/* Background Video */}
                             <video
@@ -71,29 +71,29 @@ const Project = () => {
                             <div className="absolute inset-0 bg-black/65" />
 
                             {/* Card Content */}
-                            <div className="relative z-10 p-10 h-full flex flex-col justify-between">
+                            <div className="relative z-10 p-6 sm:p-8 md:p-10 h-full flex flex-col justify-between">
 
                                 {/* Top */}
                                 <div>
-                                    <span className="inline-block mb-5 bg-gradient-to-r from-red-600 to-red-700 px-4 py-1 text-xs font-bold tracking-[0.35em] uppercase">
+                                    <span className="inline-block mb-3 sm:mb-4 bg-gradient-to-r from-red-600 to-red-700 px-3 sm:px-4 py-1 text-xs sm:text-sm font-bold tracking-[0.3em] sm:tracking-[0.35em] uppercase">
                                         {item.category}
                                     </span>
 
-                                    <h3 className="text-3xl md:text-4xl font-bold font- leading-tight tracking-wide">
+                                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight tracking-wide">
                                         {item.title}
                                     </h3>
                                 </div>
 
                                 {/* Bottom */}
-                                <div className="flex items-center justify-between pt-12 border-t border-white/20">
+                                <div className="flex items-center justify-between pt-6 sm:pt-8 md:pt-12 border-t border-white/20">
                                     <NavLink
                                         to="/our_studio"
-                                        className="text-sm tracking-[0.4em] text-gray-300 uppercase hover:text-red-500 transition-colors duration-300"
+                                        className="text-xs sm:text-sm md:text-sm tracking-[0.35em] sm:tracking-[0.4em] text-gray-300 uppercase hover:text-red-500 transition-colors duration-300"
                                     >
                                         View Project
                                     </NavLink>
 
-                                    <div className="relative w-14 h-14 rounded-full overflow-hidden border border-white/30">
+                                    <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border border-white/30">
                                         <img
                                             src={item.logo}
                                             alt="logo"
@@ -104,8 +104,8 @@ const Project = () => {
                             </div>
 
                             {/* Corner Accents */}
-                            <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-red-500/40" />
-                            <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-red-500/40" />
+                            <div className="absolute top-0 right-0 w-8 sm:w-12 h-8 sm:h-12 border-t-2 border-r-2 border-red-500/40" />
+                            <div className="absolute bottom-0 left-0 w-8 sm:w-12 h-8 sm:h-12 border-b-2 border-l-2 border-red-500/40" />
                         </motion.div>
                     ))}
                 </div>

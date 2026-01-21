@@ -16,8 +16,8 @@ const Philosophy = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
 
         {/* Left Side - Text */}
-        <div className="flex flex-col justify-center items-start px-12 md:px-28 lg:px-32 py-20 lg:py-0 z-10 relative">
-          <div className="max-w-5xl w-full">
+        <div className="flex flex-col justify-center items-start px-6 sm:px-12 md:px-20 lg:px-32 py-16 sm:py-20 lg:py-0 z-10 relative">
+          <div className="max-w-full sm:max-w-3xl lg:max-w-5xl w-full">
 
             {/* Title */}
             <motion.div
@@ -81,7 +81,7 @@ const Philosophy = () => {
         </div>
 
         {/* Right Side - Video */}
-        <div className="relative h-screen overflow-hidden">
+        <div className="relative h-96 sm:h-[500px] md:h-[600px] lg:h-screen overflow-hidden">
           <video
             autoPlay
             loop

@@ -147,17 +147,17 @@ const Pipeline = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-black  text-white py-20 px-4 md:px-8 font-">
+        <div className="min-h-screen bg-black  text-white py-20 px-8 md:px-8 font-">
             {/* Header */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="max-w-7xl mx-auto mb-20"
             >
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 text-center">
+                <h1 className="text-5xl md:text-7xl font-bold mb-6 text-center tracking-tighter">
                     Our <span className="text-red-500">Pipeline</span>
                 </h1>
-                <p className="text-gray-400 text-lg text-center">
+                <p className="text-gray-400 text-lg text-center tracking-tighter">
                     A streamlined 7-step journey through our 3D production process. 
                     From concept to final delivery, every phase brings your vision closer to reality.
                 </p>
