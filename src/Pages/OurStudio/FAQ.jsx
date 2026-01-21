@@ -46,10 +46,10 @@ const FAQ = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="mb-14 sm:mb-16 md:mb-20 text-center"
                 >
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 tracking-wider">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 tracking-tighter">
                         Frequently Asked <span className="text-red-500">Questions</span>
                     </h1>
-                    <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
+                    <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-3xl mx-auto tracking-tighter">
                         Find answers to the most common questions about our 3D production services.
                         Can't find what you're looking for? Feel free to reach out.
                     </p>
@@ -72,7 +72,7 @@ const FAQ = () => {
                                 {/* Question */}
                                 <button
                                     onClick={() => toggleQuestion(index)}
-                                    className="w-full text-left p-5 sm:p-6 md:p-8 flex items-start justify-between gap-4 sm:gap-6 hover:bg-red-500/5 transition-colors duration-300 group"
+                                    className="w-full text-left p-5 sm:p-6 md:p-8 flex items-start justify-between gap-4 sm:gap-6 hover:bg-red-500/5 transition-colors duration-300 group tracking-tighter"
                                 >
                                     <span className="text-base sm:text-lg md:text-2xl font-bold flex-1 leading-snug sm:leading-tight group-hover:text-red-500 transition-colors duration-300">
                                         {item.question}
