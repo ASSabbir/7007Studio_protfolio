@@ -4,7 +4,11 @@ import HeroSectionStudio from './HeroSectionStudio';
 import HowHelp from './HowHelp';
 import Pipeline from './Pipeline';
 import FAQ from './FAQ';
-import vdo1 from '../../assets/video/vid1.mp4';
+import vdo1 from '../../assets/video/CF1.mp4';
+import vdo2 from '../../assets/video/CF2.mp4';
+import vdo3 from '../../assets/video/CF3.mp4';
+import vdo4 from '../../assets/video/CF4.mp4';
+
 
 
 
@@ -85,7 +89,7 @@ const OurStudio = () => {
       title: 'Brand Identity Campaign',
       category: 'Motion Graphics',
       description: 'Complete brand transformation with stunning motion graphics and visual storytelling.',
-      video: vdo1,
+      video: vdo2,
       logo: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=200&h=200&fit=crop',
       client: 'StartupX',
       year: '2024',
@@ -112,7 +116,7 @@ const OurStudio = () => {
       title: 'Product Launch Video',
       category: 'VFX',
       description: 'Cinematic product reveal with breathtaking visual effects and CGI integration.',
-video: vdo1,
+      video: vdo3,
       logo: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=200&h=200&fit=crop',
       client: 'Innovation Labs',
       year: '2024',
@@ -139,7 +143,7 @@ video: vdo1,
       title: 'Architectural Visualization',
       category: '3D Rendering',
       description: 'Photorealistic architectural renders for luxury real estate development.',
-     video: vdo1,
+     video: vdo4,
       logo: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=200&h=200&fit=crop',
       client: 'Skyline Properties',
       year: '2024',
@@ -172,7 +176,7 @@ video: vdo1,
   
 
       {/* Team Members Section */}
-      <section className="py-20 px-4 md:px-8">
+      <section className="py-20 px-6 md:px-8">
         <div className="max-w-7xl mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -180,10 +184,10 @@ video: vdo1,
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-5xl md:text-7xl font-bold mb-20 text-center">
+            <h2 className="text-4xl md:text-7xl font-bold mb-20 text-center tracking-tighter">
               Team <span className="text-red-600">MEMBER'S</span>
             </h2>
-            <p className="text-gray-300 text-4xl w-full mx-auto text-center">
+            <p className="text-gray-300 text-2xl w-full mx-auto text-center tracking-tighter">
               7007 Studio is a focused, founder-led creative studio, collaborating with a small network of trusted artists and specialists when needed.
             </p>
           </motion.div>
@@ -197,7 +201,7 @@ video: vdo1,
       </section>
 
       {/* Case Studies Section */}
-      <section className="pb-20 px-4 md:px-8">
+      <section className="pb-20 px-6 md:px-8">
         <div className="max-w-7xl mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -205,10 +209,10 @@ video: vdo1,
             viewport={{ once: true }}
             className="mb-16"
           >
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-center">
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 text-center tracking-tighter">
               Case <span className="text-red-600">Studies</span>
             </h2>
-            <p className="text-gray-300 text-lg text-center w-full mx-auto">
+            <p className="text-gray-300 text-lg text-center w-full mx-auto tracking-tighter">
              <span className='text-5xl text-red-600'>We begin </span> by understanding the project from the <span className='text-red-600'>client’s perspective</span>. From there, we translate that vision into a functional solution — breaking complex ideas down into clear, manageable parts and building them with intention and precision.
             </p>
           </motion.div>
@@ -256,7 +260,7 @@ const TeamCard = ({ member, index }) => {
       className="relative overflow-hidden border border-red-500/30 bg-black group"
     >
       {/* Background Image with Heavy Blur and Dark Overlay */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 ">
         <img
           src={member.avatar}
           alt={member.name}
@@ -269,7 +273,7 @@ const TeamCard = ({ member, index }) => {
       {/* Card Content */}
       <div className="relative z-10 h-full flex flex-col md:flex-row items-center 
                       p-6 sm:p-8 md:p-10 
-                      min-h-[360px] sm:min-h-[380px] md:min-h-[400px]">
+                      min-h-[220px] sm:min-h-[240px] md:min-h-[260px]">
         
         {/* Left Side - Content */}
         <div className="flex-1 md:pr-8 text-center md:text-left">
@@ -366,7 +370,7 @@ const CaseStudyCard = ({ project, index, onClick }) => {
       {/* Card Content */}
       <div className="relative z-10 h-full flex flex-col justify-between 
                       p-6 sm:p-8 md:p-10 
-                      min-h-[360px] sm:min-h-[420px] md:min-h-[500px]">
+                      min-h-[260px] sm:min-h-[320px] md:min-h-[340px]">
         
         {/* Top */}
         <div>

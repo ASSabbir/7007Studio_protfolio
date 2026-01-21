@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
 import video1 from '../../assets/video/bg2.mp4'
 
 const SecondTitle = () => {
