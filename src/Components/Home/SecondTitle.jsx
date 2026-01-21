@@ -33,6 +33,7 @@ const SecondTitle = () => {
         {/* Black Overlay */}
          {/* <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black via-black/40 to-transparent" /> */}
  <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black via-black/30 to-transparent" />
+ <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black via-black/60 to-transparent" />
         {/* Content */}
         <div className="relative z-10 w-full 
           px-6 sm:px-10 md:px-16 lg:px-20
@@ -40,9 +41,9 @@ const SecondTitle = () => {
         >
           {/* Motion Title*/}
           <motion.div
-            style={{ y, opacity }}
+            
             className="font-KronaOne px-15 pt-15 text-red-600 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl 
-              font- leading-none tracking-tight relative"
+              font- leading-none tracking-tighter relative"
           >
             <span className="relative z-10"
               
@@ -54,7 +55,7 @@ const SecondTitle = () => {
 
           {/* Bottom White Text */}
           <div className="px-15 mt-10 md:mt-12 pb-15">
-            <p className="font-KronaOne text-white text-2xl sm:text-3xl md:text-4xl lg:text-2xl leading-snug md:leading-tight tracking-wide">
+            <p className="font-KronaOne text-white text-2xl sm:text-3xl md:text-4xl lg:text-2xl leading-snug md:leading-tight tracking-tight">
               We collaborate <br />
               with studios, agencies, and brands to deliver <br />
               production-ready digital content.
