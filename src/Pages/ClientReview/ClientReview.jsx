@@ -17,7 +17,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <div className="bg-black px-4 md:px-8 py- bg-gradient-to-b from-black to-red-950/5">
+    <div className="bg-black px-4 md:px-8 pt-18 bg-gradient-to-b from-black to-red-950/5">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, index) => (
@@ -96,18 +96,9 @@ const ClientReview = () => {
       {/* Stats Section */}
       <StatsSection />
 
-      {/* Reviews Section - Updated with Service Card Style */}
-      <div className="bg-black px-4 md:px-8 py-24 w-screen overflow-hidden">
-        <div className="max-w-7xl mx-auto mb-16">
-          {/* <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-9xl font-bold text-center"
-          >
-            What Our <span className="text-red-600">Clients Say</span>
-          </motion.h2> */}
-        </div>
+      {/* Reviews Section */}
+      <div className="bg-black px-4 md:px-8 py-14 overflow-hidden">
+        
 
         {/* Single Marquee Row with Updated Cards */}
         <MarqueeRow reviews={reviews} />
@@ -116,7 +107,7 @@ const ClientReview = () => {
   );
 };
 
-// Updated Review Card Component - Following ServiceCard Design
+// Updated Review Card Component 
 const ReviewCard3D = ({ review }) => {
   return (
     <div className="flex-shrink-0 w-[85vw] md:w-[620px] lg:w-[460px] mx-6">
@@ -150,7 +141,7 @@ const ReviewCard3D = ({ review }) => {
           </div>
 
           
-          <div className="absolute top-0 right-0 w-20 h-20 border-t-8 border-r-8 border-red-700"></div>
+          <div className="absolute top-0 right-0 w-20 h-20 border-t-4 border-r-4 border-red-700"></div>
         </div>
 
         {/* Bottom Section - Full Width */}
@@ -172,7 +163,7 @@ const ReviewCard3D = ({ review }) => {
             </div>
 
             {/* Bottom Left Red Corner */}
-            <div className="absolute bottom-0 left-0 w-16 h-16 border-b-8 border-l-8 border-red-700"></div>
+            <div className="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-red-700"></div>
           </div>
 
           {/* Bottom Right - Image with Glow */}

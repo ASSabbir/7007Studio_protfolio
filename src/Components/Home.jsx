@@ -59,33 +59,33 @@ const Home = () => {
     // All animations in sequence
     tl.from('.navlinks-li', {
       y: -100,
-      delay:0.4,
+      delay: 0.4,
       opacity: 0,
-      ease:'power2.in',
+      ease: 'power2.in',
       duration: 0.6
     });
     tl.from('#nav-close-btn', {
       y: -100,
       opacity: 0,
-      
+
       duration: 0.6
     }, "-=0.4");
     tl.from('#showreels-btn', {
       y: 100,
       opacity: 0,
-      ease:'power2.in',
+      ease: 'power2.in',
       duration: 0.6
     }, "-=0.4");
     tl.from('#banner-whatapp-icon', {
       x: 50,
       opacity: 0,
-      ease:'power2.in',
+      ease: 'power2.in',
       duration: 0.3
-    }, );
+    },);
     tl.from('#banner-text-effect', {
       x: -50,
       opacity: 0,
-      ease:'power2.in',
+      ease: 'power2.in',
       duration: 0.3
     }, "-=0.3");
 
@@ -129,7 +129,7 @@ const Home = () => {
       <ClientReview></ClientReview>
       <Marque></Marque>
 
-<HomeContact></HomeContact>
+      <HomeContact></HomeContact>
 
       {/* <SplineSection></SplineSection> */}
     </div>
