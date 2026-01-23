@@ -1,12 +1,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import ReactLenis from "lenis/react";
 import React, { useRef } from "react";
-import vdo1 from '../../assets/video/montage footage.mp4';
+import vdo1 from '../../assets/video/montage footage CF.mp4';
 
 const projects = [
   { title: "Project 1", src: vdo1 },
   { title: "Project 2", src: vdo1 },
-  // { title: "Project 3", src: vdo1 },
 ];
 
 const Skiper17 = () => {
@@ -55,7 +54,7 @@ const Skiper17 = () => {
   );
 };
 
-const StickyCard = ({ i, src, title, progress, range, targetScale }) => {
+const StickyCard = ({ i, src, progress, range, targetScale }) => {
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (

@@ -1,5 +1,4 @@
 import { useGSAP } from '@gsap/react';
-import React from 'react';
 import gsap from 'gsap';
 const Curser = () => {
     useGSAP(()=>{

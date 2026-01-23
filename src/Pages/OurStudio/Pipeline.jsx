@@ -60,7 +60,7 @@ const Pipeline = () => {
     ];
 
     useEffect(() => {
-        // Animate the running arrows along the connection paths
+        // Animate the running arrows 
         connectorRefs.current.forEach((connector, index) => {
             if (connector) {
                 const horizontalLine = connector.querySelector('.horizontal-line');
@@ -72,7 +72,7 @@ const Pipeline = () => {
                     const horizontalWidth = horizontalLine.offsetWidth;
                     const verticalHeight = verticalLine.offsetHeight;
                     
-                    // Create timeline for continuous animation
+                    // Create timeline
                     const tl = gsap.timeline({ repeat: -1 });
                     
                     if (isEven) {

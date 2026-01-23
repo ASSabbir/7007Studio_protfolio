@@ -39,14 +39,14 @@ const Footer = () => {
             </h2>
 
 
-            {/* Bottom Icons - Desktop */}
+            {/* Bottom Icons */}
             <div className="hidden lg:flex gap-4 mt-8 lg:mt-12">
               <AnimatedButton></AnimatedButton>
             </div>
           </div>
         </div>
 
-        {/* Right Side - Info Sections */}
+        {/* Right Side  */}
         <div className="w-full lg:w-[30%] pb-16 font-KronaOne ">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8">
 
@@ -126,7 +126,7 @@ const Footer = () => {
 
       </div>
 
-      {/* Bottom Icons - Mobile Only */}
+      {/* Bottom Icons */}
       <div className="flex lg:hidden justify-center pb-8">
         <AnimatedButton />
       </div>

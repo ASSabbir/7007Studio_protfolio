@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import video1 from '../../assets/video/footage2.mp4'

@@ -1,6 +1,5 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import bg1 from '../../assets/video/bg1.mp4';
+
+import bg1 from '../../assets/video/bg1.mp4'
 
 const ThiredTitle = () => {
   const navigationItems = [
@@ -8,8 +7,18 @@ const ThiredTitle = () => {
     'we specialize in 3D animation and visual effects'
   ];
 
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  return (
+    <ul className="relative border-red-600 flex h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] w-full flex-1 flex-col items-center justify-center gap-1.5 px-4 sm:px-6 md:px-12 lg:px-20 py-3 overflow-hidden">
+
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src={bg1}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
 
   // Split text into individual characters
   const splitText = (text, delayStart) => {

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import React from "react";
 import { cn } from './../../lib/utils';
 
 const TextAnimation = ({navlinks}) => {

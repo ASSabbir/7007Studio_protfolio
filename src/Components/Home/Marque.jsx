@@ -49,7 +49,7 @@ const Marque = () => {
                         </h2>
                     </div>
 
-                    {/* Marquee - Slides from bottom */}
+                    {/* Marquee */}
                     <AnimatePresence>
                         {hoveredIndex === index && (
                             <motion.div
