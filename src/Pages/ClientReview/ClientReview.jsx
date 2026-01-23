@@ -100,14 +100,14 @@ const ClientReview = () => {
       <div className="bg-black px-4 md:px-8 py-14 overflow-hidden">
         
 
-        {/* Single Marquee Row with Updated Cards */}
+        {/* Single Marquee Row */}
         <MarqueeRow reviews={reviews} />
       </div>
     </div>
   );
 };
 
-// Updated Review Card Component 
+//  Review Card Component 
 const ReviewCard3D = ({ review }) => {
   return (
     <div className="flex-shrink-0 w-[85vw] md:w-[620px] lg:w-[460px] mx-6">

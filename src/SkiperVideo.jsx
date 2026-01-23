@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence, useSpring } from "framer-motion";
 import { Play, Plus } from "lucide-react";
-import vdo from '../src/assets/video/montage footage.mp4'
+import vdo from '../src/assets/video/montage footage CF.mp4'
 import {
   MediaController,
   MediaControlBar,

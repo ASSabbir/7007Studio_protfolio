@@ -1,6 +1,4 @@
-import { motion } from "framer-motion";
-import React from "react";
-import { cn } from './../../lib/utils';
+
 import bg1 from '../../assets/video/bg1.mp4'
 
 const ThiredTitle = () => {
@@ -12,7 +10,7 @@ const ThiredTitle = () => {
   return (
     <ul className="relative border-red-600 flex h-[60vh] sm:h-[70vh] md:h-[75vh] lg:h-[80vh] w-full flex-1 flex-col items-center justify-center gap-1.5 px-4 sm:px-6 md:px-12 lg:px-20 py-3 overflow-hidden">
 
-      {/* 🎥 Background Video */}
+      {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
         src={bg1}

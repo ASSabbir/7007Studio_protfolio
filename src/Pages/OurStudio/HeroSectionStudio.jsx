@@ -1,4 +1,4 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 import vdo1 from "../../assets/video/montage footage CF.mp4";
 

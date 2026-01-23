@@ -1,14 +1,11 @@
-import React from "react";
+
 import { Outlet, useNavigate } from "react-router-dom";
 import Nav from "./Components/Nav";
 import logovideo from "../src/assets/video/logo2.mp4";
-import { useRef } from "react";
 import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Footer from "./Components/Footer";
-import { ReactLenis, useLenis } from "lenis/react";
-import Lenis from "lenis";
 import Curser from "./Components/Home/Curser";
 
 gsap.registerPlugin(useGSAP);
@@ -17,7 +14,7 @@ const Root = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  // 🔥 FORCE HOME + RESET SCROLL ON RELOAD
+  // FORCE HOME + RESET SCROLL ON RELOAD
   useEffect(() => {
     // disable browser scroll restore
     if ("scrollRestoration" in window.history) {
@@ -67,18 +64,6 @@ const Root = () => {
     tl.to("#loading_video", {
       display: "none"
     });
-
-    // Optional animations (keep commented if not needed)
-    // tl.from('#title-logo', {
-    //   y: 50,
-    //   opacity: 0
-    // });
-    // tl.to('#title-logo', {
-    //   y: 0,
-    //   opacity: 1,
-    //   duration: 0.5,
-    //   ease: "power4.out",
-    // });
     
 
   });
@@ -95,20 +80,6 @@ const Root = () => {
         id='loading_video'
         className="w-full h-screen object-cover absolute top-0 "></video>
       <Footer></Footer>
-      {/* <ReactLenis
-                root
-                options={{
-                    duration: 1.2,        // scroll duration in seconds (default: 1.2)
-                    easing: (t) => 1 - Math.pow(1 - t, 3), // custom easing curve
-
-                    gestureDirection: 'both', // allow both mouse wheel + touchpad gestures
-                    smoothWheel: true,     // smooth scroll for mouse wheel
-                    smoothTouch: true,    // smooth scroll for touch devices
-                    touchMultiplier: 1.5,  // multiplier for touch scroll speed
-                    wheelMultiplier: 1.5,    // multiplier for wheel scroll speed
-                    infinite: false,       // loop scrolling
-                }}
-            /> */}
     </div>
   );
 };

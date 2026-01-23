@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Banner from './Home/Banner';
 import Marque from './Home/Marque';
 import img1 from '../assets/TLOGO.png'
@@ -6,12 +6,8 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import SecondTitle from './Home/SecondTitle';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import BlackScreen from './Shared/BlackScreen';
-import SplineSection from './Home/SplineSection';
 import ThiredTitle from './Home/ThiredTitle';
 import { Skiper17 } from './Home/Skiper17';
-
-import SkiperVideo from '../SkiperVideo';
 import ClientReview from '../Pages/ClientReview/ClientReview';
 import Philosophy from './Home/Philosopy';
 import Project from './Home/Project';
@@ -37,7 +33,7 @@ const Home = () => {
         scrub: 1,
         pin: true,
         anticipatePin: 1,
-        refreshPriority: -1, // 👈 Add this
+        refreshPriority: -1, 
         markers: false,
         onLeave: () => {
           gsap.set('#intro-logo', { display: 'none' })
@@ -111,7 +107,7 @@ const Home = () => {
       </section>
       <div id='navtrigger' className=' h-60 w-60 absolute top-20'></div>
 
-      {/* 🚀 NORMAL SCROLL AFTER */}
+      {/* NORMAL SCROLL AFTER */}
 
       <ThiredTitle></ThiredTitle>
 
@@ -131,7 +127,6 @@ const Home = () => {
 
       <HomeContact></HomeContact>
 
-      {/* <SplineSection></SplineSection> */}
     </div>
   )
 }
