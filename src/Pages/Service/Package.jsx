@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Clock, CheckCircle, Star, Box } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import vdo1 from '../../assets/video/montage footage.mp4'
+import vdo1 from '../../assets/video/montage footage CF.mp4'
 gsap.registerPlugin(ScrollTrigger);
 
 const Package = () => {
@@ -12,136 +12,255 @@ const Package = () => {
 
   // Sample data for services
   const services = [
+    // ================= GIG BASED =================
     {
       id: 1,
       type: 'gig',
-      title: 'Professional 3D Product Animation',
+      title: '3D Product Modeling',
       category: 'Gig-Based Service',
-      description: 'Photorealistic rendering with smooth transitions',
-      priceRange: '$299 - $999',
+      description: 'E-commerce / Ads / Branding',
+      priceRange: '$120 - $350',
       video: vdo1,
-      thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=600&fit=crop',
       rating: 4.9,
-      reviews: 127,
-      logo: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop',
-      fullDescription: 'Transform your products into stunning visual experiences with our professional 3D product animation service. We specialize in creating photorealistic animations that showcase every detail of your product, from intricate textures to smooth mechanical movements. Our team uses industry-leading software and techniques to deliver animations that not only look incredible but also effectively communicate your product\'s value proposition to your audience.',
+      reviews: 132,
+      fullDescription:
+        'Professional 3D product models created for advertising, branding and e-commerce. Clean topology, real-world scale and production-ready assets.',
       packages: [
-        {
-          name: 'Basic',
-          price: 299,
-          delivery: '5 days',
-          revisions: 2,
-          features: ['15-second animation', 'HD Quality (1080p)', '2 Revisions', 'Basic lighting', 'Product turnaround']
-        },
-        {
-          name: 'Standard',
-          price: 599,
-          delivery: '7 days',
-          revisions: 4,
-          features: ['30-second animation', '4K Quality', '4 Revisions', 'Advanced lighting', 'Background music', 'Multiple camera angles']
-        },
-        {
-          name: 'Premium',
-          price: 999,
-          delivery: '10 days',
-          revisions: 'Unlimited',
-          features: ['60-second animation', '4K Quality', 'Unlimited Revisions', 'Premium lighting & effects', 'Background music', 'Source files included', 'Custom environments']
-        }
+        { name: 'Basic', price: 120, delivery: '2 days', revisions: 1, features: ['1 simple product', 'Clean geometry', 'Real-world scale', 'No textures'] },
+        { name: 'Standard', price: 220, delivery: '3–4 days', revisions: 2, features: ['1 detailed product', 'Clean topology', 'UV unwrapped', 'Basic materials'] },
+        { name: 'Premium', price: 350, delivery: '5 days', revisions: 3, features: ['Complex product', 'High + Low poly', 'Production-ready topology', 'Full material setup'] }
       ]
     },
+
     {
       id: 2,
-      type: 'custom',
-      title: 'Custom VFX Production',
-      category: 'Custom Service',
-      description: 'Tailored visual effects for films & commercials',
-      priceRange: 'Starting at $2,500',
+      type: 'gig',
+      title: 'Photorealistic 3D Rendering',
+      category: 'Gig-Based Service',
+      description: 'Marketing / Ads / Website Visuals',
+      priceRange: '$150 - $450',
       video: vdo1,
-      thumbnail: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=600&fit=crop',
-      rating: 5.0,
-      reviews: 89,
-      logo: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=200&h=200&fit=crop',
-      fullDescription: 'Elevate your visual storytelling with our custom VFX production services. Whether you\'re working on a feature film, commercial, music video, or digital content, our experienced team will work closely with you to bring your creative vision to life. We offer end-to-end VFX solutions including compositing, green screen work, CGI integration, particle effects, and more. Each project is approached with a collaborative mindset, ensuring that the final result exceeds your expectations.',
-      customFeatures: [
-        'Personalized consultation & creative direction',
-        'Custom workflow planning & pipeline setup',
-        'Dedicated project manager & team',
-        'Flexible timeline adapted to your schedule',
-        'Full creative control throughout production',
-        'Premium support & unlimited communication',
-        'Advanced compositing & color grading',
-        'CGI & 3D integration services'
-      ],
-      startingPrice: 2500,
-      estimatedTime: 'Varies by project scope'
+      rating: 4.8,
+      reviews: 101,
+      fullDescription:
+        'High-end cinematic product renders with studio and advanced lighting setups for websites, marketing and ads.',
+      packages: [
+        { name: 'Basic', price: 150, delivery: '2 days', revisions: 1, features: ['1 product', '1 camera angle', 'HD render', 'Studio lighting'] },
+        { name: 'Standard', price: 280, delivery: '3–4 days', revisions: 2, features: ['1 product', '3 camera angles', '4K resolution', 'Advanced lighting'] },
+        { name: 'Premium', price: 450, delivery: '5 days', revisions: 3, features: ['1 product', '5+ camera angles', 'Cinematic lighting', 'High-end materials & reflections'] }
+      ]
     },
+
     {
       id: 3,
       type: 'gig',
-      title: 'Motion Graphics Logo Animation',
+      title: 'Game-Ready 3D Assets',
       category: 'Gig-Based Service',
-      description: 'Eye-catching animations for brand identity',
-      priceRange: '$149 - $499',
+      description: 'Props & Environment Assets',
+      priceRange: '$180 - $600',
       video: vdo1,
-      thumbnail: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&h=600&fit=crop',
-      rating: 4.8,
-      reviews: 203,
-      logo: 'https://images.unsplash.com/photo-1593642634367-d91a135587b5?w=200&h=200&fit=crop',
-      fullDescription: 'Make a lasting impression with professionally crafted logo animations that bring your brand to life. Our motion graphics specialists create dynamic, memorable animations that enhance brand recognition and add a professional touch to your videos, presentations, and digital content. From subtle elegant movements to bold energetic reveals, we tailor each animation to perfectly match your brand personality and communication goals.',
+      rating: 4.9,
+      reviews: 87,
+      fullDescription:
+        'Optimized game assets with PBR textures, proper LODs and engine-ready setups for Unreal and Unity.',
       packages: [
-        {
-          name: 'Basic',
-          price: 149,
-          delivery: '3 days',
-          revisions: 2,
-          features: ['5-second animation', 'HD Quality', '2 Revisions', '1 Concept', 'Simple animation style']
-        },
-        {
-          name: 'Standard',
-          price: 299,
-          delivery: '5 days',
-          revisions: 4,
-          features: ['10-second animation', '4K Quality', '4 Revisions', '2 Concepts', 'Sound effects', 'Multiple export formats']
-        },
-        {
-          name: 'Premium',
-          price: 499,
-          delivery: '7 days',
-          revisions: 'Unlimited',
-          features: ['15-second animation', '4K Quality', 'Unlimited Revisions', '3 Concepts', 'Sound effects', 'Multiple formats', 'Variations for social media']
-        }
+        { name: 'Basic', price: 180, delivery: '3 days', revisions: 1, features: ['Simple prop', 'Low poly', 'UV + base texture'] },
+        { name: 'Standard', price: 350, delivery: '5 days', revisions: 2, features: ['Medium asset', 'PBR textures', 'Unreal / Unity ready'] },
+        { name: 'Premium', price: 600, delivery: '7 days', revisions: 3, features: ['Complex asset', 'Optimized LODs', 'Advanced PBR workflow', 'Engine-ready setup'] }
       ]
     },
+
     {
       id: 4,
-      type: 'custom',
-      title: 'Enterprise Brand Campaign',
-      category: 'Custom Service',
-      description: 'Complete brand storytelling solutions',
-      priceRange: 'Starting at $5,000',
+      type: 'gig',
+      title: '3D Character Modeling',
+      category: 'Gig-Based Service',
+      description: 'Stylized / Semi-Realistic',
+      priceRange: '$300 - $900',
       video: vdo1,
-      thumbnail: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=600&fit=crop',
+      rating: 4.8,
+      reviews: 64,
+      fullDescription:
+        'Stylized and semi-realistic characters for games, animation and marketing with clean topology and textures.',
+      packages: [
+        { name: 'Basic', price: 300, delivery: '5 days', revisions: 1, features: ['Stylized character', 'High-poly sculpt', 'Static pose'] },
+        { name: 'Standard', price: 550, delivery: '7 days', revisions: 2, features: ['Stylized / semi-realistic', 'Clean topology', 'T-pose / A-pose'] },
+        { name: 'Premium', price: 900, delivery: '10 days', revisions: 3, features: ['Detailed character', 'High + low poly', 'Texture sets included', 'Game or render ready'] }
+      ]
+    },
+
+    {
+      id: 5,
+      type: 'gig',
+      title: 'Hard-Surface / Industrial Modeling',
+      category: 'Gig-Based Service',
+      description: 'Mechanical & Industrial Assets',
+      priceRange: '$200 - $700',
+      video: vdo1,
+      rating: 4.9,
+      reviews: 59,
+      fullDescription:
+        'Precision hard-surface and mechanical modeling for industrial, product and technical assets.',
+      packages: [
+        { name: 'Basic', price: 200, delivery: '3 days', revisions: 1, features: ['Simple hard-surface asset', 'Clean shading', 'Non-destructive workflow'] },
+        { name: 'Standard', price: 400, delivery: '5 days', revisions: 2, features: ['Medium complexity asset', 'UV unwrapped', 'Materials applied'] },
+        { name: 'Premium', price: 700, delivery: '7 days', revisions: 3, features: ['Complex mechanical asset', 'Precision modeling', 'Multiple variations'] }
+      ]
+    },
+
+    {
+      id: 6,
+      type: 'gig',
+      title: 'Unreal Engine Asset Setup',
+      category: 'Gig-Based Service',
+      description: 'Scene & Lighting Setup',
+      priceRange: '$250 - $800',
+      video: vdo1,
+      rating: 4.9,
+      reviews: 41,
+      fullDescription:
+        'Professional Unreal Engine setup including materials, lighting, optimization and scene assembly.',
+      packages: [
+        { name: 'Basic', price: 250, delivery: '3 days', revisions: 1, features: ['Asset import', 'Material setup', 'Basic lighting'] },
+        { name: 'Standard', price: 500, delivery: '5 days', revisions: 2, features: ['Scene assembly', 'Optimized materials', 'Camera setup'] },
+        { name: 'Premium', price: 800, delivery: '7 days', revisions: 3, features: ['Cinematic or playable scene', 'Lighting polish', 'Performance optimization'] }
+      ]
+    },
+
+    {
+      id: 7,
+      type: 'gig',
+      title: '3D Animation',
+      category: 'Gig-Based Service',
+      description: 'Product / Simple Character',
+      priceRange: '$200 - $700',
+      video: vdo1,
+      rating: 4.8,
+      reviews: 73,
+      fullDescription:
+        'High-quality product and character animations with cinematic shots and professional lighting.',
+      packages: [
+        { name: 'Basic', price: 200, delivery: '3 days', revisions: 1, features: ['Simple animation', 'Static camera', '5–7 sec clip'] },
+        { name: 'Standard', price: 450, delivery: '5 days', revisions: 2, features: ['Animated camera', 'Lighting & render', '10–15 sec'] },
+        { name: 'Premium', price: 700, delivery: '7 days', revisions: 3, features: ['Cinematic animation', 'Multiple shots', 'High-quality render'] }
+      ]
+    },
+
+    {
+      id: 8,
+      type: 'gig',
+      title: 'Retopology, UV & Optimization',
+      category: 'Gig-Based Service',
+      description: 'Game-ready optimization',
+      priceRange: '$80 - $250',
+      video: vdo1,
+      rating: 4.9,
+      reviews: 66,
+      fullDescription:
+        'Clean quad meshes, UVs, textures and engine-ready optimization.',
+      packages: [
+        { name: 'Basic', price: 80, delivery: '1 day', revisions: 1, features: ['Retopology only', 'Clean quad mesh'] },
+        { name: 'Standard', price: 150, delivery: '2 days', revisions: 2, features: ['Retopo + UV', 'Game-ready'] },
+        { name: 'Premium', price: 250, delivery: '3 days', revisions: 3, features: ['Full optimization', 'Texture setup', 'Engine-ready asset'] }
+      ]
+    },
+
+    // ================= CUSTOM BASED =================
+    {
+      id: 9,
+      type: 'custom',
+      title: 'Games & Interactive Media',
+      category: 'Custom Service',
+      description: 'Full Unreal game asset pipeline',
+      priceRange: 'Starting at $2,000',
+      video: vdo1,
       rating: 5.0,
-      reviews: 45,
-      logo: 'https://images.unsplash.com/photo-1520975916090-3105956dac38?w=200&h=200&fit=crop',
-      fullDescription: 'Launch your brand to new heights with our comprehensive enterprise brand campaign services. We create integrated visual narratives that combine motion graphics, 3D animation, live-action footage, and visual effects to tell your brand story across multiple platforms. From concept development to final delivery, our team handles every aspect of production, ensuring consistency, quality, and impact across all touchpoints of your campaign.',
+      reviews: 42,
+      fullDescription:
+        'Complete asset pipelines for games with characters, props, environments and optimization.',
       customFeatures: [
-        'Full campaign strategy & creative development',
-        'Multi-platform content delivery (TV, web, social)',
-        'Dedicated creative team & art director',
-        'Brand guidelines integration & consistency',
-        'Ongoing support & content iterations',
-        'Analytics, reporting & performance tracking',
-        'Asset library creation & management',
-        'Training & handover sessions'
+        'Full game asset pipeline',
+        'Characters, props, environments',
+        'Unreal Engine workflows',
+        'Optimization & iteration',
+        'Perfect for game studios & indie teams'
       ],
-      startingPrice: 5000,
-      estimatedTime: '4-12 weeks'
+      startingPrice: 2000,
+      estimatedTime: 'Varies by scope'
+    },
+
+    {
+      id: 10,
+      type: 'custom',
+      title: 'Architecture & Interior Visualization',
+      category: 'Custom Service',
+      description: 'Cinematic walkthroughs',
+      priceRange: 'Starting at $1,800',
+      video: vdo1,
+      rating: 4.9,
+      reviews: 56,
+      fullDescription:
+        'Photoreal interior & exterior architectural renders with lighting and mood studies.',
+      customFeatures: [
+        'Exterior & interior renders',
+        'Lighting & mood studies',
+        'Cinematic walkthroughs',
+        'Perfect for architects & real-estate studios'
+      ],
+      startingPrice: 1800,
+      estimatedTime: '1–3 weeks'
+    },
+
+    {
+      id: 11,
+      type: 'custom',
+      title: 'Mechanical & Industrial Parts',
+      category: 'Custom Service',
+      description: 'Precision hard-surface assets',
+      priceRange: 'Starting at $1,500',
+      video: vdo1,
+      rating: 5.0,
+      reviews: 34,
+      fullDescription:
+        'Industrial and mechanical parts with manufacturing-ready accuracy.',
+      customFeatures: [
+        'Precision hard-surface modeling',
+        'Manufacturing-ready assets',
+        'Exploded views & visuals',
+        'Perfect for tech companies & product engineers'
+      ],
+      startingPrice: 1500,
+      estimatedTime: '1–2 weeks'
+    },
+
+    {
+      id: 12,
+      type: 'custom',
+      title: '3D Printable Models',
+      category: 'Custom Service',
+      description: 'STL / OBJ print-ready',
+      priceRange: 'Starting at $500',
+      video: vdo1,
+      rating: 4.8,
+      reviews: 48,
+      fullDescription:
+        'Print-ready geometry with correct wall thickness for functional or collectible models.',
+      customFeatures: [
+        'Print-ready geometry',
+        'Correct wall thickness',
+        'STL / OBJ delivery',
+        'Functional or collectible models',
+        'Perfect for makers & local manufacturing'
+      ],
+      startingPrice: 500,
+      estimatedTime: '3–7 days'
     }
   ];
 
-  const leftColumn = services.filter((_, index) => index % 2 === 0);
-  const rightColumn = services.filter((_, index) => index % 2 !== 0);
+
+  const leftColumn = services.filter(service => service.type === 'gig');
+  const rightColumn = services.filter(service => service.type === 'custom');
+
 
   // GSAP Scroll Animation
   useEffect(() => {
@@ -194,12 +313,12 @@ const Package = () => {
     <div className="min-h-screen bg-black text-white overflow-hidden pt-20 font-KronaOne">
 
       {/* Section Titles */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 mb-16 ">
-        <div className="relative flex justify-between items-center mb-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:mb-16  ">
+        <div className="hidden lg:flex relative justify-between items-center mb-20">
           {/* Left Title */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }} 
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
             className="group flex items-center gap-4 cursor-pointer"
@@ -236,22 +355,28 @@ const Package = () => {
 
       {/* Two Column Layout */}
       <div className="scroll-section max-w-7xl mx-auto px-4 md:px-8">
-        <div className="relative flex gap-8 md:gap-16 justify-between">
-          {/* Vertical Center Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-red-500/30 via-red-500/50 to-red-500/30 -translate-x-1/2">
+        <div className="relative flex flex-col lg:flex-row gap-16 justify-between">
+          {/* Vertical Center Line (Desktop Only) */}
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-red-500/30 via-red-500/50 to-red-500/30 -translate-x-1/2">
             <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full shadow-lg shadow-red-500/50" />
-            
+
             {/* Animated Middle Dot */}
             <div
               ref={dotRef}
               className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-red-500 to-red-600 rounded-full shadow-xl shadow-red-500/70"
             />
-            
+
             <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full shadow-lg shadow-red-500/50" />
           </div>
 
-          {/* Left Column */}
-          <div className="flex-1 space-y-16">
+
+          {/* Left Column (Gig Based) */}
+          <div className="flex-1 space-y-12">
+            {/* Mobile Title */}
+            <h2 className="lg:hidden text-3xl font-KronaOne text-white text-center tracking-wider mb-8">
+              Gig <span className="text-red-500">Services</span>
+            </h2>
+
             {leftColumn.map((item, index) => (
               <ServiceCard
                 key={item.id}
@@ -262,8 +387,13 @@ const Package = () => {
             ))}
           </div>
 
-          {/* Right Column */}
-          <div className="flex-1 space-y-16">
+          {/* Right Column (Custom Based) */}
+          <div className="flex-1 space-y-12">
+            {/* Mobile Title */}
+            <h2 className="lg:hidden text-3xl font-KronaOne text-white text-center tracking-wider mb-8">
+              Custom <span className="text-red-500">Solutions</span>
+            </h2>
+
             {rightColumn.map((item, index) => (
               <ServiceCard
                 key={item.id}
@@ -366,9 +496,9 @@ const ServiceModal = ({ service, onClose }) => {
 
           {/* LEFT SIDE */}
           <div className="lg:col-span-3 p-6 lg:p-8 space-y-6 border-r border-red-500/20">
-            
+
             {/* Video */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -437,11 +567,10 @@ const ServiceModal = ({ service, onClose }) => {
                       key={index}
                       whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(239, 68, 68, 0.2)' }}
                       onClick={() => setSelectedPackage(index)}
-                      className={`p-4 border rounded-lg cursor-pointer transition-all duration-300 ${
-                        selectedPackage === index
-                          ? 'border-red-500 bg-red-500/10 shadow-lg shadow-red-500/20'
-                          : 'border-zinc-800 hover:border-red-500/50 bg-zinc-900/30'
-                      }`}
+                      className={`p-4 border rounded-lg cursor-pointer transition-all duration-300 ${selectedPackage === index
+                        ? 'border-red-500 bg-red-500/10 shadow-lg shadow-red-500/20'
+                        : 'border-zinc-800 hover:border-red-500/50 bg-zinc-900/30'
+                        }`}
                     >
                       <div className="flex flex-col mb-3">
                         <h4 className="text-base lg:text-lg font-KronaOne text-white mb-1">
@@ -501,7 +630,7 @@ const ServiceModal = ({ service, onClose }) => {
           <div className="lg:col-span-2 p-6 lg:p-8 bg-zinc-900/30 flex flex-col">
 
             {/* Pricing Section */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
@@ -552,7 +681,7 @@ const ServiceModal = ({ service, onClose }) => {
             </motion.div>
 
             {/* CTA Buttons - Immediately Below Pricing */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -582,7 +711,7 @@ const ServiceModal = ({ service, onClose }) => {
 
             {/* Key Features - Below CTA */}
             {((service.type === 'gig' && selectedPackage !== null) || service.type === 'custom') && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
@@ -594,8 +723,8 @@ const ServiceModal = ({ service, onClose }) => {
                 <ul className="space-y-3">
                   {service.type === 'gig' && selectedPackage !== null ? (
                     service.packages[selectedPackage].features.slice(0, 5).map((feature, i) => (
-                      <motion.li 
-                        key={i} 
+                      <motion.li
+                        key={i}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.5 + i * 0.1 }}
@@ -607,7 +736,7 @@ const ServiceModal = ({ service, onClose }) => {
                     ))
                   ) : (
                     service.customFeatures.slice(0, 5).map((feature, i) => (
-                      <motion.li 
+                      <motion.li
                         key={i}
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}

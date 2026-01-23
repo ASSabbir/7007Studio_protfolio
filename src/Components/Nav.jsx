@@ -135,7 +135,7 @@ const Nav = () => {
                   to={link.to}
                   onClick={handleClose}
                   className={({ isActive }) =>
-                    `block  text-7xl font-bold transition-all duration-300
+                    `block  lg:text-7xl text-5xl font-bold transition-all duration-300
                     ${isActive ? "text-red-600" : "text-white"}`
                   }
                 >

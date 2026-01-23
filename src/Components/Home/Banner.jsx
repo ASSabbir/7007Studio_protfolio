@@ -1,6 +1,6 @@
 import React from 'react';
 import Spline from '@splinetool/react-spline';
-import vdo1 from '../../assets/video/montage footage.mp4'
+import vdo1 from '../../assets/video/montage footage CF.mp4'
 import './style.css'
 import { HiArrowUp } from "react-icons/hi2";
 import { FaWhatsapp } from "react-icons/fa";
@@ -14,9 +14,6 @@ const openWhatsApp = () => {
     "noopener,noreferrer"
   );
 };
-
-
-
 
 
 const Banner = () => {

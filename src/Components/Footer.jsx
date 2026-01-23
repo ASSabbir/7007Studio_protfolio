@@ -21,7 +21,7 @@ const Footer = () => {
   text-[25vw] sm:text-[20vw] md:text-[18vw] lg:text-[12vw] xl:text-[25vw]
   font-['Odibee_Sans']
   leading-[1]
-  -mb-[0.22em]
+  -mb-[0.12em]
   text-red-600
 ">
               7007
