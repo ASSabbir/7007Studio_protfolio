@@ -1,8 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import bg1 from "../../assets/video/bg1.mp4";
 
-const ThiredTitle = () => {
+
+const SpliteText = ({text,size}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -41,12 +41,10 @@ const ThiredTitle = () => {
           {splitText("7007", 0)}
         </h1>
 
-        <h1 className="text-[18vw] text-red-600 overflow-hidden">
-          {splitText("Studio", 0.4)}
-        </h1>
+        
       </div>
     </section>
   );
 };
 
-export default ThiredTitle;
+export default SpliteText;

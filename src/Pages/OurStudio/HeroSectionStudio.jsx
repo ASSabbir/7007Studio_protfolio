@@ -57,7 +57,7 @@ const HeroSectionStudio = () => {
               lg:text-xl 
               text-white 
               leading-relaxed 
-              md:leading-loose 
+              md:leading-snug
               max-w-3xl 
               mx-auto
               px-2 sm:px-0

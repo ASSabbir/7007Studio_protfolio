@@ -47,8 +47,8 @@ const Footer = () => {
         </div>
 
         {/* Right Side  */}
-        <div className="w-full lg:w-[30%] pb-16 font-KronaOne ">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8">
+        <div className="w-full lg:w-[30%]  font-KronaOne ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8">
 
             {/* About Us */}
             <div className="text-center sm:text-left">

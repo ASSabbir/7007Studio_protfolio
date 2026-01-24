@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import video1 from '../../assets/video/vid1.mp4';
 
+
 const Philosophy = () => {
   const philosophyLines = [
     { text: "Achievement is not the end — it's the breaking point.", color: "red" },
@@ -21,7 +22,7 @@ const Philosophy = () => {
 
             {/* Title */}
             <motion.div
-              className="relative inline-block overflow-hidden cursor-pointer mb-24"
+              className="relative inline-block overflow-hidden cursor-pointer mb-12 md:mb-24"
               initial={{ 
                 scale: 0,
                 rotateX: -90,
@@ -38,13 +39,14 @@ const Philosophy = () => {
               viewport={{ once: true, amount: 0.3 }}
               style={{ perspective: "1000px" }}
             >
-              <h2 className="text-7xl md:text-6xl font-bold text-red-600 tracking-tighter relative z-10 tracking-wide">
+              <h2 className="text-4xl  md:text-6xl font-bold text-red-600 tracking-tighter relative  tracking-wide">
                 PHILOSOPHY
               </h2>
+              
             </motion.div>
 
             {/* Philosophy Lines with 3D Scale Effect */}
-            <ul className="space-y-12">
+            <ul className="space-y-8 md:space-y-12">
               {philosophyLines.map((line, index) => (
                 <motion.li
                   key={index}
@@ -65,7 +67,7 @@ const Philosophy = () => {
                     ease: [0.6, 0.01, 0.05, 0.95]
                   }}
                   viewport={{ once: true, amount: 0.3 }}
-                  className={`text-2xl md:text-2xl leading-[1.2] tracking-wide`}
+                  className={`text-xl md:text-2xl leading-[1.2] tracking-wide`}
                   style={{
                     color: line.color === "red" ? '#ff0000' : '#ffffff',
                     letterSpacing: '0.08em',

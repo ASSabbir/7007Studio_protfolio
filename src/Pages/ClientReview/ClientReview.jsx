@@ -89,7 +89,7 @@ const ClientReview = () => {
 
 
   return (
-    <div className="min-h-screen text-white overflow-hidden">
+    <div className="min-h-screen text-white bg-black overflow-hidden">
       {/* Hero Banner */}
 
 

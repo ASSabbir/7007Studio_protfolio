@@ -17,7 +17,7 @@ const SecondTitle = () => {
       {/* Main Section with Video */}
       <div
         ref={ref}
-        className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] flex flex-col justify-center items-start overflow-hidden"
+        className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] flex flex-col justify-center items-start overflow-hidden"
       >
         {/* Background Video */}
         <video
@@ -41,7 +41,7 @@ const SecondTitle = () => {
           {/* Motion Title */}
           <motion.div
             
-            className="font-KronaOne px-15 pt-15 text-red-600 text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl 
+            className="font-KronaOne  md:px-15 pt-15 text-red-600 text-3xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl 
               font- leading-none tracking-tighter relative"
           >
             7007 Studio is a CGI, VFX, post-production, and gaming studio.
@@ -49,8 +49,8 @@ const SecondTitle = () => {
           </motion.div>
 
           {/* Bottom White Text */}
-          <div className="px-15 mt-10 md:mt-12 pb-15">
-            <p className="font-KronaOne text-white text-2xl sm:text-3xl md:text-4xl lg:text-2xl leading-snug md:leading-tight tracking-tight">
+          <div className="md:px-15 mt-10 md:mt-12 pb-15">
+            <p className="font-KronaOne text-white text-xl  md:text-4xl lg:text-2xl leading-snug md:leading-tight tracking-tight">
               We collaborate <br />
               with studios, agencies, and brands to deliver <br />
               production-ready digital content.
