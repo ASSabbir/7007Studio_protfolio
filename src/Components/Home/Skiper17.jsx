@@ -2,10 +2,13 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import ReactLenis from "lenis/react";
 import React, { useRef } from "react";
 import vdo1 from '../../assets/video/montage footage CF.mp4';
+import vdo2 from '../../assets/video/CF10.mp4';
+import vdo3 from '../../assets/video/CF11.mp4';
 
 const projects = [
   { title: "Project 1", src: vdo1 },
-  { title: "Project 2", src: vdo1 },
+  { title: "Project 2", src: vdo2 },
+  { title: "Project 3", src: vdo3 },
 ];
 
 const Skiper17 = () => {
