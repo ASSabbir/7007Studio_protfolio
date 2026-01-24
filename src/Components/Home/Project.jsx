@@ -1,7 +1,10 @@
 
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-import video1 from '../../assets/video/footage2.mp4'
+import video1 from '../../assets/video/CF1.mp4'
+import video2 from '../../assets/video/CF2.mp4'
+import video3 from '../../assets/video/CF3.mp4'
+import video4 from '../../assets/video/CF4.mp4'
 
 const projects = [
     {
@@ -15,21 +18,21 @@ const projects = [
         id: 2,
         title: "Cinematic VFX Shot",
         category: "VFX",
-        video: video1,
+        video: video2,
         logo: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=200&h=200&fit=crop"
     },
     {
         id: 3,
         title: "Game Environment",
         category: "Game Art",
-        video: video1,
+        video: video3,
         logo: "https://images.unsplash.com/photo-1593642634367-d91a135587b5?w=200&h=200&fit=crop"
     },
     {
         id: 4,
         title: "Brand Motion Film",
         category: "Motion Design",
-       video: video1,
+        video: video4,
         logo: "https://images.unsplash.com/photo-1520975916090-3105956dac38?w=200&h=200&fit=crop"
     }
 ];

@@ -56,116 +56,120 @@ const OurStudio = () => {
     }
   ];
 
-  const caseStudies = [
-    {
-      id: 1,
-      title: 'E-Commerce Platform',
-      category: '3D Animation',
-      description: 'Revolutionary shopping experience with immersive 3D product visualization.',
-      video: vdo1,
-      logo: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&h=200&fit=crop',
-      client: 'TechCorp Inc.',
-      year: '2024',
-      duration: '6 months',
-      challenge: 'TechCorp needed to revolutionize their online shopping experience to compete with emerging AR/VR e-commerce platforms. Traditional 2D product images were no longer sufficient to showcase their premium product line.',
-      solution: 'We developed a comprehensive 3D visualization system that allows customers to interact with products in real-time. Our team created over 500 photorealistic 3D models, implemented advanced rendering techniques, and designed an intuitive interface that seamlessly integrates these 3D elements into the existing platform.',
-      process: 'The project began with extensive product photography and 3D scanning. Our modeling team then refined each asset to achieve photorealistic quality. We implemented a custom WebGL-based viewer that provides smooth 360-degree rotation, zoom capabilities, and material variation previews. The final phase involved rigorous testing across devices to ensure optimal performance.',
-      results: 'The platform saw a 45% increase in user engagement and 32% boost in conversion rates within the first three months of launch. Customer returns decreased by 28% due to better product visualization. The average session duration increased from 3.5 to 6.2 minutes.',
-      images: [
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1557821552-17105176677c?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop'
-      ],
-      technologies: ['Three.js', 'WebGL', 'React', 'Blender', 'Substance Painter'],
-      testimonial: {
-        text: 'The 3D visualization system has completely transformed how our customers interact with products online. The results exceeded our expectations.',
-        author: 'James Peterson',
-        position: 'CEO, TechCorp Inc.'
-      }
-    },
-    {
-      id: 2,
-      title: 'Brand Identity Campaign',
-      category: 'Motion Graphics',
-      description: 'Complete brand transformation with stunning motion graphics and visual storytelling.',
-      video: vdo2,
-      logo: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=200&h=200&fit=crop',
-      client: 'StartupX',
-      year: '2024',
-      duration: '4 months',
-      challenge: 'StartupX was entering a crowded market and needed a distinctive brand identity that would resonate with their tech-savvy millennial audience while conveying professionalism and innovation.',
-      solution: 'We crafted a comprehensive brand identity system centered around dynamic motion graphics. This included an animated logo system, brand guidelines, social media templates, and a complete suite of marketing materials featuring cohesive motion design elements.',
-      process: 'Starting with brand discovery workshops, we identified core values and visual themes. Our design team created multiple concept directions, refining the chosen direction through iterative feedback. The motion graphics were developed using a modular system, ensuring consistency while allowing flexibility across different applications.',
-      results: 'Brand recognition increased by 67% within the first quarter. Social media engagement grew by 89%, with video content receiving 3x more shares than previous static content. The campaign won two industry awards for motion design excellence.',
-      images: [
-        'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1559028012-481c04fa702d?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop'
-      ],
-      technologies: ['After Effects', 'Cinema 4D', 'Illustrator', 'Premiere Pro'],
-      testimonial: {
-        text: 'The motion graphics system gave our brand a personality that truly stands out. Our audience engagement has never been higher.',
-        author: 'Michelle Rodriguez',
-        position: 'Marketing Director, StartupX'
-      }
-    },
-    {
-      id: 3,
-      title: 'Product Launch Video',
-      category: 'VFX',
-      description: 'Cinematic product reveal with breathtaking visual effects and CGI integration.',
-      video: vdo3,
-      logo: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=200&h=200&fit=crop',
-      client: 'Innovation Labs',
-      year: '2024',
-      duration: '5 months',
-      challenge: 'Innovation Labs needed a show-stopping product launch video for their flagship device that would generate buzz at a major tech conference and drive pre-orders.',
-      solution: 'We produced a 90-second cinematic video featuring advanced VFX, including particle simulations, dynamic lighting, photorealistic CGI product integration, and seamless transitions between abstract concepts and product features.',
-      process: 'Pre-production involved detailed storyboarding and previz. We built a complete CGI environment and product model, then integrated it with live-action footage. The VFX pipeline included particle effects for energy visualizations, advanced compositing for seamless integration, and color grading to achieve a premium, tech-forward aesthetic.',
-      results: 'The launch video garnered over 2 million views in the first week and was featured in major tech publications including TechCrunch and The Verge. Pre-orders exceeded projections by 150%. The video won Best Product Launch Video at the Digital Marketing Awards.',
-      images: [
-        'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1557821552-17105176677c?w=1200&h=800&fit=crop'
-      ],
-      technologies: ['Houdini', 'Nuke', 'Maya', 'Redshift', 'DaVinci Resolve'],
-      testimonial: {
-        text: 'This video perfectly captured our product vision and generated incredible momentum for our launch.',
-        author: 'Dr. Sarah Kim',
-        position: 'Chief Product Officer, Innovation Labs'
-      }
-    },
-    {
-      id: 4,
-      title: 'Architectural Visualization',
-      category: '3D Rendering',
-      description: 'Photorealistic architectural renders for luxury real estate development.',
-     video: vdo4,
-      logo: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=200&h=200&fit=crop',
-      client: 'Skyline Properties',
-      year: '2024',
-      duration: '3 months',
-      challenge: 'Skyline Properties needed to secure funding for a $200M luxury development project before breaking ground. Potential investors needed to visualize the finished project to commit capital.',
-      solution: 'We created a comprehensive suite of photorealistic architectural visualizations including exterior renders, interior walkthroughs, aerial views, and an interactive 3D tour. Each visualization was crafted to showcase the development in the most compelling light.',
-      process: 'Working closely with the architectural team, we built detailed 3D models of the entire development. Our lighting artists created realistic lighting scenarios for different times of day. The rendering process used physically-based materials and advanced ray tracing for photorealistic results. We also developed an interactive VR experience for investor presentations.',
-      results: 'The project was fully funded within two months, with visualizations playing a key role in securing $180M in investor commitments. The renders were used in all marketing materials and helped presell 40% of units before construction began. The project won three architectural visualization awards.',
-      images: [
-        'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&h=800&fit=crop',
-        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=800&fit=crop'
-      ],
-      technologies: ['3ds Max', 'V-Ray', 'Corona Renderer', 'Photoshop', 'Unreal Engine'],
-      testimonial: {
-        text: 'These visualizations were instrumental in securing our funding. Investors could truly see our vision.',
-        author: 'Robert Chen',
-        position: 'Managing Partner, Skyline Properties'
-      }
+ const caseStudies = [
+  {
+    id: 1,
+    title: 'Systema Toothbrush Launch TVC',
+    category: '3D Product Animation',
+    description: 'High-precision 3D TVC visualizing advanced dental cleaning technology.',
+    video: vdo1,
+    logo: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=200&h=200&fit=crop',
+    client: 'Lions Bangladesh',
+    year: '2024',
+    duration: '1.5 months',
+    challenge: 'Lions Bangladesh needed a visually scientific yet premium commercial to prove Systema’s “9x more cleaning power” claim while maintaining broadcast-level polish under a tight deadline.',
+    solution: 'We created a macro-level 3D visualization system that accurately demonstrates how tapered bristles interact with teeth and gum lines using cinematic lighting and medical-grade realism.',
+    process: 'High-fidelity teeth and gum models were built in Blender, followed by precision bristle simulations to demonstrate cleaning mechanics. Shaders were tuned to reflect enamel gloss and bristle translucency. Final animation was composited and polished for nationwide TV broadcast.',
+    results: 'Delivered a technically accurate and visually premium TVC that successfully communicated the product’s scientific benefits and aligned with the brand’s healthcare positioning.',
+    images: [
+      'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1606813902912-6c84a2bb3c7d?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1606813902912-6c84a2bb3c7d?w=1200&h=800&fit=crop'
+    ],
+    technologies: ['Blender', 'Compositing'],
+    testimonial: {
+      text: 'The visuals perfectly communicated our technology and brand promise. The result was beyond expectations.',
+      author: 'Brand Team',
+      position: 'Lions Bangladesh'
     }
-  ];
+  },
+
+  {
+    id: 2,
+    title: 'City Bank AmEx Platinum Reserve TVC',
+    category: '3D Motion Graphics',
+    description: 'Luxury-focused 3D commercial for premium financial branding.',
+    video: vdo2,
+    logo: 'https://images.unsplash.com/photo-1612831661966-49b0d5ff28c5?w=200&h=200&fit=crop',
+    client: 'City Bank',
+    year: '2024',
+    duration: '2 months',
+    challenge: 'City Bank needed a premium, cinematic visual style to position the AmEx Platinum Reserve card as a symbol of exclusivity and luxury.',
+    solution: 'We created a high-contrast, cinematic 3D motion system that emphasized metallic finishes, lighting drama, and elegant motion design to convey status and prestige.',
+    process: 'The card was modeled in 3D, materials were developed to reflect metallic and matte surfaces, and lighting was designed to create a luxury mood. Motion graphics, camera animation, and compositing finalized the TVC.',
+    results: 'The campaign achieved strong brand recall and positioned the Platinum Reserve card as a premium lifestyle product.',
+    images: [
+      'https://images.unsplash.com/photo-1612831661966-49b0d5ff28c5?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1605902711622-cfb43c4437d2?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1612831661966-49b0d5ff28c5?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1605902711622-cfb43c4437d2?w=1200&h=800&fit=crop'
+    ],
+    technologies: ['Blender', 'After Effects', 'Compositing'],
+    testimonial: {
+      text: 'The commercial captured the premium essence of our brand beautifully.',
+      author: 'Marketing Team',
+      position: 'City Bank'
+    }
+  },
+
+  {
+    id: 3,
+    title: 'Walton Water Purifier – Pure Innovation',
+    category: '3D Product Animation',
+    description: 'Cinematic fluid-driven visualization of water purification technology.',
+    video: vdo3,
+    logo: 'https://images.unsplash.com/photo-1581093588401-22f6360b5d54?w=200&h=200&fit=crop',
+    client: 'Walton Home Appliance',
+    year: '2024',
+    duration: '3 months',
+    challenge: 'Walton needed a premium way to visualize internal filtration technology while maintaining a dark, cinematic brand mood.',
+    solution: 'We used Houdini fluid simulations combined with Blender rendering to show internal filtration in a dramatic, x-ray style.',
+    process: 'Water simulations were generated in Houdini, internal filters were modeled in Blender, and lighting was optimized for a dark premium look. Cycles rendering and compositing finalized the visuals.',
+    results: 'Delivered a cinematic TVC that elevated product trust and showcased technical innovation clearly.',
+    images: [
+      'https://images.unsplash.com/photo-1581093588401-22f6360b5d54?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1581093588401-22f6360b5d54?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=1200&h=800&fit=crop'
+    ],
+    technologies: ['Blender', 'Houdini', 'Compositing'],
+    testimonial: {
+      text: 'The internal visualization made our technology easy to understand and visually premium.',
+      author: 'Product Team',
+      position: 'Walton'
+    }
+  },
+
+  {
+    id: 4,
+    title: 'Sprint Sneaker Mania',
+    category: '3D Product Animation',
+    description: 'High-energy sneaker showcase with cinematic motion and transitions.',
+    video: vdo4,
+    logo: 'https://images.unsplash.com/photo-1528701800489-20be3c8d4f47?w=200&h=200&fit=crop',
+    client: 'Sprint',
+    year: '2024',
+    duration: '2 months',
+    challenge: 'Sprint required a visually dynamic sneaker campaign using scanned assets without losing realism.',
+    solution: 'We optimized real-world scans and designed fluid camera motion and transitions for a clean, cinematic presentation.',
+    process: 'Scans were cleaned and retopologized in Blender, materials refined, animations choreographed, and final compositing polished.',
+    results: 'Created a visually powerful sneaker campaign with smooth transitions and premium realism.',
+    images: [
+      'https://images.unsplash.com/photo-1528701800489-20be3c8d4f47?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1528701800489-20be3c8d4f47?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1200&h=800&fit=crop'
+    ],
+    technologies: ['Blender', '3D Scanning', 'Compositing'],
+    testimonial: {
+      text: 'The transitions and motion made our sneakers feel alive and premium.',
+      author: 'Creative Team',
+      position: 'Sprint'
+    }
+  }
+];
+
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden font-KronaOne">

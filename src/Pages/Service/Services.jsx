@@ -57,7 +57,7 @@ const Services = () => {
           bespoke internal systems.
         </p>
 
-        <p className="mt-6 sm:mt-8 text-red-500 text-sm sm:text-lg md:text-xl font-KronaOne tracking-wide">
+        <p className="mt-6 sm:mt-8 text-red-500 text-sm sm:text-lg md:text-xl font-KronaOne tracking-tighter">
           [ Book a 30-min Session ]
         </p>
       </section>

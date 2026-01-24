@@ -323,7 +323,7 @@ const Package = () => {
             whileHover={{ scale: 1.05 }}
             className="group flex items-center gap-4 cursor-pointer"
           >
-            <h2 className="text-4xl md:text-4xl font-KronaOne text-white tracking-wider">
+            <h2 className="text-4xl md:text-4xl font-KronaOne text-white tracking-tighter">
               Gig <span className="text-red-500">Services</span>
             </h2>
             <span className="absolute left-0 -bottom-3 h-[2px] w-0 bg-red-500 group-hover:w-full transition-all duration-500" />
@@ -345,7 +345,7 @@ const Package = () => {
             whileHover={{ scale: 1.05 }}
             className="group flex items-center gap-4 cursor-pointer"
           >
-            <h2 className="text-4xl md:text-4xl font-KronaOne text-white tracking-wider">
+            <h2 className="text-4xl md:text-4xl font-KronaOne text-white tracking-tighter">
               Custom <span className="text-red-500">Solutions</span>
             </h2>
             <span className="absolute right-0 -bottom-3 h-[2px] w-0 bg-red-500 group-hover:w-full transition-all duration-500" />
@@ -373,7 +373,7 @@ const Package = () => {
           {/* Left Column (Gig Based) */}
           <div className="flex-1 space-y-12">
             {/* Mobile Title */}
-            <h2 className="lg:hidden text-3xl font-KronaOne text-white text-center tracking-wider mb-8">
+            <h2 className="lg:hidden text-3xl font-KronaOne text-white text-center tracking-tighter mb-8">
               Gig <span className="text-red-500">Services</span>
             </h2>
 
@@ -390,7 +390,7 @@ const Package = () => {
           {/* Right Column (Custom Based) */}
           <div className="flex-1 space-y-12">
             {/* Mobile Title */}
-            <h2 className="lg:hidden text-3xl font-KronaOne text-white text-center tracking-wider mb-8">
+            <h2 className="lg:hidden text-3xl font-KronaOne text-white text-center tracking-tighter mb-8">
               Custom <span className="text-red-500">Solutions</span>
             </h2>
 
@@ -446,7 +446,7 @@ const ServiceCard = ({ item, index, onClick }) => {
       {/* Card Content - Bottom Only */}
       <div className="relative z-10 h-full flex flex-col justify-end p-4 sm:p-6 md:p-8">
         {/* Title */}
-        <h3 className="text-xl sm:text-2xl md:text-2xl text-white leading-tight tracking-wide mb-1 sm:mb-2 md:mb-2 font-KronaOne">
+        <h3 className="text-xl sm:text-2xl md:text-2xl text-white leading-tight tracking-tighter mb-1 sm:mb-2 md:mb-2 font-KronaOne">
           {item.title}
         </h3>
 
@@ -638,7 +638,7 @@ const ServiceModal = ({ service, onClose }) => {
             >
               <div className="flex items-center gap-2 mb-3">
                 <Box className="w-5 h-5 text-red-500" />
-                <span className="text-xs font-KronaOne text-gray-400 uppercase tracking-wider">
+                <span className="text-xs font-KronaOne text-gray-400 uppercase tracking-tighter">
                   {service.type === 'gig' ? 'Package Pricing' : 'Starting Price'}
                 </span>
               </div>
@@ -690,7 +690,7 @@ const ServiceModal = ({ service, onClose }) => {
               <motion.button
                 whileHover={{ scale: 1.03, boxShadow: '0 10px 30px rgba(239, 68, 68, 0.4)' }}
                 whileTap={{ scale: 0.97 }}
-                className="w-full bg-gradient-to-r from-red-600 to-red-700 text-white font-KronaOne py-3 lg:py-4 rounded-lg tracking-wider uppercase text-xs lg:text-sm transition-all duration-300"
+                className="w-full bg-gradient-to-r from-red-600 to-red-700 text-white font-KronaOne py-3 lg:py-4 rounded-lg tracking-tighter uppercase text-xs lg:text-sm transition-all duration-300"
               >
                 {service.type === 'gig' ? 'Order Now' : 'Book Consultation'}
               </motion.button>
@@ -698,7 +698,7 @@ const ServiceModal = ({ service, onClose }) => {
               <motion.button
                 whileHover={{ scale: 1.03, backgroundColor: 'rgba(239, 68, 68, 1)' }}
                 whileTap={{ scale: 0.97 }}
-                className="w-full border-2 border-red-500 text-red-500 hover:text-white font-KronaOne py-3 lg:py-4 rounded-lg tracking-wider uppercase text-xs lg:text-sm transition-all duration-300"
+                className="w-full border-2 border-red-500 text-red-500 hover:text-white font-KronaOne py-3 lg:py-4 rounded-lg tracking-tighter uppercase text-xs lg:text-sm transition-all duration-300"
               >
                 Contact Us
               </motion.button>
@@ -717,7 +717,7 @@ const ServiceModal = ({ service, onClose }) => {
                 transition={{ delay: 0.4 }}
                 className="mt-6 p-6 bg-black/40 rounded-lg border border-red-500/20"
               >
-                <h4 className="text-xs font-KronaOne text-gray-400 uppercase tracking-wider mb-4">
+                <h4 className="text-xs font-KronaOne text-gray-400 uppercase tracking-tighter mb-4">
                   Key Highlights
                 </h4>
                 <ul className="space-y-3">
