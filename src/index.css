@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Odibee+Sans&display=swap');
 @font-face {
   font-family: silverlineblack;
   src: url(../src/assets/fonts/SilverlineSans-Black.ttf);
@@ -40,6 +41,7 @@
   --font-urbanist:"Urbanist", sans-serif;
   --font-zendots:"Zen Dots", sans-serif;
   --font-orbitron:"Orbitron", sans-serif;
+  --font-KronaOne:"Krona One", sans-serif;
 }
 
 @theme inline {

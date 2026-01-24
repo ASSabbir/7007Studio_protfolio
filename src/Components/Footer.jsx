@@ -1,113 +1,72 @@
 import React from 'react';
-import { Youtube, Instagram, Facebook, Linkedin, Mail, Phone, MapPin, Briefcase } from 'lucide-react';
-
-const AnimatedButton = () => {
-  return (
-    <div className="flex gap-4">
-      <a 
-        href="https://youtube.com/@7007studio" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="w-12 h-12 flex items-center justify-center bg-red-600 hover:bg-red-700 rounded-full transition-all duration-300 hover:scale-110"
-      >
-        <Youtube className="w-6 h-6 text-white" />
-      </a>
-      <a 
-        href="https://instagram.com/7007studio" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="w-12 h-12 flex items-center justify-center bg-red-600 hover:bg-red-700 rounded-full transition-all duration-300 hover:scale-110"
-      >
-        <Instagram className="w-6 h-6 text-white" />
-      </a>
-      <a 
-        href="https://facebook.com/7007studio" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="w-12 h-12 flex items-center justify-center bg-red-600 hover:bg-red-700 rounded-full transition-all duration-300 hover:scale-110"
-      >
-        <Facebook className="w-6 h-6 text-white" />
-      </a>
-      <a 
-        href="https://linkedin.com/company/7007studio" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="w-12 h-12 flex items-center justify-center bg-red-600 hover:bg-red-700 rounded-full transition-all duration-300 hover:scale-110"
-      >
-        <Linkedin className="w-6 h-6 text-white" />
-      </a>
-    </div>
-  );
-};
+import { Briefcase } from 'lucide-react';
+import {
+  Mail,
+  Phone,
+  MapPin,
+} from 'lucide-react';
+import AnimatedButton from './AnimatedButton';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white font-dmsans pt-30 border-red-400 flex flex-col relative">
+    <footer className="bg-black text-white font-dmsans pt-5 border-red-400 flex flex-col relative">
       {/* Main Content */}
-      <div className="flex-1 flex flex-col lg:flex-row items-center justify-between px-6 mb-10  md:px-12 md:py-16 lg:px-20 lg:py-0 gap-12 lg:gap-20">
+      <div className="flex-1 flex flex-col lg:flex-row items-end justify-between px-6 mb-10  md:px-12 md:py-16 lg:px-20 lg:py-0 gap-12 lg:gap-20">
         {/* Left Side - Logo */}
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+        <div className="w-full lg:w-[70%] flex justify-center ">
           <div className="flex flex-col items-center font-OdibeeSans lg:items-start">
-            <h1 className="text-[25vw] sm:text-[20vw] md:text-[18vw] lg:text-[12vw] xl:text-[14vw] font-black leading-none text-red-600">
+            <h1 className="
+  block
+  m-0 p-0
+  text-[25vw] sm:text-[20vw] md:text-[18vw] lg:text-[12vw] xl:text-[25vw]
+  font-['Odibee_Sans']
+  leading-[1]
+  -mb-[0.12em]
+  text-red-600
+">
               7007
             </h1>
-            <h2 className="text-[10vw] sm:text-[8vw] md:text-[7vw] lg:text-[5vw] xl:text-[6vw] font-black leading-none text-white -mt-2 md:-mt-3 lg:-mt-4">
+
+            <h2 className="
+  block
+  m-0 p-0
+  text-[10vw] sm:text-[8vw] md:text-[7vw] lg:text-[5vw] xl:text-[11vw]
+  font-['Odibee_Sans']
+  leading-none
+  text-white
+">
               STUDIO
             </h2>
-            
-            {/* Bottom Icons - Desktop */}
-            <div className="hidden lg:flex mt-8 lg:mt-12">
-              <AnimatedButton />
+
+
+            {/* Bottom Icons */}
+            <div className="hidden lg:flex gap-4 mt-8 lg:mt-12">
+              <AnimatedButton></AnimatedButton>
             </div>
           </div>
         </div>
 
-        {/* Right Side - Info Sections */}
-        <div className="w-full lg:w-1/2">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10 lg:gap-12 xl:gap-16">
-            {/* Contact Information */}
-            <div className="text-center sm:text-left">
-              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
-                Contact
-              </h3>
-              <div className="space-y-2">
-                <a 
-                  href="mailto:hello@7007studio.com" 
-                  className="flex items-center justify-center sm:justify-start gap-2 text-white text-sm md:text-base hover:text-red-600 transition-colors"
-                >
-                  <Mail className="w-4 h-4" />
-                  <span>hello@7007studio.com</span>
-                </a>
-                <a 
-                  href="tel:+8801XXXXXXXXX" 
-                  className="flex items-center justify-center sm:justify-start gap-2 text-white text-sm md:text-base hover:text-red-600 transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>+880 1XXXXXXXXX</span>
-                </a>
-                <div className="flex items-center justify-center sm:justify-start gap-2 text-white text-sm md:text-base">
-                  <MapPin className="w-4 h-4" />
-                  <span>Dhaka, Bangladesh</span>
-                </div>
-              </div>
-            </div>
+        {/* Right Side  */}
+        <div className="w-full lg:w-[30%] pb-16 font-KronaOne ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8">
 
             {/* About Us */}
             <div className="text-center sm:text-left">
-              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
-                About us
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-4 lowercase">
+                About Us
               </h3>
-              <p className="text-white text-sm md:text-base leading-relaxed">
-                7007 Studio is a creative design & digital production studio focused on premium visuals, branding, and motion experiences.
+              <p className="text-white text-sm  leading-relaxed">
+                7007 Studio is a creative design & digital production studio focused on
+                premium visuals, branding, and motion experiences.
               </p>
             </div>
 
             {/* Services */}
             <div className="text-center sm:text-left">
-              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-4 lowercase">
                 Services
               </h3>
-              <ul className="space-y-2 text-white text-sm md:text-base">
+              <ul className="space-y-2 text-white text-sm ">
                 <li className="hover:text-red-600 transition-colors cursor-pointer">3D Animation</li>
                 <li className="hover:text-red-600 transition-colors cursor-pointer">Motion Graphics</li>
                 <li className="hover:text-red-600 transition-colors cursor-pointer">Brand Identity</li>
@@ -115,27 +74,59 @@ const Footer = () => {
               </ul>
             </div>
 
+            {/* Contact */}
+            <div className="text-center sm:text-left">
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-4 lowercase">
+                Contact
+              </h3>
+
+              <div className="space-y-2">
+                <a
+                  href="mailto:hello@7007studio.com"
+                  className="flex items-center justify-center sm:justify-start gap-2 text-white text-sm  hover:text-red-600 transition-colors"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>hello@7007studio.com</span>
+                </a>
+
+                <a
+                  href="tel:+8801XXXXXXXXX"
+                  className="flex items-center justify-center sm:justify-start gap-2 text-white text-sm  hover:text-red-600 transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>+880 1XXXXXXXXX</span>
+                </a>
+
+                <div className="flex items-center justify-center sm:justify-start gap-2 text-white text-sm ">
+                  <MapPin className="w-4 h-4" />
+                  <span>Dhaka, Bangladesh</span>
+                </div>
+              </div>
+            </div>
+
             {/* Careers */}
             <div className="text-center sm:text-left">
-              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
+              <h3 className="text-red-600 text-xl md:text-2xl lg:text-3xl font-bold mb-4 lowercase">
                 Careers
               </h3>
               <p className="text-white text-sm md:text-base mb-2">
                 We're always looking for creative minds.
               </p>
-              <a 
-                href="mailto:careers@7007studio.com" 
+              <a
+                href="mailto:careers@7007studio.com"
                 className="inline-flex items-center gap-2 text-white text-sm md:text-base underline hover:text-red-600 transition-colors"
               >
                 <Briefcase className="w-4 h-4" />
                 <span>careers@7007studio.com</span>
               </a>
             </div>
+
           </div>
         </div>
+
       </div>
 
-      {/* Bottom Icons - Mobile Only */}
+      {/* Bottom Icons */}
       <div className="flex lg:hidden justify-center pb-8">
         <AnimatedButton />
       </div>
